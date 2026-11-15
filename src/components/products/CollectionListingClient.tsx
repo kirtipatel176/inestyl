@@ -7,6 +7,7 @@ import { useProductFilters } from "@/hooks/useProductFilters";
 import { ProductFilterToolbar } from "@/components/products/filters/ProductFilterToolbar";
 import { ProductCard } from "@/components/products/ProductCard";
 import { EmptyFilterResults } from "@/components/products/filters/EmptyFilterResults";
+import { getOptimizedImagePath } from "@/lib/images";
 
 interface CollectionListingClientProps {
   collection: CollectionItem;
@@ -57,10 +58,12 @@ export function CollectionListingClient({
       {/* 1. Large Editorial Campaign Hero Header */}
       <div className="relative rounded-2xl overflow-hidden bg-[#F5F5F7] border border-[#E5E7EB] aspect-[21/9] sm:aspect-[24/8] min-h-[220px]">
         <Image
-          src={collection.image}
+          src={getOptimizedImagePath(collection.image)}
           alt={collection.title}
           fill
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+          quality={85}
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex flex-col justify-end p-6 sm:p-10 text-white">

@@ -18,10 +18,11 @@ export function TheInestyleEdit() {
             className="lg:col-span-7 relative h-[360px] sm:h-[480px] w-full bg-[#F5F5F7] overflow-hidden"
           >
             <Image
-              src="/images/hero/hero-lifestyle-composite.jpg"
+              src="/images/hero/desktop/hero-lifestyle-composite.webp"
               alt="The INESTYLE Edit — Curated Footwear and Apparel"
               fill
-              priority={false}
+              loading="lazy"
+              quality={80}
               sizes="(max-width: 1024px) 100vw, 58vw"
               className="object-cover object-center hover:scale-103 transition-transform duration-1000 ease-out"
             />

@@ -22,9 +22,11 @@ export function NewArrivalsBannerAnimated() {
           {/* Sneaker Macro Crop on Left */}
           <div className="md:col-span-5 relative h-72 md:h-96 w-full overflow-hidden">
             <Image
-              src="/images/hero/new-arrivals-banner.jpg"
+              src="/images/hero/new-arrivals-banner.webp"
               alt="New Arrivals Sneaker Drops at iNESTYL OUTLET"
               fill
+              loading="lazy"
+              quality={80}
               sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />

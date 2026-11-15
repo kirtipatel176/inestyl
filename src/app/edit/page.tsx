@@ -35,11 +35,12 @@ export default function TheEditPage() {
       {/* 3. Hero Feature Photograph (Large Editorial Image) */}
       <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-subtle group">
         <Image
-          src="/images/hero/hero-lifestyle-composite.jpg"
+          src="/images/hero/desktop/hero-lifestyle-composite.webp"
           alt="The INESTYLE Edit — Visual Editorial Curation"
           fill
           priority
           sizes="100vw"
+          quality={85}
           className="object-cover group-hover:scale-102 transition-transform duration-1000 ease-out"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8 sm:p-12">
@@ -59,9 +60,11 @@ export default function TheEditPage() {
         <article className="space-y-4 group">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#FFFFFF]">
             <Image
-              src="/images/categories/category-footwear.jpg"
+              src="/images/categories/category-footwear-card.webp"
               alt="Footwear Engineering Story"
               fill
+              loading="lazy"
+              quality={80}
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-contain p-4 group-hover:scale-105 transition-transform duration-700"
             />
@@ -86,9 +89,11 @@ export default function TheEditPage() {
         <article className="space-y-4 group">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#FFFFFF]">
             <Image
-              src="/images/categories/category-apparel.jpg"
+              src="/images/categories/category-apparel-card.webp"
               alt="Denim & Outerwear Curation"
               fill
+              loading="lazy"
+              quality={80}
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-contain p-4 group-hover:scale-105 transition-transform duration-700"
             />
@@ -113,9 +118,11 @@ export default function TheEditPage() {
         <article className="space-y-4 group">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#FFFFFF]">
             <Image
-              src="/images/store/store-interior-1.jpg"
+              src="/images/store/store-interior-1.webp"
               alt="The In-Person Touch"
               fill
+              loading="lazy"
+              quality={80}
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />

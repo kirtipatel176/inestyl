@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { COLLECTIONS_DATA, PRODUCTS_DATA } from "@/constants/mock-data";
+import { getOptimizedImagePath } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Curated Collections — iNESTYL OUTLET",
@@ -65,9 +66,11 @@ export default function CollectionsPage() {
                 }`}
               >
                 <Image
-                  src={col.image}
+                  src={getOptimizedImagePath(col.image)}
                   alt={col.title}
                   fill
+                  loading="lazy"
+                  quality={80}
                   sizes={
                     isFeaturedSpan
                       ? "(max-width: 1024px) 100vw, 66vw"

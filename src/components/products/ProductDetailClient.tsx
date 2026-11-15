@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { ProductItem } from "@/constants/mock-data";
 import { STORE_DETAILS } from "@/constants";
+import { getOptimizedImagePath } from "@/lib/images";
 
 interface ProductDetailClientProps {
   product: ProductItem;
@@ -91,9 +92,12 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                   }`}
                 >
                   <Image
-                    src={img}
+                    src={getOptimizedImagePath(img, "thumb")}
                     alt={`${product.title} view ${idx + 1}`}
                     fill
+                    sizes="80px"
+                    loading="lazy"
+                    quality={75}
                     className="object-contain p-2"
                   />
                 </button>
@@ -128,11 +132,12 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
 
             <div className="relative w-full h-full">
               <Image
-                src={activeImage}
+                src={getOptimizedImagePath(activeImage, "detail")}
                 alt={product.title}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 60vw"
+                quality={85}
                 className="object-contain drop-shadow-sm transition-transform duration-500 hover:scale-103"
               />
             </div>

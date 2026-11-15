@@ -20,7 +20,7 @@ const COLLECTIONS: CollectionPanel[] = [
     title: "New Arrivals",
     supportingLine: "The latest authentic drops, freshly added to our store inventory.",
     href: "/collections/new-arrivals",
-    image: "/images/hero/new-arrivals-banner.jpg",
+    image: "/images/hero/new-arrivals-banner.webp",
     alt: "New arrivals sneaker and apparel drops",
     colSpan: "lg:col-span-7",
     heightClass: "h-[420px] sm:h-[480px]",
@@ -29,7 +29,7 @@ const COLLECTIONS: CollectionPanel[] = [
     title: "Running Collection",
     supportingLine: "High-cushion road runners, trail grip shoes and endurance trainers.",
     href: "/collections/running-collection",
-    image: "/images/hero/hero-offer-banner.jpg",
+    image: "/images/hero/hero-offer-banner.webp",
     alt: "Best of footwear collection",
     colSpan: "lg:col-span-5",
     heightClass: "h-[420px] sm:h-[480px]",
@@ -38,7 +38,7 @@ const COLLECTIONS: CollectionPanel[] = [
     title: "Everyday Essentials",
     supportingLine: "Combed cotton pique polos, archive tees and relaxed fleece.",
     href: "/collections/everyday-essentials",
-    image: "/images/hero/hero-sneaker-apparel.jpg",
+    image: "/images/hero/hero-sneaker-apparel.webp",
     alt: "Everyday wardrobe essentials",
     colSpan: "lg:col-span-5",
     heightClass: "h-[420px] sm:h-[480px]",
@@ -47,7 +47,7 @@ const COLLECTIONS: CollectionPanel[] = [
     title: "Sports & Performance",
     supportingLine: "Engineered performance gear built for speed, comfort and daily movement.",
     href: "/collections/sports-performance",
-    image: "/images/hero/hero.png",
+    image: "/images/hero/desktop/hero.webp",
     alt: "Sports and lifestyle performance collection",
     colSpan: "lg:col-span-7",
     heightClass: "h-[420px] sm:h-[480px]",
@@ -107,6 +107,8 @@ export function ShopByCollectionSection() {
                   src={col.image}
                   alt={col.alt}
                   fill
+                  loading="lazy"
+                  quality={80}
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   className="object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 />

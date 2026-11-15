@@ -17,42 +17,42 @@ const OCCASIONS: OccasionCategory[] = [
     title: "Everyday Wear",
     description: "Versatile, breathable essentials engineered for daily comfort.",
     href: "/products?category=Casual",
-    image: "/images/products/us-polo-classic-tee.jpg",
+    image: "/images/products/clothing/us-polo-classic-tee-listing.webp",
     alt: "Everyday wear casual outfit",
   },
   {
     title: "Running",
     description: "Maximal cushioning and responsive energy return for road and trail.",
     href: "/footwear",
-    image: "/images/products/adidas-ultraboost.jpg",
+    image: "/images/products/footwear/adidas-ultraboost-listing.webp",
     alt: "High-performance running shoes",
   },
   {
     title: "Gym & Training",
     description: "Stable support and lateral grip for high-intensity movement.",
     href: "/footwear",
-    image: "/images/products/hoka-clifton-9.jpg",
+    image: "/images/products/footwear/hoka-clifton-9-listing.webp",
     alt: "Gym and cross training footwear",
   },
   {
     title: "Casual Outings",
     description: "Relaxed silhouettes and elevated streetwear statements.",
     href: "/clothing",
-    image: "/images/hero/hero-sneaker-apparel.jpg",
+    image: "/images/hero/hero-sneaker-apparel.webp",
     alt: "Casual streetwear and sneakers",
   },
   {
     title: "Smart Casual",
     description: "Classic denim, crisp Oxford shirts, and heritage pique polos.",
     href: "/clothing",
-    image: "/images/products/levis-501-original.jpg",
+    image: "/images/products/clothing/levis-501-original-listing.webp",
     alt: "Smart casual denim and shirts",
   },
   {
     title: "Weekend Style",
     description: "Off-duty comfort, warm fleece hoodies, and lifestyle runners.",
     href: "/products",
-    image: "/images/products/nike-club-hoodie.jpg",
+    image: "/images/products/clothing/nike-club-hoodie-listing.webp",
     alt: "Weekend relaxed style and hoodies",
   },
 ];
@@ -100,6 +100,8 @@ export function ShopByOccasionSection() {
                   src={occasion.image}
                   alt={occasion.alt}
                   fill
+                  loading="lazy"
+                  quality={80}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 />

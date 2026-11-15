@@ -54,9 +54,11 @@ export function CategorySectionAnimated() {
             {/* Centered Image with smooth scale on hover */}
             <div className="relative w-full h-56 sm:h-64 my-auto">
               <Image
-                src="/images/categories/category-footwear.jpg"
+                src="/images/categories/category-footwear-card.webp"
                 alt="Footwear Collection at iNESTYL OUTLET"
                 fill
+                loading="lazy"
+                quality={80}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-700 ease-out"
               />
@@ -103,9 +105,11 @@ export function CategorySectionAnimated() {
             {/* Centered Image with smooth scale on hover */}
             <div className="relative w-full h-56 sm:h-64 my-auto rounded-lg overflow-hidden">
               <Image
-                src="/images/categories/category-apparel.jpg"
+                src="/images/categories/category-apparel-card.webp"
                 alt="Apparel Collection at iNESTYL OUTLET"
                 fill
+                loading="lazy"
+                quality={80}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover rounded-lg group-hover:scale-105 transition-transform duration-700 ease-out"
               />

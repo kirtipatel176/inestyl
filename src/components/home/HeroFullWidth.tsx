@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { BLUR_PLACEHOLDERS } from "@/lib/images";
 
 export function HeroFullWidth() {
   const shouldReduceMotion = useReducedMotion();
@@ -30,34 +31,58 @@ export function HeroFullWidth() {
           },
         }}
       >
-        {/* Desktop Campaign Image */}
+        {/* Desktop Campaign Image (Visible from sm breakpoint upwards: >= 640px) */}
         <div className="hidden sm:block relative w-full h-full">
-          <Image
-            src="/images/hero/hero-lifestyle-composite.jpg"
-            alt="INESTYLE OUTLET Campaign"
-            fill
-            priority
-            sizes="100vw"
-            quality={92}
-            className="object-cover object-center"
-          />
+          <picture className="relative w-full h-full block">
+            <source
+              type="image/avif"
+              srcSet="/images/hero/desktop/hero-lifestyle-composite.avif"
+            />
+            <source
+              type="image/webp"
+              srcSet="/images/hero/desktop/hero-lifestyle-composite.webp"
+            />
+            <Image
+              src="/images/hero/desktop/hero-lifestyle-composite.webp"
+              alt="INESTYLE OUTLET Campaign — Authentic Footwear and Apparel"
+              fill
+              priority
+              quality={85}
+              sizes="100vw"
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDERS["/images/hero/desktop/hero-lifestyle-composite.webp"]}
+              className="object-cover object-center"
+            />
+          </picture>
         </div>
 
-        {/* Mobile Campaign Image */}
+        {/* Mobile Campaign Image (Visible only on mobile: < 640px) */}
         <div className="block sm:hidden relative w-full h-full">
-          <Image
-            src="/images/hero/hero-lifestyle-composite.jpg"
-            alt="INESTYLE OUTLET Mobile Campaign"
-            fill
-            priority
-            sizes="100vw"
-            quality={90}
-            className="object-cover object-right"
-          />
+          <picture className="relative w-full h-full block">
+            <source
+              type="image/avif"
+              srcSet="/images/hero/mobile/hero-mobile.avif"
+            />
+            <source
+              type="image/webp"
+              srcSet="/images/hero/mobile/hero-mobile.webp"
+            />
+            <Image
+              src="/images/hero/hero-mobile.jpg"
+              alt="INESTYLE OUTLET Mobile Campaign — Authentic Footwear"
+              fill
+              priority
+              quality={90}
+              sizes="100vw"
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDERS["/images/hero/hero-mobile.jpg"]}
+              className="object-cover object-center"
+            />
+          </picture>
         </div>
 
         {/* Subtle, restrained gradient overlay for contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/35 sm:from-black/80 sm:via-black/35 sm:to-black/30 pointer-events-none" />
       </motion.div>
 
       {/* 2. Hero Content Container — Pure, Uncluttered, Apple-Inspired */}

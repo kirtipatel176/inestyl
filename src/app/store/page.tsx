@@ -81,9 +81,11 @@ export default function StorePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-subtle group">
             <Image
-              src="/images/store/store-interior-1.jpg"
+              src="/images/store/store-interior-1.webp"
               alt="iNESTYL OUTLET Sneaker Display Wall"
               fill
+              loading="lazy"
+              quality={80}
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover group-hover:scale-104 transition-transform duration-700"
             />
@@ -94,9 +96,11 @@ export default function StorePage() {
 
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-subtle group">
             <Image
-              src="/images/store/store-interior-2.jpg"
+              src="/images/store/store-interior-2.webp"
               alt="iNESTYL OUTLET Apparel Curation"
               fill
+              loading="lazy"
+              quality={80}
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover group-hover:scale-104 transition-transform duration-700"
             />
@@ -107,9 +111,11 @@ export default function StorePage() {
 
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-subtle group">
             <Image
-              src="/images/store/store-interior-3.jpg"
+              src="/images/store/store-interior-3.webp"
               alt="iNESTYL OUTLET Boutique Interior"
               fill
+              loading="lazy"
+              quality={80}
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover group-hover:scale-104 transition-transform duration-700"
             />

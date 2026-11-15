@@ -83,9 +83,12 @@ export function MenMegaMenu({ onClose }: MenMegaMenuProps) {
               className="group block relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#F5F5F7] border border-[#E5E7EB]"
             >
               <Image
-                src="/images/hero/hero-lifestyle-composite.jpg"
+                src="/images/hero/hero-lifestyle-composite.webp"
                 alt="Men's Collection Campaign"
                 fill
+                loading="lazy"
+                quality={80}
+                sizes="(max-width: 1200px) 33vw, 360px"
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-5 text-white">

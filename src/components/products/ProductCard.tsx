@@ -6,6 +6,7 @@ import Link from "next/link";
 import { MessageSquare } from "lucide-react";
 import { ProductItem, getProductAvailability } from "@/constants/mock-data";
 import { STORE_DETAILS } from "@/constants";
+import { getOptimizedImagePath } from "@/lib/images";
 
 interface ProductCardProps {
   product: ProductItem;
@@ -46,9 +47,11 @@ export function ProductCard({ product }: ProductCardProps) {
         >
           <div className="relative w-full h-full">
             <Image
-              src={product.image}
+              src={getOptimizedImagePath(product.image, "listing")}
               alt={product.title}
               fill
+              loading="lazy"
+              quality={75}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="object-contain drop-shadow-sm transition-transform duration-700 ease-out group-hover:scale-105"
             />

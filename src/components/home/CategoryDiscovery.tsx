@@ -18,14 +18,14 @@ const PRIMARY_CATEGORIES: CategoryTile[] = [
     title: "Men's Footwear",
     subtitle: "Engineered running, court heritage & street silhouettes",
     href: "/footwear?gender=Men",
-    image: "/images/categories/category-footwear.jpg",
+    image: "/images/categories/category-footwear-card.webp",
     tag: "Originals",
   },
   {
     title: "Women's Footwear",
     subtitle: "Maximalist cushion, lifestyle runners & daily comfort",
     href: "/footwear?gender=Women",
-    image: "/images/products/hoka-clifton-9.jpg",
+    image: "/images/products/footwear/hoka-clifton-9-listing.webp",
     tag: "Curated",
   },
 ];
@@ -35,21 +35,21 @@ const COMPANION_CATEGORIES: CategoryTile[] = [
     title: "Sports & Lifestyle",
     subtitle: "High-mileage road shoes and retro court icons",
     href: "/footwear?cat=Running",
-    image: "/images/products/nike-air-max-270.jpg",
+    image: "/images/products/footwear/nike-air-max-270-listing.webp",
     tag: "Performance",
   },
   {
     title: "Clothing",
     subtitle: "Original denim, heavy truckers & archive outerwear",
     href: "/clothing",
-    image: "/images/categories/category-apparel.jpg",
+    image: "/images/categories/category-apparel-card.webp",
     tag: "Apparel",
   },
   {
     title: "Everyday Essentials",
     subtitle: "Combed cotton pique polos, fleece & relaxed tees",
     href: "/clothing?cat=Everyday",
-    image: "/images/products/us-polo-classic-tee.jpg",
+    image: "/images/products/clothing/us-polo-classic-tee-listing.webp",
     tag: "Wardrobe",
   },
 ];
@@ -113,6 +113,8 @@ export function CategoryDiscovery() {
                   src={cat.image}
                   alt={cat.title}
                   fill
+                  loading="lazy"
+                  quality={80}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-contain group-hover:scale-104 transition-transform duration-700 ease-out"
                 />
@@ -158,6 +160,8 @@ export function CategoryDiscovery() {
                   src={cat.image}
                   alt={cat.title}
                   fill
+                  loading="lazy"
+                  quality={80}
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-contain group-hover:scale-104 transition-transform duration-700 ease-out"
                 />

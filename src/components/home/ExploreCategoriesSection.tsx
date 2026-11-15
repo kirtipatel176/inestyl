@@ -15,25 +15,25 @@ const CATEGORIES: CategoryPanel[] = [
   {
     title: "Men's Collection",
     href: "/men",
-    image: "/images/hero/hero-sneaker-apparel.jpg",
+    image: "/images/hero/hero-sneaker-apparel.webp",
     alt: "Men's authentic footwear and clothing collection",
   },
   {
     title: "Women's Collection",
     href: "/women",
-    image: "/images/hero/new-arrivals-banner.jpg",
+    image: "/images/hero/new-arrivals-banner.webp",
     alt: "Women's curated footwear and fashion collection",
   },
   {
     title: "Footwear",
     href: "/footwear",
-    image: "/images/categories/category-footwear.jpg",
+    image: "/images/categories/category-footwear-card.webp",
     alt: "International brand footwear and sneakers",
   },
   {
     title: "Clothing",
     href: "/clothing",
-    image: "/images/categories/category-apparel.jpg",
+    image: "/images/categories/category-apparel-card.webp",
     alt: "Authentic denim, jackets, and everyday apparel",
   },
 ];
@@ -81,6 +81,8 @@ export function ExploreCategoriesSection() {
                   src={category.image}
                   alt={category.alt}
                   fill
+                  loading="lazy"
+                  quality={80}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 />

@@ -425,6 +425,8 @@ export function AdminDashboardClient() {
                               src={p.image}
                               alt={p.title}
                               fill
+                              sizes="40px"
+                              loading="lazy"
                               className="object-contain p-1"
                             />
                           </div>
@@ -565,6 +567,8 @@ export function AdminDashboardClient() {
                         src={col.image}
                         alt={col.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 360px"
+                        loading="lazy"
                         className="object-cover"
                       />
                       {col.badge && (
@@ -636,6 +640,8 @@ export function AdminDashboardClient() {
                         src={b.logo}
                         alt={b.name}
                         fill
+                        sizes="96px"
+                        loading="lazy"
                         className="object-contain filter grayscale"
                       />
                     </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { PRODUCTS_DATA, type ProductItem } from "@/constants/mock-data";
+import { getOptimizedImagePath } from "@/lib/images";
 
 export function FeaturedCollectionSection() {
   // Standout curated styles representing authentic footwear and fashion
@@ -61,9 +62,11 @@ export function FeaturedCollectionSection() {
               >
                 <div className="relative w-full h-full">
                   <Image
-                    src={product.image}
+                    src={getOptimizedImagePath(product.image, "listing")}
                     alt={product.title}
                     fill
+                    loading="lazy"
+                    quality={75}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-contain drop-shadow-sm scale-100 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                   />

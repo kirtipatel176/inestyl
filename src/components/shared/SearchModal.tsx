@@ -7,6 +7,7 @@ import { Search, X } from "lucide-react";
 import { PRODUCTS_DATA, BRANDS_DATA } from "@/constants/mock-data";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
+import { getOptimizedImagePath } from "@/lib/images";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -151,9 +152,12 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       <div className="flex items-center gap-4">
                         <div className="relative w-14 h-14 bg-[#F5F5F7] border border-[#E5E7EB] rounded-lg overflow-hidden flex-shrink-0">
                           <Image
-                            src={product.image}
+                            src={getOptimizedImagePath(product.image, "thumb")}
                             alt={product.title}
                             fill
+                            sizes="56px"
+                            loading="lazy"
+                            quality={75}
                             className="object-contain p-1 group-hover:scale-105 transition-transform duration-300"
                           />
                         </div>

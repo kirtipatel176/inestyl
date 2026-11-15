@@ -33,7 +33,7 @@ const HERO_SLIDES: HeroSlide[] = [
     primaryCtaLink: "/footwear",
     secondaryCtaText: "Explore Brands",
     secondaryCtaLink: "/brands",
-    image: "/images/hero/hero-lifestyle-composite.jpg",
+    image: "/images/hero/desktop/hero-lifestyle-composite.webp",
     imageAlt: "Premium Sneaker & Apparel Curation at iNESTYL OUTLET",
     tag: "100% Original Stock",
     accent: "#0071E3",
@@ -48,7 +48,7 @@ const HERO_SLIDES: HeroSlide[] = [
     primaryCtaLink: "/apparel",
     secondaryCtaText: "Store Location",
     secondaryCtaLink: "/contact",
-    image: "/images/hero/hero-sneaker-apparel.jpg",
+    image: "/images/hero/desktop/hero-sneaker-apparel.webp",
     imageAlt: "Authentic Designer Denim & Apparel Collection",
     tag: "Outlet Pricing Up to 36% Off",
     accent: "#0071E3",
@@ -63,7 +63,7 @@ const HERO_SLIDES: HeroSlide[] = [
     primaryCtaLink: "/footwear",
     secondaryCtaText: "New Arrivals",
     secondaryCtaLink: "/new-arrivals",
-    image: "/images/hero/hero-offer-banner.jpg",
+    image: "/images/hero/desktop/hero-offer-banner.webp",
     imageAlt: "High-Performance Running and Street Sneaker Collection",
     tag: "Live Store Inventory",
     accent: "#0071E3",
@@ -247,6 +247,7 @@ export function HeroInteractive() {
                       src={slide.image}
                       alt={slide.imageAlt}
                       fill
+                      quality={82}
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover"
                       priority={slide.id === 1}
