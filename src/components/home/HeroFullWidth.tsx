@@ -46,13 +46,13 @@ export function HeroFullWidth() {
         {/* Mobile Campaign Image */}
         <div className="block sm:hidden relative w-full h-full">
           <Image
-            src="/images/hero/new-arrivals-banner.jpg"
+            src="/images/hero/hero-lifestyle-composite.jpg"
             alt="INESTYLE OUTLET Mobile Campaign"
             fill
             priority
             sizes="100vw"
-            quality={88}
-            className="object-cover object-center"
+            quality={90}
+            className="object-cover object-right"
           />
         </div>
 
