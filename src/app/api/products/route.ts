@@ -9,9 +9,62 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const includeAll = searchParams.get("all") === "true";
+    const brand = searchParams.get("brand")?.toLowerCase();
+    const type = searchParams.get("type")?.toLowerCase();
+    const gender = searchParams.get("gender");
+    const search = searchParams.get("search")?.toLowerCase().trim();
+    const pageParam = searchParams.get("page");
+    const limitParam = searchParams.get("limit");
 
-    const products = includeAll ? getAllProducts() : getPublishedProducts();
-    return NextResponse.json({ success: true, count: products.length, products });
+    let products = includeAll ? getAllProducts() : getPublishedProducts();
+
+    // Filtering
+    if (brand) {
+      products = products.filter((p) => p.brand.toLowerCase() === brand || p.brandSlug.toLowerCase() === brand);
+    }
+    if (type) {
+      products = products.filter((p) => p.type.toLowerCase() === type);
+    }
+    if (gender) {
+      products = products.filter((p) => p.gender === gender || p.gender === "Unisex");
+    }
+    if (search) {
+      products = products.filter(
+        (p) =>
+          p.title.toLowerCase().includes(search) ||
+          p.brand.toLowerCase().includes(search) ||
+          p.sku.toLowerCase().includes(search)
+      );
+    }
+
+    const totalCount = products.length;
+
+    // Optional pagination
+    let paginatedProducts = products;
+    if (pageParam || limitParam) {
+      const page = Math.max(1, parseInt(pageParam || "1", 10) || 1);
+      const limit = Math.max(1, Math.min(100, parseInt(limitParam || "24", 10) || 24));
+      const start = (page - 1) * limit;
+      paginatedProducts = products.slice(start, start + limit);
+    }
+
+    // Header caching: Public storefront products cached at edge for 2 minutes
+    const headers: Record<string, string> = {};
+    if (!includeAll) {
+      headers["Cache-Control"] = "public, max-age=120, stale-while-revalidate=600";
+    } else {
+      headers["Cache-Control"] = "private, no-cache, no-store, must-revalidate";
+    }
+
+    return NextResponse.json(
+      {
+        success: true,
+        count: paginatedProducts.length,
+        totalCount,
+        products: paginatedProducts,
+      },
+      { headers }
+    );
   } catch (error: any) {
     return NextResponse.json(
       { success: false, error: error.message || "Failed to fetch products" },

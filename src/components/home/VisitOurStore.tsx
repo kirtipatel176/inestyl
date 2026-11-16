@@ -58,7 +58,7 @@ export function VisitOurStore() {
           {/* Main Primary View */}
           <div className="relative col-span-2 sm:col-span-1 h-64 sm:h-full min-h-[260px] rounded-xl overflow-hidden border border-[#E5E7EB] group">
             <Image
-              src="/images/store/store-interior-1.webp"
+              src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/store/store-interior-1"
               alt="iNESTYL OUTLET Flagship Footwear Display"
               fill
               loading="lazy"
@@ -75,7 +75,7 @@ export function VisitOurStore() {
           <div className="hidden sm:grid grid-rows-2 gap-4 col-span-1 h-full min-h-[260px]">
             <div className="relative rounded-xl overflow-hidden border border-[#E5E7EB] group">
               <Image
-                src="/images/store/store-interior-2.webp"
+                src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/store/store-interior-2"
                 alt="iNESTYL OUTLET Apparel Curation"
                 fill
                 loading="lazy"
@@ -89,7 +89,7 @@ export function VisitOurStore() {
             </div>
             <div className="relative rounded-xl overflow-hidden border border-[#E5E7EB] group">
               <Image
-                src="/images/store/store-interior-3.webp"
+                src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/store/store-interior-3"
                 alt="iNESTYL OUTLET Boutique Interior"
                 fill
                 loading="lazy"

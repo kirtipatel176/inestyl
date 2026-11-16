@@ -20,6 +20,14 @@ import {
 const DATA_DIR = path.join(process.cwd(), "src", "data");
 const AUTH_FILE = path.join(DATA_DIR, "admin-auth.json");
 
+const IS_VERCEL = Boolean(process.env.VERCEL);
+const EFFECTIVE_AUTH_DIR = IS_VERCEL ? "/tmp" : DATA_DIR;
+const EFFECTIVE_AUTH_FILE = IS_VERCEL ? path.join("/tmp", "admin-auth.json") : AUTH_FILE;
+
+let memoryAuthDb: AdminAuthDatabase | null = null;
+let isSavingAuth = false;
+let pendingAuthDb: AdminAuthDatabase | null = null;
+
 // Rate limit configuration
 const MAX_ATTEMPTS = 5;
 const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes lockout
@@ -41,8 +49,12 @@ const RESET_TOKEN_EXPIRY_MS = 15 * 60 * 1000; // 15 minutes
 const VERIFY_TOKEN_EXPIRY_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 function ensureDataDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  try {
+    if (!fs.existsSync(EFFECTIVE_AUTH_DIR)) {
+      fs.mkdirSync(EFFECTIVE_AUTH_DIR, { recursive: true });
+    }
+  } catch (err) {
+    // Non-fatal
   }
 }
 
@@ -53,42 +65,43 @@ export function toSafeUser(user: AdminUser): SafeAdminUser {
 }
 
 export function getAuthDb(): AdminAuthDatabase {
-  ensureDataDir();
-  if (!fs.existsSync(AUTH_FILE)) {
-    const initialDb: AdminAuthDatabase = {
-      users: [],
-      sessions: [],
-      resetTokens: [],
-      twoFactorChallenges: [],
-      verificationTokens: [],
-      rateLimits: {},
-    };
-    saveAuthDb(initialDb);
-    seedDefaultAdmins(initialDb);
-    return initialDb;
+  if (memoryAuthDb) {
+    return memoryAuthDb;
   }
 
-  try {
-    const content = fs.readFileSync(AUTH_FILE, "utf-8");
-    const parsed = JSON.parse(content) as AdminAuthDatabase;
-    if (!parsed.users || parsed.users.length === 0) {
-      seedDefaultAdmins(parsed);
+  ensureDataDir();
+
+  const candidates = [EFFECTIVE_AUTH_FILE, AUTH_FILE];
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) {
+      try {
+        const content = fs.readFileSync(candidate, "utf-8");
+        const parsed = JSON.parse(content) as AdminAuthDatabase;
+        if (parsed && Array.isArray(parsed.users)) {
+          if (parsed.users.length === 0) {
+            seedDefaultAdmins(parsed);
+          }
+          memoryAuthDb = parsed;
+          return parsed;
+        }
+      } catch (err) {
+        console.warn(`Failed reading candidate auth DB ${candidate}:`, err);
+      }
     }
-    return parsed;
-  } catch (err) {
-    console.error("Failed to read admin auth database, resetting:", err);
-    const initialDb: AdminAuthDatabase = {
-      users: [],
-      sessions: [],
-      resetTokens: [],
-      twoFactorChallenges: [],
-      verificationTokens: [],
-      rateLimits: {},
-    };
-    saveAuthDb(initialDb);
-    seedDefaultAdmins(initialDb);
-    return initialDb;
   }
+
+  const initialDb: AdminAuthDatabase = {
+    users: [],
+    sessions: [],
+    resetTokens: [],
+    twoFactorChallenges: [],
+    verificationTokens: [],
+    rateLimits: {},
+  };
+  seedDefaultAdmins(initialDb);
+  memoryAuthDb = initialDb;
+  saveAuthDb(initialDb);
+  return initialDb;
 }
 
 export const DEMO_ADMIN_EMAILS = [
@@ -110,9 +123,35 @@ export function resetDemoAccounts(): AdminAuthDatabase {
   return db;
 }
 
+async function performAsyncAuthWrite(dbToSave: AdminAuthDatabase): Promise<void> {
+  if (isSavingAuth) {
+    pendingAuthDb = dbToSave;
+    return;
+  }
+  isSavingAuth = true;
+  try {
+    ensureDataDir();
+    const serialized = JSON.stringify(dbToSave);
+    const tempFile = `${EFFECTIVE_AUTH_FILE}.tmp.${Date.now()}`;
+    await fs.promises.writeFile(tempFile, serialized, "utf-8");
+    await fs.promises.rename(tempFile, EFFECTIVE_AUTH_FILE);
+  } catch (err: any) {
+    if (err?.code !== "EROFS" && err?.code !== "EACCES") {
+      console.warn("Async auth database write non-fatal error:", err?.message || err);
+    }
+  } finally {
+    isSavingAuth = false;
+    if (pendingAuthDb) {
+      const nextDb = pendingAuthDb;
+      pendingAuthDb = null;
+      performAsyncAuthWrite(nextDb).catch(() => {});
+    }
+  }
+}
+
 export function saveAuthDb(db: AdminAuthDatabase): void {
-  ensureDataDir();
-  fs.writeFileSync(AUTH_FILE, JSON.stringify(db, null, 2), "utf-8");
+  memoryAuthDb = db;
+  performAsyncAuthWrite(db).catch(() => {});
 }
 
 export function seedDefaultAdmins(db: AdminAuthDatabase): void {

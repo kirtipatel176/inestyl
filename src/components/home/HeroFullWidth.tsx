@@ -3,7 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { BLUR_PLACEHOLDERS } from "@/lib/images";
+import { getBlurDataUrl } from "@/lib/images";
+
+const DESKTOP_HERO_SRC =
+  "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/homepage/desktop/hero-lifestyle-composite";
+const MOBILE_HERO_SRC =
+  "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/homepage/mobile/hero-mobile";
 
 export function HeroFullWidth() {
   const shouldReduceMotion = useReducedMotion();
@@ -16,13 +21,13 @@ export function HeroFullWidth() {
       {/* 1. Full-Width Edge-to-Edge Campaign Photograph with Slow Ambient Zoom */}
       <motion.div
         className="absolute inset-0 w-full h-full"
-        initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 1.05 }}
+        initial={{ opacity: 1, scale: shouldReduceMotion ? 1 : 1.02 }}
         animate={{
           opacity: 1,
           scale: shouldReduceMotion ? 1 : [1, 1.04],
         }}
         transition={{
-          opacity: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
+          opacity: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
           scale: {
             duration: 16,
             repeat: Infinity,
@@ -33,52 +38,32 @@ export function HeroFullWidth() {
       >
         {/* Desktop Campaign Image (Visible from sm breakpoint upwards: >= 640px) */}
         <div className="hidden sm:block relative w-full h-full">
-          <picture className="relative w-full h-full block">
-            <source
-              type="image/avif"
-              srcSet="/images/hero/desktop/hero-lifestyle-composite.avif"
-            />
-            <source
-              type="image/webp"
-              srcSet="/images/hero/desktop/hero-lifestyle-composite.webp"
-            />
-            <Image
-              src="/images/hero/desktop/hero-lifestyle-composite.webp"
-              alt="INESTYLE OUTLET Campaign — Authentic Footwear and Apparel"
-              fill
-              priority
-              quality={85}
-              sizes="100vw"
-              placeholder="blur"
-              blurDataURL={BLUR_PLACEHOLDERS["/images/hero/desktop/hero-lifestyle-composite.webp"]}
-              className="object-cover object-center"
-            />
-          </picture>
+          <Image
+            src={DESKTOP_HERO_SRC}
+            alt="INESTYLE OUTLET Campaign — Authentic Footwear and Apparel"
+            fill
+            priority
+            quality={80}
+            sizes="(max-width: 640px) 0vw, 100vw"
+            placeholder="blur"
+            blurDataURL={getBlurDataUrl(DESKTOP_HERO_SRC)}
+            className="object-cover object-center"
+          />
         </div>
 
         {/* Mobile Campaign Image (Visible only on mobile: < 640px) */}
         <div className="block sm:hidden relative w-full h-full">
-          <picture className="relative w-full h-full block">
-            <source
-              type="image/avif"
-              srcSet="/images/hero/mobile/hero-mobile.avif"
-            />
-            <source
-              type="image/webp"
-              srcSet="/images/hero/mobile/hero-mobile.webp"
-            />
-            <Image
-              src="/images/hero/hero-mobile.jpg"
-              alt="INESTYLE OUTLET Mobile Campaign — Authentic Footwear"
-              fill
-              priority
-              quality={90}
-              sizes="100vw"
-              placeholder="blur"
-              blurDataURL={BLUR_PLACEHOLDERS["/images/hero/hero-mobile.jpg"]}
-              className="object-cover object-center"
-            />
-          </picture>
+          <Image
+            src={MOBILE_HERO_SRC}
+            alt="INESTYLE OUTLET Mobile Campaign — Authentic Footwear"
+            fill
+            loading="eager"
+            quality={80}
+            sizes="(max-width: 640px) 100vw, 0vw"
+            placeholder="blur"
+            blurDataURL={getBlurDataUrl(MOBILE_HERO_SRC)}
+            className="object-cover object-center"
+          />
         </div>
 
         {/* Subtle, restrained gradient overlay for contrast focused on the bottom where text lives */}

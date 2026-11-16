@@ -7,8 +7,11 @@ import { ShopByOccasionSection } from "@/components/home/ShopByOccasionSection";
 import { VisitOurStore } from "@/components/home/VisitOurStore";
 import { TrustPillarsAnimated } from "@/components/home/TrustPillarsAnimated";
 import { SectionErrorBoundary } from "@/components/ui/SectionErrorBoundary";
+import { getPublishedProducts } from "@/lib/server-db";
 
 export default function HomePage() {
+  const publishedProducts = getPublishedProducts();
+
   return (
     <div className="space-y-24 sm:space-y-32 pb-24">
       {/* 1. FULL-WIDTH HERO SECTION */}
@@ -23,7 +26,7 @@ export default function HomePage() {
 
       {/* 3. FEATURED COLLECTION */}
       <SectionErrorBoundary sectionName="Featured Collection">
-        <FeaturedCollectionSection />
+        <FeaturedCollectionSection initialProducts={publishedProducts} />
       </SectionErrorBoundary>
 
       {/* 4. DISCOVER BRANDS */}

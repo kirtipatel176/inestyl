@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { ProductListingView } from "@/components/products/ProductListingView";
-import { PRODUCTS_DATA } from "@/constants/mock-data";
+import { getPublishedProducts } from "@/lib/server-db";
 
 export const metadata: Metadata = {
   title: "Casual Shoes — Court Classics & Daily Wear | iNESTYL OUTLET",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function CasualShoesListingPage() {
-  const casualProducts = PRODUCTS_DATA.filter(
+  const casualProducts = getPublishedProducts().filter(
     (p) =>
       p.type === "footwear" &&
       (p.shoeType === "Casual" ||

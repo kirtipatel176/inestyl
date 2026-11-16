@@ -141,9 +141,9 @@ export function CsvImportModal({ onClose, onSuccess }: CsvImportModalProps) {
   const handleDownloadTemplate = () => {
     const templateContent = [
       "sku,title,brand,category,subcategory,type,gender,mrp,outletPrice,sizes,colours,description,image",
-      'NK-DUNK-01,Nike Dunk Low Retro,Nike,Shoes,Sneakers,footwear,Men,8295,5995,"7, 8, 9, 10, 11","Black (#111111), White (#FFFFFF)",Iconic hardwood silhouette crafted with premium leather,/images/products/nike-air-max-270.jpg',
-      'LV-511-SLIM,Levi\'s 511 Slim Fit Jeans,Levi\'s,Clothing,Jeans,clothing,Men,3999,2699,"30, 32, 34, 36","Indigo (#1A237E)",Modern slim with room to move engineered with +All Seasons Technology,/images/products/levis-511-slim.jpg',
-      'PM-CLYDE-02,Puma Clyde Classic Leather,Puma,Shoes,Casual,footwear,Unisex,6999,4499,"6, 7, 8, 9, 10","White (#FFFFFF)",Clean heritage court staple verified from authorized distributor,/images/products/puma-rs-x.jpg',
+      'NK-DUNK-01,Nike Dunk Low Retro,Nike,Shoes,Sneakers,footwear,Men,8295,5995,"7, 8, 9, 10, 11","Black (#111111), White (#FFFFFF)",Iconic hardwood silhouette crafted with premium leather,https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/products/footwear/men/nike-air-max-270',
+      'LV-511-SLIM,Levi\'s 511 Slim Fit Jeans,Levi\'s,Clothing,Jeans,clothing,Men,3999,2699,"30, 32, 34, 36","Indigo (#1A237E)",Modern slim with room to move engineered with +All Seasons Technology,https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/products/clothing/men/levis-501-original',
+      'PM-CLYDE-02,Puma Clyde Classic Leather,Puma,Shoes,Casual,footwear,Unisex,6999,4499,"6, 7, 8, 9, 10","White (#FFFFFF)",Clean heritage court staple verified from authorized distributor,https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/products/footwear/men/puma-rs-x',
     ].join("\n");
 
     const blob = new Blob([templateContent], { type: "text/csv;charset=utf-8;" });

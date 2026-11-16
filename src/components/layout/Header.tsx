@@ -3,11 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { Search, ChevronDown, Menu, MessageSquare, MessageCircle, Phone } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
-import { SearchModal } from "@/components/shared/SearchModal";
-import { EnquireModal } from "@/components/shared/EnquireModal";
 import { FootwearMegaMenu } from "@/components/layout/FootwearMegaMenu";
 import { ApparelMegaMenu } from "@/components/layout/ApparelMegaMenu";
 import { MenMegaMenu } from "@/components/layout/MenMegaMenu";
@@ -17,21 +16,41 @@ import { MobileNavigation } from "@/components/layout/MobileNavigation";
 import { STORE_DETAILS } from "@/constants";
 import { NavigationConfig } from "@/types";
 
+// Dynamically import heavy modals to keep critical First Load JS lean
+const SearchModal = dynamic(
+  () => import("@/components/shared/SearchModal").then((mod) => mod.SearchModal),
+  { ssr: false }
+);
+
+const EnquireModal = dynamic(
+  () => import("@/components/shared/EnquireModal").then((mod) => mod.EnquireModal),
+  { ssr: false }
+);
+
+// Module-level client cache to prevent redundant /api/navigation calls across page transitions
+let cachedNavConfig: NavigationConfig | null = null;
+
 export function Header() {
   const pathname = usePathname();
-  const [navigationConfig, setNavigationConfig] = useState<NavigationConfig | null>(null);
+  const [navigationConfig, setNavigationConfig] = useState<NavigationConfig | null>(cachedNavConfig);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isEnquireOpen, setIsEnquireOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  // Fetch navigation settings from database
+  // Fetch navigation settings from database once and cache in-memory
   useEffect(() => {
+    if (cachedNavConfig) {
+      setNavigationConfig(cachedNavConfig);
+      return;
+    }
+
     fetch("/api/navigation")
       .then((r) => r.json())
       .then((data) => {
         if (data.success && data.navigation) {
+          cachedNavConfig = data.navigation;
           setNavigationConfig(data.navigation);
         }
       })
@@ -450,8 +469,12 @@ export function Header() {
         onClose={() => setIsMobileMenuOpen(false)}
         onEnquireClick={() => setIsEnquireOpen(true)}
       />
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
-      <EnquireModal isOpen={isEnquireOpen} onClose={() => setIsEnquireOpen(false)} />
+      {isSearchOpen && (
+        <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      )}
+      {isEnquireOpen && (
+        <EnquireModal isOpen={isEnquireOpen} onClose={() => setIsEnquireOpen(false)} />
+      )}
     </>
   );
 }

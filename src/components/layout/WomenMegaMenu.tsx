@@ -83,7 +83,7 @@ export function WomenMegaMenu({ onClose }: WomenMegaMenuProps) {
               className="group block relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#F5F5F7] border border-[#E5E7EB]"
             >
               <Image
-                src="/images/categories/category-footwear-card.webp"
+                src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/categories/footwear/category-footwear-card"
                 alt="Women's Collection Campaign"
                 fill
                 loading="lazy"

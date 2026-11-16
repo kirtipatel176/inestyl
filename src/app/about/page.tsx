@@ -31,7 +31,7 @@ export default function AboutPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-subtle border border-[#E5E7EB] group">
           <Image
-            src="/images/store/store-interior-1.webp"
+            src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/store/store-interior-1"
             alt="iNESTYL OUTLET Sneaker Display Wall"
             fill
             loading="lazy"
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-subtle border border-[#E5E7EB] group">
           <Image
-            src="/images/store/store-interior-2.webp"
+            src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/store/store-interior-2"
             alt="iNESTYL OUTLET Premium Apparel Curation"
             fill
             loading="lazy"
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-subtle border border-[#E5E7EB] group">
           <Image
-            src="/images/store/store-interior-3.webp"
+            src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/store/store-interior-3"
             alt="iNESTYL OUTLET Flagship Boutique Kapadwanj"
             fill
             loading="lazy"

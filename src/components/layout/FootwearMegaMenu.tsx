@@ -93,7 +93,7 @@ export function FootwearMegaMenu({ onClose }: FootwearMegaMenuProps) {
               className="group block relative rounded-2xl overflow-hidden aspect-[16/10] bg-[#F5F5F7] border border-[#E5E7EB]"
             >
               <Image
-                src="/images/hero/hero-sneaker-apparel.webp"
+                src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/homepage/campaigns/hero-sneaker-apparel"
                 alt="Sneakers & Performance Shoes"
                 fill
                 loading="lazy"

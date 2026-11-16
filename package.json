@@ -5,16 +5,16 @@
   "description": "iNESTYL OUTLET — Premium Multi-Brand Footwear & Apparel Outlet Discovery Catalogue",
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf .next && next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "optimize:images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
+    "cloudinary": "^2.11.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
-    "gsap": "^3.12.7",
     "lucide-react": "^0.475.0",
     "next": "^15.1.7",
     "react": "^19.0.0",

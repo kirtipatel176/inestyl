@@ -271,7 +271,7 @@ export function AuditRecoveryTab({
                 Media Asset Backup &amp; Verification Strategy
               </h3>
               <p className="text-xs text-[#86868B]">
-                Verify image integrity across local public/images/ folders and generate media manifests.
+                Verify image integrity across Cloudinary CDN delivery endpoints and generate media manifests.
               </p>
             </div>
           </div>
@@ -291,7 +291,7 @@ export function AuditRecoveryTab({
             <span className="text-[10px] text-emerald-700 uppercase font-bold block">Asset Verification</span>
             <span className="text-lg font-bold text-emerald-800 flex items-center gap-1.5 mt-0.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              100% Verified
+              100% Cloudinary CDN
             </span>
             <span className="text-[11px] text-emerald-700 block mt-1">All {products.length} product images resolved.</span>
           </div>
@@ -301,7 +301,7 @@ export function AuditRecoveryTab({
             <span className="text-lg font-bold text-[#1D1D1F] mt-0.5 block">
               {products.reduce((acc, p) => acc + (p.gallery?.length || 1), 0)} Images
             </span>
-            <span className="text-[11px] text-[#86868B] block mt-1">Stored in /public/images/products</span>
+            <span className="text-[11px] text-[#86868B] block mt-1">Delivered via Cloudinary CDN (inestyle-outlet/*)</span>
           </div>
 
           <div className="p-4 rounded-2xl bg-[#F5F5F7] border border-[#E5E7EB]">

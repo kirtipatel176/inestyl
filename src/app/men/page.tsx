@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { ProductListingView } from "@/components/products/ProductListingView";
-import { PRODUCTS_DATA } from "@/constants/mock-data";
+import { getPublishedProducts } from "@/lib/server-db";
 
 export const metadata: Metadata = {
   title: "Men's Collection — Footwear & Apparel | iNESTYL OUTLET",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function MensPage() {
-  const menProducts = PRODUCTS_DATA.filter(
+  const menProducts = getPublishedProducts().filter(
     (p) => p.gender === "Men" || p.gender === "Unisex"
   );
 

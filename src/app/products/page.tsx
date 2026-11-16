@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { ProductListingView } from "@/components/products/ProductListingView";
+import { getPublishedProducts } from "@/lib/server-db";
 
 export const metadata: Metadata = {
   title: "Complete Product Catalogue — iNESTYL OUTLET",
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
+  const publishedProducts = getPublishedProducts();
+
   return (
     <Suspense fallback={<div className="container-luxury py-16 text-center text-xs text-[#86868B]">Loading catalogue...</div>}>
       <ProductListingView
@@ -20,6 +23,7 @@ export default function ProductsPage() {
           { label: "All Products" },
         ]}
         department="all"
+        initialProducts={publishedProducts}
       />
     </Suspense>
   );

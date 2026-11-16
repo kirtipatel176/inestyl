@@ -18,6 +18,7 @@ import {
   Store,
   X,
   LogOut,
+  Image as ImageIcon,
 } from "lucide-react";
 import { useAdminAuth } from "./auth/AdminAuthProvider";
 
@@ -33,7 +34,8 @@ export type AdminTab =
   | "notifications"
   | "audit"
   | "enquiries"
-  | "homepage";
+  | "homepage"
+  | "media";
 
 interface AdminSidebarProps {
   activeTab: AdminTab;
@@ -80,6 +82,7 @@ export function AdminSidebar({
     {
       heading: "Content & Standards",
       items: [
+        { id: "media", label: "Media Library", icon: ImageIcon, badge: "Cloudinary" },
         { id: "navigation", label: "Navigation Manager", icon: Compass, badge: "Live" },
         { id: "size-guide", label: "Size Guides", icon: Ruler },
         { id: "homepage", label: "Homepage Sections", icon: Sliders },
@@ -114,7 +117,7 @@ export function AdminSidebar({
       <div className="p-6 border-b border-white/10 flex items-center justify-between">
         <Link href="/" className="inline-block">
           <Image
-            src="/brand/logo-white.svg"
+            src="/brand/logo-horizontal-light.svg"
             alt="INESTYLE OUTLET"
             width={140}
             height={36}

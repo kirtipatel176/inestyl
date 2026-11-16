@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { ProductListingView } from "@/components/products/ProductListingView";
-import { PRODUCTS_DATA } from "@/constants/mock-data";
+import { getPublishedProducts } from "@/lib/server-db";
 
 export const metadata: Metadata = {
   title: "Original Clothing & Denim — Levi's, DIESEL, Nike & U.S. Polo | iNESTYL OUTLET",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function ClothingPage() {
-  const clothingProducts = PRODUCTS_DATA.filter(
+  const clothingProducts = getPublishedProducts().filter(
     (p) => p.type === "clothing" || p.type === "apparel"
   );
 

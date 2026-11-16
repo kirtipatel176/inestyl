@@ -473,13 +473,25 @@ const DEFAULT_ANALYTICS_EVENTS: AnalyticsEvent[] = [
 ];
 
 let memoryDb: DatabaseSchema | null = null;
+let saveDebounceTimer: NodeJS.Timeout | null = null;
+let isWriting = false;
+let pendingSaveDb: DatabaseSchema | null = null;
+
+const IS_VERCEL = Boolean(process.env.VERCEL);
+const EFFECTIVE_DATA_DIR = IS_VERCEL ? "/tmp" : DATA_DIR;
+const EFFECTIVE_DB_FILE = IS_VERCEL ? path.join("/tmp", "db.json") : DB_FILE;
 
 function ensureDataDirectories() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(BACKUPS_DIR)) {
-    fs.mkdirSync(BACKUPS_DIR, { recursive: true });
+  try {
+    if (!fs.existsSync(EFFECTIVE_DATA_DIR)) {
+      fs.mkdirSync(EFFECTIVE_DATA_DIR, { recursive: true });
+    }
+    const backupsDir = IS_VERCEL ? path.join("/tmp", "backups") : BACKUPS_DIR;
+    if (!fs.existsSync(backupsDir)) {
+      fs.mkdirSync(backupsDir, { recursive: true });
+    }
+  } catch (err) {
+    // Non-fatal directory creation failure in constrained sandboxes
   }
 }
 
@@ -540,35 +552,78 @@ export function getDatabase(): DatabaseSchema {
 
   ensureDataDirectories();
 
-  if (!fs.existsSync(DB_FILE)) {
-    const initialDb = initializeDefaultDatabase();
-    saveDatabase(initialDb);
-    memoryDb = initialDb;
-    return initialDb;
+  // Try reading from file if it exists, prioritizing active DB file
+  const candidateFiles = [EFFECTIVE_DB_FILE, DB_FILE];
+  for (const candidate of candidateFiles) {
+    if (fs.existsSync(candidate)) {
+      try {
+        const raw = fs.readFileSync(candidate, "utf-8");
+        memoryDb = JSON.parse(raw);
+        if (memoryDb && Array.isArray(memoryDb.products)) {
+          return memoryDb;
+        }
+      } catch (err) {
+        console.warn(`Failed reading candidate DB ${candidate}:`, err);
+      }
+    }
   }
 
+  // Fallback to initialized default dataset in memory
+  const initialDb = initializeDefaultDatabase();
+  memoryDb = initialDb;
+  saveDatabase(initialDb, true);
+  return initialDb;
+}
+
+async function performAsyncDiskWrite(dbToSave: DatabaseSchema): Promise<void> {
+  if (isWriting) {
+    pendingSaveDb = dbToSave;
+    return;
+  }
+
+  isWriting = true;
   try {
-    const raw = fs.readFileSync(DB_FILE, "utf-8");
-    memoryDb = JSON.parse(raw);
-    return memoryDb!;
-  } catch (err) {
-    console.error("Failed to read database file, re-initializing:", err);
-    const initialDb = initializeDefaultDatabase();
-    saveDatabase(initialDb);
-    memoryDb = initialDb;
-    return initialDb;
+    ensureDataDirectories();
+    const serialized = JSON.stringify(dbToSave);
+    const tempFile = `${EFFECTIVE_DB_FILE}.tmp.${Date.now()}.${Math.random().toString(36).slice(2, 6)}`;
+    await fs.promises.writeFile(tempFile, serialized, "utf-8");
+    await fs.promises.rename(tempFile, EFFECTIVE_DB_FILE);
+  } catch (err: any) {
+    // Suppress filesystem errors gracefully on read-only environments (e.g. Vercel)
+    if (err?.code !== "EROFS" && err?.code !== "EACCES") {
+      console.warn("Async database write encountered non-fatal error:", err?.message || err);
+    }
+  } finally {
+    isWriting = false;
+    if (pendingSaveDb) {
+      const nextDb = pendingSaveDb;
+      pendingSaveDb = null;
+      performAsyncDiskWrite(nextDb).catch(() => {});
+    }
   }
 }
 
-export function saveDatabase(db: DatabaseSchema): void {
-  ensureDataDirectories();
+export function saveDatabase(db: DatabaseSchema, immediate = false): void {
   db.lastUpdated = new Date().toISOString();
   memoryDb = db;
 
-  // Safe atomic write
-  const tempFile = `${DB_FILE}.tmp.${Date.now()}`;
-  fs.writeFileSync(tempFile, JSON.stringify(db, null, 2), "utf-8");
-  fs.renameSync(tempFile, DB_FILE);
+  if (immediate) {
+    if (saveDebounceTimer) {
+      clearTimeout(saveDebounceTimer);
+      saveDebounceTimer = null;
+    }
+    performAsyncDiskWrite(db).catch(() => {});
+    return;
+  }
+
+  // Debounced write: Batches rapid mutations (e.g. high-concurrency analytics/reads)
+  if (saveDebounceTimer) {
+    clearTimeout(saveDebounceTimer);
+  }
+  saveDebounceTimer = setTimeout(() => {
+    saveDebounceTimer = null;
+    performAsyncDiskWrite(db).catch(() => {});
+  }, 2000);
 }
 
 // -------------------------------------------------------------
@@ -1234,8 +1289,8 @@ export function validateProductImport(rawRows: any[]): ImportValidationResult {
       mrp,
       outletPrice,
       discount,
-      image: row.image || row.Image || "/images/products/nike-air-max-270.jpg",
-      gallery: [row.image || row.Image || "/images/products/nike-air-max-270.jpg"],
+      image: row.image || row.Image || "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/products/footwear/men/nike-air-max-270",
+      gallery: [row.image || row.Image || "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/products/footwear/men/nike-air-max-270"],
       sizes: sizeList,
       inStockSizes: sizeList,
       colours: colourList,

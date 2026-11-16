@@ -6,7 +6,11 @@ import { motion } from "framer-motion";
 import { PRODUCTS_DATA, type ProductItem } from "@/constants/mock-data";
 import { getOptimizedImagePath } from "@/lib/images";
 
-export function FeaturedCollectionSection() {
+interface FeaturedCollectionSectionProps {
+  initialProducts?: ProductItem[];
+}
+
+export function FeaturedCollectionSection({ initialProducts }: FeaturedCollectionSectionProps = {}) {
   // Standout curated styles representing authentic footwear and fashion
   const featuredProductSlugs = [
     "nike-air-max-270",
@@ -17,8 +21,10 @@ export function FeaturedCollectionSection() {
     "diesel-denim-trucker-jacket",
   ];
 
+  const dataSource = initialProducts && initialProducts.length > 0 ? initialProducts : PRODUCTS_DATA;
+
   const products: ProductItem[] = featuredProductSlugs
-    .map((slug) => PRODUCTS_DATA.find((p) => p.slug === slug))
+    .map((slug) => dataSource.find((p) => p.slug === slug))
     .filter((p): p is ProductItem => Boolean(p));
 
   return (

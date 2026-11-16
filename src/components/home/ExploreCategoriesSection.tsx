@@ -15,25 +15,25 @@ const CATEGORIES: CategoryPanel[] = [
   {
     title: "Men's Collection",
     href: "/men",
-    image: "/images/hero/hero-sneaker-apparel.webp",
+    image: "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/homepage/campaigns/hero-sneaker-apparel",
     alt: "Men's authentic footwear and clothing collection",
   },
   {
     title: "Women's Collection",
     href: "/women",
-    image: "/images/hero/new-arrivals-banner.webp",
+    image: "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/homepage/campaigns/new-arrivals-banner",
     alt: "Women's curated footwear and fashion collection",
   },
   {
     title: "Footwear",
     href: "/footwear",
-    image: "/images/categories/category-footwear-card.webp",
+    image: "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/categories/footwear/category-footwear-card",
     alt: "International brand footwear and sneakers",
   },
   {
     title: "Clothing",
     href: "/clothing",
-    image: "/images/categories/category-apparel-card.webp",
+    image: "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/categories/clothing/category-apparel-card",
     alt: "Authentic denim, jackets, and everyday apparel",
   },
 ];

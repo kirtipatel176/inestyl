@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { ProductListingView } from "@/components/products/ProductListingView";
-import { PRODUCTS_DATA } from "@/constants/mock-data";
+import { getPublishedProducts } from "@/lib/server-db";
 
 export const metadata: Metadata = {
   title: "Original Shoes & Footwear — Sneakers, Running & Casual | iNESTYL OUTLET",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function ShoesPage() {
-  const footwearProducts = PRODUCTS_DATA.filter((p) => p.type === "footwear");
+  const footwearProducts = getPublishedProducts().filter((p) => p.type === "footwear");
 
   return (
     <Suspense fallback={<div className="container-luxury py-16 text-center text-xs text-[#86868B]">Loading footwear catalogue...</div>}>

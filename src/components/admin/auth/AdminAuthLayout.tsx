@@ -26,7 +26,7 @@ export function AdminAuthLayout({
         {/* Editorial Fashion & Footwear Photograph Background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/store/store-interior-1.webp"
+            src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/store/store-interior-1"
             alt="INESTYLE OUTLET Kapadwanj Flagship Store"
             fill
             sizes="50vw"

@@ -33,3 +33,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# backups & migration state
+/.image-backup/
+scripts/.migration-state.json

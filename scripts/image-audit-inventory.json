@@ -1,0 +1,5331 @@
+{
+  "timestamp": "2026-11-16T16:42:10.073Z",
+  "totalImages": 310,
+  "counts": {
+    "cat1": 79,
+    "cat2": 122,
+    "cat3": 23,
+    "cat4": 68,
+    "cat5": 0,
+    "cat6": 14,
+    "cat7": 4
+  },
+  "classified": {
+    "cat1_required_used": [
+      {
+        "imgPath": "public/brand/logo-primary-stacked.png",
+        "publicPath": "/brand/logo-primary-stacked.png",
+        "basename": "logo-primary-stacked.png",
+        "nameWithoutExt": "logo-primary-stacked",
+        "ext": ".png",
+        "size": 31580,
+        "dims": {
+          "width": 1460,
+          "height": 500
+        },
+        "hash": "300047329b5e10053064f7d02ad992e188a4c49d6757346b1dea4dbd8106a84a",
+        "isValid": true,
+        "usages": [
+          "src/app/layout.tsx"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-primary-stacked.svg",
+        "publicPath": "/brand/logo-primary-stacked.svg",
+        "basename": "logo-primary-stacked.svg",
+        "nameWithoutExt": "logo-primary-stacked",
+        "ext": ".svg",
+        "size": 3658,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "c44eabd0c80c502f17ebd7a2d7194c1afc9c8919eac588cece61e508b61bd680",
+        "isValid": true,
+        "usages": [
+          "src/components/layout/Footer.tsx",
+          "src/components/layout/Header.tsx",
+          "src/components/layout/MobileNavigation.tsx"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/partners/adidas.svg",
+        "publicPath": "/brand/partners/adidas.svg",
+        "basename": "adidas.svg",
+        "nameWithoutExt": "adidas",
+        "ext": ".svg",
+        "size": 418,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "f46b503605ee4d1ccca4e39fd272401864d6b5ce8b136a469b5d5fc2558b9878",
+        "isValid": true,
+        "usages": [
+          "src/components/home/DiscoverBrandsSection.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/partners/diesel.svg",
+        "publicPath": "/brand/partners/diesel.svg",
+        "basename": "diesel.svg",
+        "nameWithoutExt": "diesel",
+        "ext": ".svg",
+        "size": 360,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "f945dffb45d1388c4391fd0c51f2dfad7192fe61d49886d00c7d1be23eb7a420",
+        "isValid": true,
+        "usages": [
+          "src/components/home/DiscoverBrandsSection.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/partners/hoka.svg",
+        "publicPath": "/brand/partners/hoka.svg",
+        "basename": "hoka.svg",
+        "nameWithoutExt": "hoka",
+        "ext": ".svg",
+        "size": 340,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "d0dc205cc8e2102c5eee0dba4d6761960353e803f0b110f01ad8f77e9922e27c",
+        "isValid": true,
+        "usages": [
+          "src/components/home/DiscoverBrandsSection.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/partners/levis.svg",
+        "publicPath": "/brand/partners/levis.svg",
+        "basename": "levis.svg",
+        "nameWithoutExt": "levis",
+        "ext": ".svg",
+        "size": 372,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "45a6000a281c24b2b0dd75b8b38b270cb58a71985a7cd23ead63bf46dff0c137",
+        "isValid": true,
+        "usages": [
+          "src/components/home/DiscoverBrandsSection.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/partners/nike.svg",
+        "publicPath": "/brand/partners/nike.svg",
+        "basename": "nike.svg",
+        "nameWithoutExt": "nike",
+        "ext": ".svg",
+        "size": 377,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "d1152c2aeb3b7a3e1752b72e9342b342ca51cf339a4c5a8c2a4378f02237cbe7",
+        "isValid": true,
+        "usages": [
+          "src/components/home/DiscoverBrandsSection.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/partners/puma.svg",
+        "publicPath": "/brand/partners/puma.svg",
+        "basename": "puma.svg",
+        "nameWithoutExt": "puma",
+        "ext": ".svg",
+        "size": 904,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "e8afdf1a4a598e9d5f717ebde4d58235740eb89129d6d2a713c4e08d1bdc7d4c",
+        "isValid": true,
+        "usages": [
+          "src/components/home/DiscoverBrandsSection.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/partners/us-polo-assn.svg",
+        "publicPath": "/brand/partners/us-polo-assn.svg",
+        "basename": "us-polo-assn.svg",
+        "nameWithoutExt": "us-polo-assn",
+        "ext": ".svg",
+        "size": 395,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "e7d098de04cbf247388fb5bfe5d97a14b9d8e5f17cde21c7743622288e52efb5",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/banners/category-apparel.jpg",
+        "publicPath": "/images/banners/category-apparel.jpg",
+        "basename": "category-apparel.jpg",
+        "nameWithoutExt": "category-apparel",
+        "ext": ".jpg",
+        "size": 82677,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "07b77cd7e210b5127b88cc0e920ff7535669b3075bfa362154da73c5ebf6f440",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategories.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/banners/category-footwear.jpg",
+        "publicPath": "/images/banners/category-footwear.jpg",
+        "basename": "category-footwear.jpg",
+        "nameWithoutExt": "category-footwear",
+        "ext": ".jpg",
+        "size": 57255,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "1013f5d7153fa7a4ccec2a88640f9ddd6c4ec551bffebc5f6c0c4b8a5932add9",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategories.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/categories/category-apparel-card.webp",
+        "publicPath": "/images/categories/category-apparel-card.webp",
+        "basename": "category-apparel-card.webp",
+        "nameWithoutExt": "category-apparel-card",
+        "ext": ".webp",
+        "size": 31620,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "6163dd5b72872c66789299d7426d598f0d1155dfd2d1f20bd3c698760094d631",
+        "isValid": true,
+        "usages": [
+          "src/app/edit/page.tsx",
+          "src/components/home/CategoryDiscovery.tsx",
+          "src/components/home/CategorySectionAnimated.tsx",
+          "src/components/home/ExploreCategoriesSection.tsx",
+          "src/components/layout/ApparelMegaMenu.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-apparel.jpg",
+        "publicPath": "/images/categories/category-apparel.jpg",
+        "basename": "category-apparel.jpg",
+        "nameWithoutExt": "category-apparel",
+        "ext": ".jpg",
+        "size": 89086,
+        "dims": {
+          "width": 800,
+          "height": 1198
+        },
+        "hash": "1e5e54053b750ce81a32eaa9da85677ec43588a7c2ed71054e5ee38c4cd9cc3f",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategories.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear-card.webp",
+        "publicPath": "/images/categories/category-footwear-card.webp",
+        "basename": "category-footwear-card.webp",
+        "nameWithoutExt": "category-footwear-card",
+        "ext": ".webp",
+        "size": 21352,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "57ec2823303dbb8f62240a335f7a00a5797255e29e48b3396af18df465a2d416",
+        "isValid": true,
+        "usages": [
+          "src/app/edit/page.tsx",
+          "src/components/home/CategoryDiscovery.tsx",
+          "src/components/home/CategorySectionAnimated.tsx",
+          "src/components/home/ExploreCategoriesSection.tsx",
+          "src/components/layout/WomenMegaMenu.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear.jpg",
+        "publicPath": "/images/categories/category-footwear.jpg",
+        "basename": "category-footwear.jpg",
+        "nameWithoutExt": "category-footwear",
+        "ext": ".jpg",
+        "size": 53926,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "1b43c2ce9d1fd1a282ddacf52a48291841aa300f9e1311bec769682c2034d71d",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategories.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/everyday-essentials.webp",
+        "publicPath": "/images/collections/everyday-essentials.webp",
+        "basename": "everyday-essentials.webp",
+        "nameWithoutExt": "everyday-essentials",
+        "ext": ".webp",
+        "size": 60410,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "69d7da8232a80dde48d884ab0fceb19750a1d895156886d1575482eb5e1d3ea3",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/new-arrivals.webp",
+        "publicPath": "/images/collections/new-arrivals.webp",
+        "basename": "new-arrivals.webp",
+        "nameWithoutExt": "new-arrivals",
+        "ext": ".webp",
+        "size": 60730,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "1600347e77b0df9dfc971147d65a72a59b6a65deb59c670bd25236f92a509d47",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/sneakers-collection.webp",
+        "publicPath": "/images/collections/sneakers-collection.webp",
+        "basename": "sneakers-collection.webp",
+        "nameWithoutExt": "sneakers-collection",
+        "ext": ".webp",
+        "size": 91896,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "22a1492eeab39a9804d0d24cffa82efff4741eb3add2d1976fed8c1b455a1442",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/sports-performance.webp",
+        "publicPath": "/images/collections/sports-performance.webp",
+        "basename": "sports-performance.webp",
+        "nameWithoutExt": "sports-performance",
+        "ext": ".webp",
+        "size": 30538,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "14f955ec2b02249ff12c635684fd9829ef75654f15a5fe1a9b80b3e7b9e3b234",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/trending-styles.webp",
+        "publicPath": "/images/collections/trending-styles.webp",
+        "basename": "trending-styles.webp",
+        "nameWithoutExt": "trending-styles",
+        "ext": ".webp",
+        "size": 30444,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "d719b8fde986ca3ce6e441949594efcb2aa790469e14c986d1ab299d11040e4b",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/weekend-edit.webp",
+        "publicPath": "/images/collections/weekend-edit.webp",
+        "basename": "weekend-edit.webp",
+        "nameWithoutExt": "weekend-edit",
+        "ext": ".webp",
+        "size": 25286,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "9e65b65f6b898efd26f1b062d87a530810069c698b692d5639d2b84a7027193a",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-lifestyle-composite.jpg",
+        "publicPath": "/images/hero/desktop/hero-lifestyle-composite.jpg",
+        "basename": "hero-lifestyle-composite.jpg",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".jpg",
+        "size": 75279,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "5388339184643780d88e3e506903a7c497e558765960ebb812f7f5d14db1f867",
+        "isValid": true,
+        "usages": [
+          "src/components/admin/AdminDashboardClient.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-lifestyle-composite.webp",
+        "publicPath": "/images/hero/desktop/hero-lifestyle-composite.webp",
+        "basename": "hero-lifestyle-composite.webp",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".webp",
+        "size": 48792,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "ada638f0456e75b81550ec465902ff6d7b4338ed0f2b7ad87dce3fa47cfabd86",
+        "isValid": true,
+        "usages": [
+          "src/app/edit/page.tsx",
+          "src/components/home/HeroFullWidth.tsx",
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/TheInestyleEdit.tsx",
+          "src/components/layout/MenMegaMenu.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-mobile.jpg",
+        "publicPath": "/images/hero/desktop/hero-mobile.jpg",
+        "basename": "hero-mobile.jpg",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".jpg",
+        "size": 87653,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "3771f792339d40569ebb9aeb5328b8609d0e7c1d7dc0c868a8ca65795b445a65",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroFullWidth.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-mobile.webp",
+        "publicPath": "/images/hero/desktop/hero-mobile.webp",
+        "basename": "hero-mobile.webp",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".webp",
+        "size": 53058,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "6e182d7a07a9a3ec036ba75f67b24d4f0f0f9d070bcdec9c174f77d3ddf0aeab",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroFullWidth.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-offer-banner.jpg",
+        "publicPath": "/images/hero/desktop/hero-offer-banner.jpg",
+        "basename": "hero-offer-banner.jpg",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".jpg",
+        "size": 74589,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "683eef8455091092ea508194558ea7fae2eeb0c4f8e8f34fdc5c42f501e32821",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-offer-banner.webp",
+        "publicPath": "/images/hero/desktop/hero-offer-banner.webp",
+        "basename": "hero-offer-banner.webp",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".webp",
+        "size": 43214,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "7c421141d86b66a09daf89f127fab7b0d4563a8797f8c65372fe49ebafa9d0b5",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/ShopByCollectionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-sneaker-apparel.jpg",
+        "publicPath": "/images/hero/desktop/hero-sneaker-apparel.jpg",
+        "basename": "hero-sneaker-apparel.jpg",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".jpg",
+        "size": 119249,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "9792c3993f56fd2f18edf0e7129081cdb50149551d44cba7eeb0729c5b71295e",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-sneaker-apparel.webp",
+        "publicPath": "/images/hero/desktop/hero-sneaker-apparel.webp",
+        "basename": "hero-sneaker-apparel.webp",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".webp",
+        "size": 99940,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "ca21752697376d15e2803f93a9be7eb8f699bdbfbe2d2a9a8f145974d4885880",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategoriesSection.tsx",
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/ShopByCollectionSection.tsx",
+          "src/components/home/ShopByOccasionSection.tsx",
+          "src/components/layout/FootwearMegaMenu.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero.png",
+        "publicPath": "/images/hero/desktop/hero.png",
+        "basename": "hero.png",
+        "nameWithoutExt": "hero",
+        "ext": ".png",
+        "size": 2902028,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "e0b1c37e2efdc494be7311a559dda49d51ddc8fcbba3e4778207abe3ef920b7a",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero.webp",
+        "publicPath": "/images/hero/desktop/hero.webp",
+        "basename": "hero.webp",
+        "nameWithoutExt": "hero",
+        "ext": ".webp",
+        "size": 147276,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "a71b45808566778cc461c21f00993f17a53d3da92637d18f294fc20616ebe4d9",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ShopByCollectionSection.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/new-arrivals-banner.jpg",
+        "publicPath": "/images/hero/desktop/new-arrivals-banner.jpg",
+        "basename": "new-arrivals-banner.jpg",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".jpg",
+        "size": 142026,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "4e82df5ed43d83d708cbbacdae257e8143b7870e75f4ced182cdcde57df550b0",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/new-arrivals-banner.webp",
+        "publicPath": "/images/hero/desktop/new-arrivals-banner.webp",
+        "basename": "new-arrivals-banner.webp",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".webp",
+        "size": 89916,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "2124b71a3d360a715f67a4b07030042bc17e0dd7da5d201d8156ff01fed55d2d",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategoriesSection.tsx",
+          "src/components/home/NewArrivalsBannerAnimated.tsx",
+          "src/components/home/ShopByCollectionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/hero-lifestyle-composite.jpg",
+        "publicPath": "/images/hero/hero-lifestyle-composite.jpg",
+        "basename": "hero-lifestyle-composite.jpg",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".jpg",
+        "size": 39289,
+        "dims": {
+          "width": 1024,
+          "height": 512
+        },
+        "hash": "52fc81d31705d7936e33ec53b83a6130cef6eb90e3e709e0accedadcc53e13e7",
+        "isValid": true,
+        "usages": [
+          "src/components/admin/AdminDashboardClient.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-lifestyle-composite.webp",
+        "publicPath": "/images/hero/hero-lifestyle-composite.webp",
+        "basename": "hero-lifestyle-composite.webp",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".webp",
+        "size": 27960,
+        "dims": {
+          "width": 1024,
+          "height": 512
+        },
+        "hash": "8f5bdce8749c892388ae8d26a50f8d3eaf88a0b0263d396b5cd6211db4a3f9e0",
+        "isValid": true,
+        "usages": [
+          "src/app/edit/page.tsx",
+          "src/components/home/HeroFullWidth.tsx",
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/TheInestyleEdit.tsx",
+          "src/components/layout/MenMegaMenu.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-mobile.jpg",
+        "publicPath": "/images/hero/hero-mobile.jpg",
+        "basename": "hero-mobile.jpg",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".jpg",
+        "size": 46772,
+        "dims": {
+          "width": 576,
+          "height": 1024
+        },
+        "hash": "60b77a10e7e3e9fe1c1c3e9cf3f7c599754bb01fea19c8c2d1b763d09d0d3a32",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroFullWidth.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-mobile.webp",
+        "publicPath": "/images/hero/hero-mobile.webp",
+        "basename": "hero-mobile.webp",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".webp",
+        "size": 31924,
+        "dims": {
+          "width": 576,
+          "height": 1024
+        },
+        "hash": "431d01927f4ae3ea3206e7bb78c6e87dd978337d6bc9ac1990064ac529ba5e28",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroFullWidth.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-offer-banner.jpg",
+        "publicPath": "/images/hero/hero-offer-banner.jpg",
+        "basename": "hero-offer-banner.jpg",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".jpg",
+        "size": 59081,
+        "dims": {
+          "width": 1376,
+          "height": 768
+        },
+        "hash": "b59124120c0b17e2dde6d5a2bc61f191e27e86e8c28b8c9199f358f44d30167c",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/hero-offer-banner.webp",
+        "publicPath": "/images/hero/hero-offer-banner.webp",
+        "basename": "hero-offer-banner.webp",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".webp",
+        "size": 39142,
+        "dims": {
+          "width": 1376,
+          "height": 768
+        },
+        "hash": "399545ce183eb669ce70888b7c70180ec0a2732f7d5c86df8eb084e53598420d",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/ShopByCollectionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/hero-sneaker-apparel.jpg",
+        "publicPath": "/images/hero/hero-sneaker-apparel.jpg",
+        "basename": "hero-sneaker-apparel.jpg",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".jpg",
+        "size": 83551,
+        "dims": {
+          "width": 1200,
+          "height": 800
+        },
+        "hash": "8673d12fede6a70b1f5047f44510446f672ac961b748605a48c80f09e1a125b8",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-sneaker-apparel.webp",
+        "publicPath": "/images/hero/hero-sneaker-apparel.webp",
+        "basename": "hero-sneaker-apparel.webp",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".webp",
+        "size": 73342,
+        "dims": {
+          "width": 1200,
+          "height": 800
+        },
+        "hash": "f32652685f13f4138a6cb7afccf7d667e30dfede642c4e5654a629829ea389f4",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategoriesSection.tsx",
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/ShopByCollectionSection.tsx",
+          "src/components/home/ShopByOccasionSection.tsx",
+          "src/components/layout/FootwearMegaMenu.tsx"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero.png",
+        "publicPath": "/images/hero/hero.png",
+        "basename": "hero.png",
+        "nameWithoutExt": "hero",
+        "ext": ".png",
+        "size": 756410,
+        "dims": {
+          "width": 1774,
+          "height": 887
+        },
+        "hash": "d74ed5e69ddad5e69b1220f5f7aba41422b3bd50f68519a073e485de1b2e6575",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero.webp",
+        "publicPath": "/images/hero/hero.webp",
+        "basename": "hero.webp",
+        "nameWithoutExt": "hero",
+        "ext": ".webp",
+        "size": 170310,
+        "dims": {
+          "width": 1774,
+          "height": 887
+        },
+        "hash": "df321d7076a94ca52f7bc7d095b5a821fc70b23209fd249d97001d13cce08d46",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ShopByCollectionSection.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-lifestyle-composite.jpg",
+        "publicPath": "/images/hero/mobile/hero-lifestyle-composite.jpg",
+        "basename": "hero-lifestyle-composite.jpg",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".jpg",
+        "size": 43176,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "010c9d39bc6d216a8606e12aa87ddc130c0e1eb493cfece722a82903952a3859",
+        "isValid": true,
+        "usages": [
+          "src/components/admin/AdminDashboardClient.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-lifestyle-composite.webp",
+        "publicPath": "/images/hero/mobile/hero-lifestyle-composite.webp",
+        "basename": "hero-lifestyle-composite.webp",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".webp",
+        "size": 27282,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "d5bd97bbb79b146d0620afc82e3c57eff23dbc26038bd1d480f6f2b738204333",
+        "isValid": true,
+        "usages": [
+          "src/app/edit/page.tsx",
+          "src/components/home/HeroFullWidth.tsx",
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/TheInestyleEdit.tsx",
+          "src/components/layout/MenMegaMenu.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-mobile.jpg",
+        "publicPath": "/images/hero/mobile/hero-mobile.jpg",
+        "basename": "hero-mobile.jpg",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".jpg",
+        "size": 54189,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "23f41a7715ce714d1d59c67aa3d1d8a16c82fe0b1627b2f26ac59730cc54eecf",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroFullWidth.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-mobile.webp",
+        "publicPath": "/images/hero/mobile/hero-mobile.webp",
+        "basename": "hero-mobile.webp",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".webp",
+        "size": 36650,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "7283a289cc4317879809a38f8a593223dd1d1e58bf26718c3ec85744ccd01554",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroFullWidth.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-offer-banner.jpg",
+        "publicPath": "/images/hero/mobile/hero-offer-banner.jpg",
+        "basename": "hero-offer-banner.jpg",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".jpg",
+        "size": 64593,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "5b0758ecfa6517927b535ba48a63c09e60de467cda43ab6f2acd05daa1bbe923",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-offer-banner.webp",
+        "publicPath": "/images/hero/mobile/hero-offer-banner.webp",
+        "basename": "hero-offer-banner.webp",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".webp",
+        "size": 41330,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "69dad4598c90bfa5446db0e7085f568207c8fb8afc9f43f7114fa4782d9fb006",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/ShopByCollectionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-sneaker-apparel.jpg",
+        "publicPath": "/images/hero/mobile/hero-sneaker-apparel.jpg",
+        "basename": "hero-sneaker-apparel.jpg",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".jpg",
+        "size": 98240,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "c06c15717718b42b5c6f52531285b8434594f76f3286b102ad020e4850f19fa4",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-sneaker-apparel.webp",
+        "publicPath": "/images/hero/mobile/hero-sneaker-apparel.webp",
+        "basename": "hero-sneaker-apparel.webp",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".webp",
+        "size": 84202,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "09a50bdfca4e10c5847e505865b2ec151418e817900907e486e52a0b6284754f",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategoriesSection.tsx",
+          "src/components/home/HeroInteractive.tsx",
+          "src/components/home/ShopByCollectionSection.tsx",
+          "src/components/home/ShopByOccasionSection.tsx",
+          "src/components/layout/FootwearMegaMenu.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero.png",
+        "publicPath": "/images/hero/mobile/hero.png",
+        "basename": "hero.png",
+        "nameWithoutExt": "hero",
+        "ext": ".png",
+        "size": 1452690,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "f51566d4da0765f2c0e70209ff6c747e306f2ebd8f6a21dbbf6e399286e090de",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero.webp",
+        "publicPath": "/images/hero/mobile/hero.webp",
+        "basename": "hero.webp",
+        "nameWithoutExt": "hero",
+        "ext": ".webp",
+        "size": 66618,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "a1bc0788782a5955e1c023df2ba0c198c144311f49b726f8e61e3698be8cc53d",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ShopByCollectionSection.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/new-arrivals-banner.jpg",
+        "publicPath": "/images/hero/mobile/new-arrivals-banner.jpg",
+        "basename": "new-arrivals-banner.jpg",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".jpg",
+        "size": 80642,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "dbde9eb63ede817e58bbcd838f71c6325f140527fdb0ec6543a6c396a2c9dcb9",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/new-arrivals-banner.webp",
+        "publicPath": "/images/hero/mobile/new-arrivals-banner.webp",
+        "basename": "new-arrivals-banner.webp",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".webp",
+        "size": 50158,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "951e20a9d0a25297daca44c0ab01ec9f21dd17b6bc16ea54ed4d1f14e6e0ea70",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategoriesSection.tsx",
+          "src/components/home/NewArrivalsBannerAnimated.tsx",
+          "src/components/home/ShopByCollectionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/new-arrivals-banner.jpg",
+        "publicPath": "/images/hero/new-arrivals-banner.jpg",
+        "basename": "new-arrivals-banner.jpg",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".jpg",
+        "size": 226570,
+        "dims": {
+          "width": 1400,
+          "height": 2100
+        },
+        "hash": "9372c83ac4f7705bf631453db18075ca62f8438cb33d63f9c0015a144a1a9f5b",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/new-arrivals-banner.webp",
+        "publicPath": "/images/hero/new-arrivals-banner.webp",
+        "basename": "new-arrivals-banner.webp",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".webp",
+        "size": 123980,
+        "dims": {
+          "width": 1400,
+          "height": 2100
+        },
+        "hash": "7fb7def84fc1a1b8ac3003d2d9ecc2473c95c56da5811a111a77e804a6cba933",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategoriesSection.tsx",
+          "src/components/home/NewArrivalsBannerAnimated.tsx",
+          "src/components/home/ShopByCollectionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/adidas-ultraboost.jpg",
+        "publicPath": "/images/products/adidas-ultraboost.jpg",
+        "basename": "adidas-ultraboost.jpg",
+        "nameWithoutExt": "adidas-ultraboost",
+        "ext": ".jpg",
+        "size": 16803,
+        "dims": {
+          "width": 800,
+          "height": 559
+        },
+        "hash": "8eb178634cece8439afde091dc3b1fca648287ebc80a7b9b148e698c8447c075",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/clothing/diesel-denim-jacket-listing.webp",
+        "publicPath": "/images/products/clothing/diesel-denim-jacket-listing.webp",
+        "basename": "diesel-denim-jacket-listing.webp",
+        "nameWithoutExt": "diesel-denim-jacket-listing",
+        "ext": ".webp",
+        "size": 30224,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "08f43215c1b189f5fa98508c04a766056f5e927db54f8b7ab1e3107427bc70df",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/levis-501-original-listing.webp",
+        "publicPath": "/images/products/clothing/levis-501-original-listing.webp",
+        "basename": "levis-501-original-listing.webp",
+        "nameWithoutExt": "levis-501-original-listing",
+        "ext": ".webp",
+        "size": 39946,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "dc6701e182d05f543ab9a102e488df4c5f5c26d03bb7c96eac6931f0838c9e9a",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ShopByOccasionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/nike-club-hoodie-listing.webp",
+        "publicPath": "/images/products/clothing/nike-club-hoodie-listing.webp",
+        "basename": "nike-club-hoodie-listing.webp",
+        "nameWithoutExt": "nike-club-hoodie-listing",
+        "ext": ".webp",
+        "size": 33662,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "0fca1cf68fa5cb34d657ab92004dd1aa48bf3bc97724050769081b204beaaf62",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ShopByOccasionSection.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/us-polo-classic-tee-listing.webp",
+        "publicPath": "/images/products/clothing/us-polo-classic-tee-listing.webp",
+        "basename": "us-polo-classic-tee-listing.webp",
+        "nameWithoutExt": "us-polo-classic-tee-listing",
+        "ext": ".webp",
+        "size": 29626,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "20de9f5e68ce6e1d8b638990b125d8e94a59b545e10aa78942135dd3c27b9a87",
+        "isValid": true,
+        "usages": [
+          "src/components/home/CategoryDiscovery.tsx",
+          "src/components/home/ShopByOccasionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/diesel-denim-jacket.jpg",
+        "publicPath": "/images/products/diesel-denim-jacket.jpg",
+        "basename": "diesel-denim-jacket.jpg",
+        "nameWithoutExt": "diesel-denim-jacket",
+        "ext": ".jpg",
+        "size": 58788,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "4cef80c4eb894b07a4601799565378382119472e03a8f5291640f62aa06c7d82",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/footwear/adidas-ultraboost-listing.webp",
+        "publicPath": "/images/products/footwear/adidas-ultraboost-listing.webp",
+        "basename": "adidas-ultraboost-listing.webp",
+        "nameWithoutExt": "adidas-ultraboost-listing",
+        "ext": ".webp",
+        "size": 7690,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "62b289e18bc088eaa042ab00b54256ff0bd32cd99c26b219512b627f776af7a3",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ShopByOccasionSection.tsx"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/hoka-clifton-9-listing.webp",
+        "publicPath": "/images/products/footwear/hoka-clifton-9-listing.webp",
+        "basename": "hoka-clifton-9-listing.webp",
+        "nameWithoutExt": "hoka-clifton-9-listing",
+        "ext": ".webp",
+        "size": 17242,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "c4ceea0df23c0761ed5e7e81eaaa604b5cf4bdbbabf71e44e5ab655f71dae2af",
+        "isValid": true,
+        "usages": [
+          "src/components/home/CategoryDiscovery.tsx",
+          "src/components/home/ShopByOccasionSection.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-listing.webp",
+        "publicPath": "/images/products/footwear/nike-air-max-270-listing.webp",
+        "basename": "nike-air-max-270-listing.webp",
+        "nameWithoutExt": "nike-air-max-270-listing",
+        "ext": ".webp",
+        "size": 18784,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "6e53636aa8499a8897c1963abed455206edf998bcca5015e21e69d2b000b9706",
+        "isValid": true,
+        "usages": [
+          "src/components/home/CategoryDiscovery.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/hoka-clifton-9.jpg",
+        "publicPath": "/images/products/hoka-clifton-9.jpg",
+        "basename": "hoka-clifton-9.jpg",
+        "nameWithoutExt": "hoka-clifton-9",
+        "ext": ".jpg",
+        "size": 53926,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "1b43c2ce9d1fd1a282ddacf52a48291841aa300f9e1311bec769682c2034d71d",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategories.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/levis-501-original.jpg",
+        "publicPath": "/images/products/levis-501-original.jpg",
+        "basename": "levis-501-original.jpg",
+        "nameWithoutExt": "levis-501-original",
+        "ext": ".jpg",
+        "size": 112969,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "18aa75d20bbe2e108d0588565ee0aaf3baf90100e8132d32a509d4d7fcee2b8d",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-side.jpg",
+        "publicPath": "/images/products/nike-air-max-270-side.jpg",
+        "basename": "nike-air-max-270-side.jpg",
+        "nameWithoutExt": "nike-air-max-270-side",
+        "ext": ".jpg",
+        "size": 26490,
+        "dims": {
+          "width": 800,
+          "height": 640
+        },
+        "hash": "e067d38d8608ff091293a2b5141c440acc52aae0bfe5e5b584c6e2d75ec44eab",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-sole.jpg",
+        "publicPath": "/images/products/nike-air-max-270-sole.jpg",
+        "basename": "nike-air-max-270-sole.jpg",
+        "nameWithoutExt": "nike-air-max-270-sole",
+        "ext": ".jpg",
+        "size": 91379,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "66b3545b357677694a0625abb2abc9e551bef4da36da62d707d38c80203ba5b1",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-top.jpg",
+        "publicPath": "/images/products/nike-air-max-270-top.jpg",
+        "basename": "nike-air-max-270-top.jpg",
+        "nameWithoutExt": "nike-air-max-270-top",
+        "ext": ".jpg",
+        "size": 26237,
+        "dims": {
+          "width": 800,
+          "height": 1000
+        },
+        "hash": "ceb6e92f427cb23ae2cc0150f2f688608d73442450496bd0b41b6aceb9d52980",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270.jpg",
+        "publicPath": "/images/products/nike-air-max-270.jpg",
+        "basename": "nike-air-max-270.jpg",
+        "nameWithoutExt": "nike-air-max-270",
+        "ext": ".jpg",
+        "size": 38305,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "a8a3fbe1b9e399973b6f5139baad6a099afcf3862174ac99c3c5fb4c3ca0b5d1",
+        "isValid": true,
+        "usages": [
+          "src/components/admin/AdminDashboardClient.tsx",
+          "src/components/admin/modals/CsvImportModal.tsx",
+          "src/components/home/ExploreCategories.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json",
+          "src/lib/images.ts",
+          "src/lib/server-db.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-club-hoodie.jpg",
+        "publicPath": "/images/products/nike-club-hoodie.jpg",
+        "basename": "nike-club-hoodie.jpg",
+        "nameWithoutExt": "nike-club-hoodie",
+        "ext": ".jpg",
+        "size": 64411,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "9fbcfe977d134ca5775597eb3d7c29cf7f55fd8134a42a365b0ecf83650a398a",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/puma-rs-x.jpg",
+        "publicPath": "/images/products/puma-rs-x.jpg",
+        "basename": "puma-rs-x.jpg",
+        "nameWithoutExt": "puma-rs-x",
+        "ext": ".jpg",
+        "size": 18565,
+        "dims": {
+          "width": 800,
+          "height": 600
+        },
+        "hash": "85a9d6d598e4331f4b396cfed58196f108bef3679ffffc1edd712db016e1a40b",
+        "isValid": true,
+        "usages": [
+          "src/components/admin/modals/CsvImportModal.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/us-polo-classic-tee.jpg",
+        "publicPath": "/images/products/us-polo-classic-tee.jpg",
+        "basename": "us-polo-classic-tee.jpg",
+        "nameWithoutExt": "us-polo-classic-tee",
+        "ext": ".jpg",
+        "size": 87446,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "f83e303069171541ef1fcd2428d343055063d0921876fcb34d872075765eb6a6",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-1.jpg",
+        "publicPath": "/images/store/store-interior-1.jpg",
+        "basename": "store-interior-1.jpg",
+        "nameWithoutExt": "store-interior-1",
+        "ext": ".jpg",
+        "size": 75127,
+        "dims": {
+          "width": 800,
+          "height": 534
+        },
+        "hash": "fe89f8dc7ead7387a936c2957f965be84ba2e44bc78769cdcbd66658fec3cafb",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-1.webp",
+        "publicPath": "/images/store/store-interior-1.webp",
+        "basename": "store-interior-1.webp",
+        "nameWithoutExt": "store-interior-1",
+        "ext": ".webp",
+        "size": 55936,
+        "dims": {
+          "width": 800,
+          "height": 534
+        },
+        "hash": "e7b525cf73e99c5bb734c965c695f78ab158a519081ab09a6188d0fd05ff5190",
+        "isValid": true,
+        "usages": [
+          "src/app/about/page.tsx",
+          "src/app/edit/page.tsx",
+          "src/app/store/page.tsx",
+          "src/components/admin/auth/AdminAuthLayout.tsx",
+          "src/components/home/VisitOurStore.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-2.webp",
+        "publicPath": "/images/store/store-interior-2.webp",
+        "basename": "store-interior-2.webp",
+        "nameWithoutExt": "store-interior-2",
+        "ext": ".webp",
+        "size": 32298,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "49d0b1a489b94bc07dbc2ee25e9f2963d87b406b76b166d7c778ef967f244115",
+        "isValid": true,
+        "usages": [
+          "src/app/about/page.tsx",
+          "src/app/store/page.tsx",
+          "src/components/home/VisitOurStore.tsx"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-3.webp",
+        "publicPath": "/images/store/store-interior-3.webp",
+        "basename": "store-interior-3.webp",
+        "nameWithoutExt": "store-interior-3",
+        "ext": ".webp",
+        "size": 97042,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "af3d90808f1254847d8c3b6dc6aa1c5c5c70bd7e955438e467164abb669d04ae",
+        "isValid": true,
+        "usages": [
+          "src/app/about/page.tsx",
+          "src/app/store/page.tsx",
+          "src/components/home/VisitOurStore.tsx"
+        ],
+        "isDynamicVariant": false
+      }
+    ],
+    "cat2_required_dynamic": [
+      {
+        "imgPath": "public/images/categories/category-apparel-banner.avif",
+        "publicPath": "/images/categories/category-apparel-banner.avif",
+        "basename": "category-apparel-banner.avif",
+        "nameWithoutExt": "category-apparel-banner",
+        "ext": ".avif",
+        "size": 52614,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "cb88dda20939b90e4b397e8d6d4d1e5bc957bbc83f11f4470cdf25f99610d668",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-apparel-banner.jpg",
+        "publicPath": "/images/categories/category-apparel-banner.jpg",
+        "basename": "category-apparel-banner.jpg",
+        "nameWithoutExt": "category-apparel-banner",
+        "ext": ".jpg",
+        "size": 82677,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "07b77cd7e210b5127b88cc0e920ff7535669b3075bfa362154da73c5ebf6f440",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-apparel-banner.webp",
+        "publicPath": "/images/categories/category-apparel-banner.webp",
+        "basename": "category-apparel-banner.webp",
+        "nameWithoutExt": "category-apparel-banner",
+        "ext": ".webp",
+        "size": 50044,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "359c56332de4f1b4f1bd741e485f3b3833dcafc1a6f067b70a3fb48663a01ed1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-apparel-card.avif",
+        "publicPath": "/images/categories/category-apparel-card.avif",
+        "basename": "category-apparel-card.avif",
+        "nameWithoutExt": "category-apparel-card",
+        "ext": ".avif",
+        "size": 31063,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "fe1e521ea7991a97b17c5f10c2c4df5586b2f66ebd2ca139d378d75be31cd939",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-apparel-card.jpg",
+        "publicPath": "/images/categories/category-apparel-card.jpg",
+        "basename": "category-apparel-card.jpg",
+        "nameWithoutExt": "category-apparel-card",
+        "ext": ".jpg",
+        "size": 47888,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "88897f224ffa92577b3315042acfd1ff2a53e70c8e8efdf96fb5595b3891952b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear-banner.avif",
+        "publicPath": "/images/categories/category-footwear-banner.avif",
+        "basename": "category-footwear-banner.avif",
+        "nameWithoutExt": "category-footwear-banner",
+        "ext": ".avif",
+        "size": 46931,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "b9a6f7262aa90dbc170b7ef7f6144c1eade939e91c9a9fbd8a3c0c7407d95bcf",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear-banner.jpg",
+        "publicPath": "/images/categories/category-footwear-banner.jpg",
+        "basename": "category-footwear-banner.jpg",
+        "nameWithoutExt": "category-footwear-banner",
+        "ext": ".jpg",
+        "size": 57255,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "1013f5d7153fa7a4ccec2a88640f9ddd6c4ec551bffebc5f6c0c4b8a5932add9",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear-banner.webp",
+        "publicPath": "/images/categories/category-footwear-banner.webp",
+        "basename": "category-footwear-banner.webp",
+        "nameWithoutExt": "category-footwear-banner",
+        "ext": ".webp",
+        "size": 35016,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "afb084d4296ca61ee4baa977222f044daa2910071b6aa2dac33f62e060aeea27",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear-card.avif",
+        "publicPath": "/images/categories/category-footwear-card.avif",
+        "basename": "category-footwear-card.avif",
+        "nameWithoutExt": "category-footwear-card",
+        "ext": ".avif",
+        "size": 27641,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "b4dc90cb899f730cba50f4737eaabb226baa596647f9b7044c18ab785a43b51b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear-card.jpg",
+        "publicPath": "/images/categories/category-footwear-card.jpg",
+        "basename": "category-footwear-card.jpg",
+        "nameWithoutExt": "category-footwear-card",
+        "ext": ".jpg",
+        "size": 31218,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "8c1ae548df184ffce4d66552135fe4e9eb975aee4e986f3ad10ca1b97fe20e7c",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-lifestyle-composite.avif",
+        "publicPath": "/images/hero/desktop/hero-lifestyle-composite.avif",
+        "basename": "hero-lifestyle-composite.avif",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".avif",
+        "size": 55616,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "f206779f7e814311bf6aac54ff174626ddd41c73790f763657f19c6c30307892",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-mobile.avif",
+        "publicPath": "/images/hero/desktop/hero-mobile.avif",
+        "basename": "hero-mobile.avif",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".avif",
+        "size": 58173,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "46965762aff11fba86bdc15b3c5d98086bcf963adda88344a166e035d821b503",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-offer-banner.avif",
+        "publicPath": "/images/hero/desktop/hero-offer-banner.avif",
+        "basename": "hero-offer-banner.avif",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".avif",
+        "size": 60889,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "71bda1b49716ac6f5816a23863647534852b40800f0b93bddf258d04fc7bda00",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-sneaker-apparel.avif",
+        "publicPath": "/images/hero/desktop/hero-sneaker-apparel.avif",
+        "basename": "hero-sneaker-apparel.avif",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".avif",
+        "size": 111782,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "2ce2309916e8727e8caa8a7108344cdbecff61bb6e530696b5deaa0272ea92d3",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-stage.avif",
+        "publicPath": "/images/hero/desktop/hero-stage.avif",
+        "basename": "hero-stage.avif",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".avif",
+        "size": 137611,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "6526d2aa7403b022ba6866b10a4e8f97cc60844f2886c76c677873ad17db811a",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-stage.png",
+        "publicPath": "/images/hero/desktop/hero-stage.png",
+        "basename": "hero-stage.png",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".png",
+        "size": 3328176,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "b500dfe90ec576d1998c2336ef61f3ee13014e6d799e95d2496211544e704858",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero-stage.webp",
+        "publicPath": "/images/hero/desktop/hero-stage.webp",
+        "basename": "hero-stage.webp",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".webp",
+        "size": 125096,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "e869915c286b26554c6df1593b207fee052c257574e796862e40458449da6f3b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/hero.avif",
+        "publicPath": "/images/hero/desktop/hero.avif",
+        "basename": "hero.avif",
+        "nameWithoutExt": "hero",
+        "ext": ".avif",
+        "size": 155122,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "5bdfa9a3959b3651eabf7c70e669b2f99aa3d390621b533f08a9ed14317bc228",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/desktop/new-arrivals-banner.avif",
+        "publicPath": "/images/hero/desktop/new-arrivals-banner.avif",
+        "basename": "new-arrivals-banner.avif",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".avif",
+        "size": 102995,
+        "dims": {
+          "width": 1600,
+          "height": 900
+        },
+        "hash": "930cf0f6f051f044c3877cc1ef3aa9ad8599320610cb8adcbcd8230c16c53822",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/hero-offer-banner.avif",
+        "publicPath": "/images/hero/hero-offer-banner.avif",
+        "basename": "hero-offer-banner.avif",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".avif",
+        "size": 50654,
+        "dims": {
+          "width": 1376,
+          "height": 768
+        },
+        "hash": "7c87a71937fb264bceee0b4df98b92d30f2fefb247805835b41f861811d1a4a5",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-lifestyle-composite.avif",
+        "publicPath": "/images/hero/mobile/hero-lifestyle-composite.avif",
+        "basename": "hero-lifestyle-composite.avif",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".avif",
+        "size": 32370,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "053b6de9923978133a203076cf74fb9c716b29acef479598caca104da1725917",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-mobile.avif",
+        "publicPath": "/images/hero/mobile/hero-mobile.avif",
+        "basename": "hero-mobile.avif",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".avif",
+        "size": 43305,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "0e5e9ba62cf41e7acf77116d7fc8f310e6cabb447e706995daa18a5d9d873e96",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-offer-banner.avif",
+        "publicPath": "/images/hero/mobile/hero-offer-banner.avif",
+        "basename": "hero-offer-banner.avif",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".avif",
+        "size": 57047,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "514ecfd999fc7a55237e838ce046fe5ed1d9625655de9450e72c995e92baef64",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-sneaker-apparel.avif",
+        "publicPath": "/images/hero/mobile/hero-sneaker-apparel.avif",
+        "basename": "hero-sneaker-apparel.avif",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".avif",
+        "size": 98103,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "78809ea06725d468411611fad2fa62ce4367cb9159d4ea17079a0cef34ed804f",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-stage.avif",
+        "publicPath": "/images/hero/mobile/hero-stage.avif",
+        "basename": "hero-stage.avif",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".avif",
+        "size": 98411,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "de8a780558a0dc63b59a968c768a16af9d4d22b6c14a29ee83d17ef45677dd80",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-stage.png",
+        "publicPath": "/images/hero/mobile/hero-stage.png",
+        "basename": "hero-stage.png",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".png",
+        "size": 1700408,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "e96a5554f7e567b84176e7e54c3cacd7648ce125cd5bcff30b7d0ab048229069",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero-stage.webp",
+        "publicPath": "/images/hero/mobile/hero-stage.webp",
+        "basename": "hero-stage.webp",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".webp",
+        "size": 94436,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "b1045d8989c2328a8a5d46d9cfce8c9708bc3169ace9ab2af696bcdfee44829c",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/hero.avif",
+        "publicPath": "/images/hero/mobile/hero.avif",
+        "basename": "hero.avif",
+        "nameWithoutExt": "hero",
+        "ext": ".avif",
+        "size": 71114,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "a1e88107e6b0e2266ab6d3732a89162c565f6a2a5c1277a5377ba690169c430d",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/mobile/new-arrivals-banner.avif",
+        "publicPath": "/images/hero/mobile/new-arrivals-banner.avif",
+        "basename": "new-arrivals-banner.avif",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".avif",
+        "size": 52930,
+        "dims": {
+          "width": 750,
+          "height": 1000
+        },
+        "hash": "50585be48cb50b1893f1f888cb993d65d61d26fadec8446e71ede2f3d50ee755",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/hero/new-arrivals-banner.avif",
+        "publicPath": "/images/hero/new-arrivals-banner.avif",
+        "basename": "new-arrivals-banner.avif",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".avif",
+        "size": 142609,
+        "dims": {
+          "width": 1400,
+          "height": 2100
+        },
+        "hash": "91a5f6c14fb2c6d3913b3b7da3ee2f28e5045fd45f45ab559e35ac1b5b9810d8",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/diesel-denim-jacket-detail.avif",
+        "publicPath": "/images/products/clothing/diesel-denim-jacket-detail.avif",
+        "basename": "diesel-denim-jacket-detail.avif",
+        "nameWithoutExt": "diesel-denim-jacket-detail",
+        "ext": ".avif",
+        "size": 70820,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "4d38fcaa70d71248f3046d9bbf7cc69b0bb996ec2e7344d46df671af8b555e7e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/diesel-denim-jacket-detail.jpg",
+        "publicPath": "/images/products/clothing/diesel-denim-jacket-detail.jpg",
+        "basename": "diesel-denim-jacket-detail.jpg",
+        "nameWithoutExt": "diesel-denim-jacket-detail",
+        "ext": ".jpg",
+        "size": 105635,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "a508cc873355b4b5f56e7db25fc8fea0947f96a43ef937fdee659df62a7d03d0",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/diesel-denim-jacket-detail.webp",
+        "publicPath": "/images/products/clothing/diesel-denim-jacket-detail.webp",
+        "basename": "diesel-denim-jacket-detail.webp",
+        "nameWithoutExt": "diesel-denim-jacket-detail",
+        "ext": ".webp",
+        "size": 67918,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "25d8f58ee9ecd2e9f5355115004bbc477b43a0393efcd3463a4805f22751aae5",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/diesel-denim-jacket-listing.avif",
+        "publicPath": "/images/products/clothing/diesel-denim-jacket-listing.avif",
+        "basename": "diesel-denim-jacket-listing.avif",
+        "nameWithoutExt": "diesel-denim-jacket-listing",
+        "ext": ".avif",
+        "size": 31218,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "f7fed7be128965f9357c44868af5e623eb6eebf94321c29b399236596852d89b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/diesel-denim-jacket-listing.jpg",
+        "publicPath": "/images/products/clothing/diesel-denim-jacket-listing.jpg",
+        "basename": "diesel-denim-jacket-listing.jpg",
+        "nameWithoutExt": "diesel-denim-jacket-listing",
+        "ext": ".jpg",
+        "size": 39848,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "b7ff617cecf44c733cd99bf8d8c4f6768627fcbf0762bf4560b827babf81f007",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/levis-501-original-detail.avif",
+        "publicPath": "/images/products/clothing/levis-501-original-detail.avif",
+        "basename": "levis-501-original-detail.avif",
+        "nameWithoutExt": "levis-501-original-detail",
+        "ext": ".avif",
+        "size": 126438,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "5d1c0212882f7416a48a1c6ec98ddd90ba6b1252ce7e48296b068319c1ec6dd1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/levis-501-original-detail.jpg",
+        "publicPath": "/images/products/clothing/levis-501-original-detail.jpg",
+        "basename": "levis-501-original-detail.jpg",
+        "nameWithoutExt": "levis-501-original-detail",
+        "ext": ".jpg",
+        "size": 158404,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "fb53c719513e7345f43c7a1cf16ef873aa8bc7ead3f14005fbef6328ec3a40f7",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/levis-501-original-detail.webp",
+        "publicPath": "/images/products/clothing/levis-501-original-detail.webp",
+        "basename": "levis-501-original-detail.webp",
+        "nameWithoutExt": "levis-501-original-detail",
+        "ext": ".webp",
+        "size": 100722,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "232cc99ef34d33f3109672a8c101299ee7ed71bce3d15169a67f9c8fc0682556",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/levis-501-original-listing.avif",
+        "publicPath": "/images/products/clothing/levis-501-original-listing.avif",
+        "basename": "levis-501-original-listing.avif",
+        "nameWithoutExt": "levis-501-original-listing",
+        "ext": ".avif",
+        "size": 49063,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "9687fcfe3136f4ca13041e3f93d4ee9c4df9bfedaab5b454eed249f66a912850",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/levis-501-original-listing.jpg",
+        "publicPath": "/images/products/clothing/levis-501-original-listing.jpg",
+        "basename": "levis-501-original-listing.jpg",
+        "nameWithoutExt": "levis-501-original-listing",
+        "ext": ".jpg",
+        "size": 54640,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "fd53ccc18bed4b78bc52340bd44af9d6e71be3fa391c8c742e4a86029a42252c",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/nike-club-hoodie-detail.avif",
+        "publicPath": "/images/products/clothing/nike-club-hoodie-detail.avif",
+        "basename": "nike-club-hoodie-detail.avif",
+        "nameWithoutExt": "nike-club-hoodie-detail",
+        "ext": ".avif",
+        "size": 83529,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "c8277a64c8b8adcb83699ef774b6b5568494e77514251687f1e545a32184f0a5",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/nike-club-hoodie-detail.jpg",
+        "publicPath": "/images/products/clothing/nike-club-hoodie-detail.jpg",
+        "basename": "nike-club-hoodie-detail.jpg",
+        "nameWithoutExt": "nike-club-hoodie-detail",
+        "ext": ".jpg",
+        "size": 116576,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "16f86af9c43fb8c960d0de5d0957cf6fc28b2a3f7d2a355b3b4614f3e7dba08c",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/nike-club-hoodie-detail.webp",
+        "publicPath": "/images/products/clothing/nike-club-hoodie-detail.webp",
+        "basename": "nike-club-hoodie-detail.webp",
+        "nameWithoutExt": "nike-club-hoodie-detail",
+        "ext": ".webp",
+        "size": 80948,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "0dc86fcf2deb0812b3f0ca5c1ee34bdfdc505ad6afe2b48f1cf2ae525442b772",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/nike-club-hoodie-listing.avif",
+        "publicPath": "/images/products/clothing/nike-club-hoodie-listing.avif",
+        "basename": "nike-club-hoodie-listing.avif",
+        "nameWithoutExt": "nike-club-hoodie-listing",
+        "ext": ".avif",
+        "size": 35470,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "b67449f080f4931a610b9402b5bc98b6ae01b61d23d8601afc620acc015620f1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/nike-club-hoodie-listing.jpg",
+        "publicPath": "/images/products/clothing/nike-club-hoodie-listing.jpg",
+        "basename": "nike-club-hoodie-listing.jpg",
+        "nameWithoutExt": "nike-club-hoodie-listing",
+        "ext": ".jpg",
+        "size": 41318,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "15238d15872e272808ad0a6824fc7e9d85a7760152d1ec439661578f63415f30",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/us-polo-classic-tee-detail.avif",
+        "publicPath": "/images/products/clothing/us-polo-classic-tee-detail.avif",
+        "basename": "us-polo-classic-tee-detail.avif",
+        "nameWithoutExt": "us-polo-classic-tee-detail",
+        "ext": ".avif",
+        "size": 89360,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "786bda28ee3229fc5bacf347ad865c4821431548e2db9af57e49342f97211050",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/us-polo-classic-tee-detail.jpg",
+        "publicPath": "/images/products/clothing/us-polo-classic-tee-detail.jpg",
+        "basename": "us-polo-classic-tee-detail.jpg",
+        "nameWithoutExt": "us-polo-classic-tee-detail",
+        "ext": ".jpg",
+        "size": 122128,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "5985762408366b687540205a1cc0f7a3e0d0aa088faca88062c324f5140976b2",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/us-polo-classic-tee-detail.webp",
+        "publicPath": "/images/products/clothing/us-polo-classic-tee-detail.webp",
+        "basename": "us-polo-classic-tee-detail.webp",
+        "nameWithoutExt": "us-polo-classic-tee-detail",
+        "ext": ".webp",
+        "size": 72330,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "9655d9cbdc4a5ab67b827f1231c1748114b8d15a147a14b7c0d506b40fb07d32",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/us-polo-classic-tee-listing.avif",
+        "publicPath": "/images/products/clothing/us-polo-classic-tee-listing.avif",
+        "basename": "us-polo-classic-tee-listing.avif",
+        "nameWithoutExt": "us-polo-classic-tee-listing",
+        "ext": ".avif",
+        "size": 37271,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "47400d960ba7960d96869b3ff87a4cb0594f502ce33fdeda17cfe67ac8cd23e0",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/clothing/us-polo-classic-tee-listing.jpg",
+        "publicPath": "/images/products/clothing/us-polo-classic-tee-listing.jpg",
+        "basename": "us-polo-classic-tee-listing.jpg",
+        "nameWithoutExt": "us-polo-classic-tee-listing",
+        "ext": ".jpg",
+        "size": 42851,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "2cb79527280546c57c41084862b3d13eb071471a3b16735721bdca650052741e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/adidas-ultraboost-detail.avif",
+        "publicPath": "/images/products/footwear/adidas-ultraboost-detail.avif",
+        "basename": "adidas-ultraboost-detail.avif",
+        "nameWithoutExt": "adidas-ultraboost-detail",
+        "ext": ".avif",
+        "size": 20330,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "ada0b7b84af09df7f480421ea3723e79fce8b8e358fc03d8f61fc8504190f48c",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/adidas-ultraboost-detail.jpg",
+        "publicPath": "/images/products/footwear/adidas-ultraboost-detail.jpg",
+        "basename": "adidas-ultraboost-detail.jpg",
+        "nameWithoutExt": "adidas-ultraboost-detail",
+        "ext": ".jpg",
+        "size": 31930,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "058ef9c0476546ced483eb30bc163487e96c10a3e017cba73aa4ec434dac5445",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/adidas-ultraboost-detail.webp",
+        "publicPath": "/images/products/footwear/adidas-ultraboost-detail.webp",
+        "basename": "adidas-ultraboost-detail.webp",
+        "nameWithoutExt": "adidas-ultraboost-detail",
+        "ext": ".webp",
+        "size": 19078,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "00aedb3ca530e8ff5aaad7250d5a953345d524362a10cc605ac2be7e2d11c395",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/adidas-ultraboost-listing.avif",
+        "publicPath": "/images/products/footwear/adidas-ultraboost-listing.avif",
+        "basename": "adidas-ultraboost-listing.avif",
+        "nameWithoutExt": "adidas-ultraboost-listing",
+        "ext": ".avif",
+        "size": 8265,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "29e37e517bef3861ba581502d302aa9006d9f261fe0a2ae087ba083607c607dd",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/adidas-ultraboost-listing.jpg",
+        "publicPath": "/images/products/footwear/adidas-ultraboost-listing.jpg",
+        "basename": "adidas-ultraboost-listing.jpg",
+        "nameWithoutExt": "adidas-ultraboost-listing",
+        "ext": ".jpg",
+        "size": 11059,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "53272cc85c2f7acfc777f14cc1c8686cf724a2fa65b6718770d9497021d883c0",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/hoka-clifton-9-detail.avif",
+        "publicPath": "/images/products/footwear/hoka-clifton-9-detail.avif",
+        "basename": "hoka-clifton-9-detail.avif",
+        "nameWithoutExt": "hoka-clifton-9-detail",
+        "ext": ".avif",
+        "size": 56478,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "4f367dbd4c06f59fa98506ddfd3ce3801bb1e157fc84bc743d2975f807803e00",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/hoka-clifton-9-detail.jpg",
+        "publicPath": "/images/products/footwear/hoka-clifton-9-detail.jpg",
+        "basename": "hoka-clifton-9-detail.jpg",
+        "nameWithoutExt": "hoka-clifton-9-detail",
+        "ext": ".jpg",
+        "size": 75073,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "0c75ffc0f425963d097ea517ae9e871afed993c71552da22d8ec5f67d2049b6f",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/hoka-clifton-9-detail.webp",
+        "publicPath": "/images/products/footwear/hoka-clifton-9-detail.webp",
+        "basename": "hoka-clifton-9-detail.webp",
+        "nameWithoutExt": "hoka-clifton-9-detail",
+        "ext": ".webp",
+        "size": 41238,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "590782374c83af8ad28d9628d9acc971d7cb05c982876fb8a2b994b5c53a0254",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/hoka-clifton-9-listing.avif",
+        "publicPath": "/images/products/footwear/hoka-clifton-9-listing.avif",
+        "basename": "hoka-clifton-9-listing.avif",
+        "nameWithoutExt": "hoka-clifton-9-listing",
+        "ext": ".avif",
+        "size": 21804,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "8c2c4e6785f508da750f420e91f337acdde2776d5fed5b54ed17a5e626f18983",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/hoka-clifton-9-listing.jpg",
+        "publicPath": "/images/products/footwear/hoka-clifton-9-listing.jpg",
+        "basename": "hoka-clifton-9-listing.jpg",
+        "nameWithoutExt": "hoka-clifton-9-listing",
+        "ext": ".jpg",
+        "size": 26732,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "022a2de621aeb3ec2dbb7e0f5724e779e5af1d2809f9bb934dc1ff976a20d99a",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-detail.avif",
+        "publicPath": "/images/products/footwear/nike-air-max-270-detail.avif",
+        "basename": "nike-air-max-270-detail.avif",
+        "nameWithoutExt": "nike-air-max-270-detail",
+        "ext": ".avif",
+        "size": 60108,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "ba76816e1f6adc0fea13e88772214642ce9276a4874c8d923fabb028232a6bf1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-detail.jpg",
+        "publicPath": "/images/products/footwear/nike-air-max-270-detail.jpg",
+        "basename": "nike-air-max-270-detail.jpg",
+        "nameWithoutExt": "nike-air-max-270-detail",
+        "ext": ".jpg",
+        "size": 74391,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "1edbe2548ed796c4b1858802483e0873444d8bb8826f6e77d46459b5789e974e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-detail.webp",
+        "publicPath": "/images/products/footwear/nike-air-max-270-detail.webp",
+        "basename": "nike-air-max-270-detail.webp",
+        "nameWithoutExt": "nike-air-max-270-detail",
+        "ext": ".webp",
+        "size": 51472,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "355e9ad625a58441fb59032ce6ad65f27a35b933a279019094faf9106cda8cd3",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-listing.avif",
+        "publicPath": "/images/products/footwear/nike-air-max-270-listing.avif",
+        "basename": "nike-air-max-270-listing.avif",
+        "nameWithoutExt": "nike-air-max-270-listing",
+        "ext": ".avif",
+        "size": 22589,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "81e9228195fa4d7a04e21876a720dd5e0f0ec0024dbe8f9f15622848691eb033",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-listing.jpg",
+        "publicPath": "/images/products/footwear/nike-air-max-270-listing.jpg",
+        "basename": "nike-air-max-270-listing.jpg",
+        "nameWithoutExt": "nike-air-max-270-listing",
+        "ext": ".jpg",
+        "size": 24737,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "ef056538e4eaaebd4e687a1b5c49d280050c58e6b682859a91e9e5683cdc1419",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-side-detail.avif",
+        "publicPath": "/images/products/footwear/nike-air-max-270-side-detail.avif",
+        "basename": "nike-air-max-270-side-detail.avif",
+        "nameWithoutExt": "nike-air-max-270-side-detail",
+        "ext": ".avif",
+        "size": 42372,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "b66fcb8598e6f4b1919294075621ab65c7c3d3f6a39493dcc7106bd6f88278ee",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-side-detail.jpg",
+        "publicPath": "/images/products/footwear/nike-air-max-270-side-detail.jpg",
+        "basename": "nike-air-max-270-side-detail.jpg",
+        "nameWithoutExt": "nike-air-max-270-side-detail",
+        "ext": ".jpg",
+        "size": 57702,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "b06e8ac62a460308c3abbf624e4b66f40bafedacb48d784fc68f17887a4e311b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-side-detail.webp",
+        "publicPath": "/images/products/footwear/nike-air-max-270-side-detail.webp",
+        "basename": "nike-air-max-270-side-detail.webp",
+        "nameWithoutExt": "nike-air-max-270-side-detail",
+        "ext": ".webp",
+        "size": 28000,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "f7c89a33e24ee38a6b6477fe6a84bb045e3c489a9f8b3fea47ca8eb32630b872",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-side-listing.avif",
+        "publicPath": "/images/products/footwear/nike-air-max-270-side-listing.avif",
+        "basename": "nike-air-max-270-side-listing.avif",
+        "nameWithoutExt": "nike-air-max-270-side-listing",
+        "ext": ".avif",
+        "size": 13016,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "a39ad6f9e3ddb706a453ae479c2bb22d7add87cc29e44ae0e6278ca3f956543e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-side-listing.jpg",
+        "publicPath": "/images/products/footwear/nike-air-max-270-side-listing.jpg",
+        "basename": "nike-air-max-270-side-listing.jpg",
+        "nameWithoutExt": "nike-air-max-270-side-listing",
+        "ext": ".jpg",
+        "size": 16134,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "b11c565d243facdf98b52be8f298e98ee923733c474690f3180e0020a3c0785e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-side-listing.webp",
+        "publicPath": "/images/products/footwear/nike-air-max-270-side-listing.webp",
+        "basename": "nike-air-max-270-side-listing.webp",
+        "nameWithoutExt": "nike-air-max-270-side-listing",
+        "ext": ".webp",
+        "size": 10074,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "23dd37e094afd2ea6d9a52ac7300aaf09f824aee9e9aa7e2d073b720f5875a47",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-sole-detail.avif",
+        "publicPath": "/images/products/footwear/nike-air-max-270-sole-detail.avif",
+        "basename": "nike-air-max-270-sole-detail.avif",
+        "nameWithoutExt": "nike-air-max-270-sole-detail",
+        "ext": ".avif",
+        "size": 136500,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "a871fdc5790dd7a94448cc9d9b89b1e353d65624886110941a2b80747d0c0133",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-sole-detail.jpg",
+        "publicPath": "/images/products/footwear/nike-air-max-270-sole-detail.jpg",
+        "basename": "nike-air-max-270-sole-detail.jpg",
+        "nameWithoutExt": "nike-air-max-270-sole-detail",
+        "ext": ".jpg",
+        "size": 160752,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "534e95084bf12063ba84ab8cd74e22f8c9912213f69eedb5930fc3bffb4977c9",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-sole-detail.webp",
+        "publicPath": "/images/products/footwear/nike-air-max-270-sole-detail.webp",
+        "basename": "nike-air-max-270-sole-detail.webp",
+        "nameWithoutExt": "nike-air-max-270-sole-detail",
+        "ext": ".webp",
+        "size": 115906,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "351216022fe8ebf1f043b835eec76b99f0e89352c48218d3387ae9e06907ac02",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-sole-listing.avif",
+        "publicPath": "/images/products/footwear/nike-air-max-270-sole-listing.avif",
+        "basename": "nike-air-max-270-sole-listing.avif",
+        "nameWithoutExt": "nike-air-max-270-sole-listing",
+        "ext": ".avif",
+        "size": 55757,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "e8b68a5f2309a0e5e3ed04190ff1ebb2d10163929bfaf230f7b018848fcd32d8",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-sole-listing.jpg",
+        "publicPath": "/images/products/footwear/nike-air-max-270-sole-listing.jpg",
+        "basename": "nike-air-max-270-sole-listing.jpg",
+        "nameWithoutExt": "nike-air-max-270-sole-listing",
+        "ext": ".jpg",
+        "size": 53450,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "f9852ca2e47e0f2b5b148022db6b0decdb490c1e28d8775dd229c6d1b5fe34f6",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-sole-listing.webp",
+        "publicPath": "/images/products/footwear/nike-air-max-270-sole-listing.webp",
+        "basename": "nike-air-max-270-sole-listing.webp",
+        "nameWithoutExt": "nike-air-max-270-sole-listing",
+        "ext": ".webp",
+        "size": 47586,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "6ecbd42262e3f07ed8f0b119eaaa7f3fdd93451945ec08b95f0ac147936509d1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-top-detail.avif",
+        "publicPath": "/images/products/footwear/nike-air-max-270-top-detail.avif",
+        "basename": "nike-air-max-270-top-detail.avif",
+        "nameWithoutExt": "nike-air-max-270-top-detail",
+        "ext": ".avif",
+        "size": 33932,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "ae06565c5c88d068496e2649ad90762a6c4a489c06c32369a5f315444df2b9af",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-top-detail.jpg",
+        "publicPath": "/images/products/footwear/nike-air-max-270-top-detail.jpg",
+        "basename": "nike-air-max-270-top-detail.jpg",
+        "nameWithoutExt": "nike-air-max-270-top-detail",
+        "ext": ".jpg",
+        "size": 45248,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "d4c475b68be79ed7745272639d93034ff38b88ce011b2d7ab55db254ed097f31",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-top-detail.webp",
+        "publicPath": "/images/products/footwear/nike-air-max-270-top-detail.webp",
+        "basename": "nike-air-max-270-top-detail.webp",
+        "nameWithoutExt": "nike-air-max-270-top-detail",
+        "ext": ".webp",
+        "size": 28914,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "388d3b0a013e39f7f55fa8dd2264fe9f88bde434a592b3c616951c74a093db3f",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-top-listing.avif",
+        "publicPath": "/images/products/footwear/nike-air-max-270-top-listing.avif",
+        "basename": "nike-air-max-270-top-listing.avif",
+        "nameWithoutExt": "nike-air-max-270-top-listing",
+        "ext": ".avif",
+        "size": 13209,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "79fb481fa1ec67b9fb71ede45371e7cb6909f3444f907f0d93e191157ad28e21",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-top-listing.jpg",
+        "publicPath": "/images/products/footwear/nike-air-max-270-top-listing.jpg",
+        "basename": "nike-air-max-270-top-listing.jpg",
+        "nameWithoutExt": "nike-air-max-270-top-listing",
+        "ext": ".jpg",
+        "size": 16107,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "1b15df4d04d3a09d91640e14c25f07c70d5aaace15db68da478ea977db7b62ae",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/nike-air-max-270-top-listing.webp",
+        "publicPath": "/images/products/footwear/nike-air-max-270-top-listing.webp",
+        "basename": "nike-air-max-270-top-listing.webp",
+        "nameWithoutExt": "nike-air-max-270-top-listing",
+        "ext": ".webp",
+        "size": 11692,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "be2cd75ded5d9305d2c59d670f4aada6e1512ce666d3388ca6e91748a5314534",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/puma-rs-x-detail.avif",
+        "publicPath": "/images/products/footwear/puma-rs-x-detail.avif",
+        "basename": "puma-rs-x-detail.avif",
+        "nameWithoutExt": "puma-rs-x-detail",
+        "ext": ".avif",
+        "size": 24006,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "e72ba84ccd3f0d32631e17fe480c9f9f7e860a483988e2f0da4004304cce0e03",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/puma-rs-x-detail.jpg",
+        "publicPath": "/images/products/footwear/puma-rs-x-detail.jpg",
+        "basename": "puma-rs-x-detail.jpg",
+        "nameWithoutExt": "puma-rs-x-detail",
+        "ext": ".jpg",
+        "size": 34121,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "d42aad432ee39e1a9d1966d827200664ef6c9cbfd2240420968ddcd4fbc301ac",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/puma-rs-x-detail.webp",
+        "publicPath": "/images/products/footwear/puma-rs-x-detail.webp",
+        "basename": "puma-rs-x-detail.webp",
+        "nameWithoutExt": "puma-rs-x-detail",
+        "ext": ".webp",
+        "size": 20780,
+        "dims": {
+          "width": 1200,
+          "height": 1500
+        },
+        "hash": "b7e0644516377ba38368b1fecc6ecc7fad224c5afd507367670d552f03a086db",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/puma-rs-x-listing.avif",
+        "publicPath": "/images/products/footwear/puma-rs-x-listing.avif",
+        "basename": "puma-rs-x-listing.avif",
+        "nameWithoutExt": "puma-rs-x-listing",
+        "ext": ".avif",
+        "size": 9794,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "386d8f40b2c76ff1fbb3d946e14d977c0db488aeb93a49b9bf8a4744e0e8f2f4",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/puma-rs-x-listing.jpg",
+        "publicPath": "/images/products/footwear/puma-rs-x-listing.jpg",
+        "basename": "puma-rs-x-listing.jpg",
+        "nameWithoutExt": "puma-rs-x-listing",
+        "ext": ".jpg",
+        "size": 13698,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "452dfed8f9a8ee02ca1b18c2e513c33b390de5617f5201d3d23ffadab62f6fed",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/products/footwear/puma-rs-x-listing.webp",
+        "publicPath": "/images/products/footwear/puma-rs-x-listing.webp",
+        "basename": "puma-rs-x-listing.webp",
+        "nameWithoutExt": "puma-rs-x-listing",
+        "ext": ".webp",
+        "size": 9050,
+        "dims": {
+          "width": 600,
+          "height": 750
+        },
+        "hash": "09e2c1ab0f13d38f0ad912b46a910209fe7c715f3b85b627b40670c31f9546b9",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/adidas-ultraboost-thumb.avif",
+        "publicPath": "/images/thumbnails/adidas-ultraboost-thumb.avif",
+        "basename": "adidas-ultraboost-thumb.avif",
+        "nameWithoutExt": "adidas-ultraboost-thumb",
+        "ext": ".avif",
+        "size": 1872,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "19c6110723bbe8393587274e37758259ec3e9f15c8593ee36b839989ccc9e874",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/adidas-ultraboost-thumb.jpg",
+        "publicPath": "/images/thumbnails/adidas-ultraboost-thumb.jpg",
+        "basename": "adidas-ultraboost-thumb.jpg",
+        "nameWithoutExt": "adidas-ultraboost-thumb",
+        "ext": ".jpg",
+        "size": 2424,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "c715437aa21201a953aba0734006b21fea9c5456a32f91a8ba66256fe914cde7",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/adidas-ultraboost-thumb.webp",
+        "publicPath": "/images/thumbnails/adidas-ultraboost-thumb.webp",
+        "basename": "adidas-ultraboost-thumb.webp",
+        "nameWithoutExt": "adidas-ultraboost-thumb",
+        "ext": ".webp",
+        "size": 1418,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "bf1554fc5fffe9cedada3c1436cccda5e6af1a0dfca4e93dc982f29463cda89e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/diesel-denim-jacket-thumb.avif",
+        "publicPath": "/images/thumbnails/diesel-denim-jacket-thumb.avif",
+        "basename": "diesel-denim-jacket-thumb.avif",
+        "nameWithoutExt": "diesel-denim-jacket-thumb",
+        "ext": ".avif",
+        "size": 6649,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "e2c4a94cdb558380bc5c86c863c6633bab33eb546184b8e19c34a8786f9e6985",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/diesel-denim-jacket-thumb.jpg",
+        "publicPath": "/images/thumbnails/diesel-denim-jacket-thumb.jpg",
+        "basename": "diesel-denim-jacket-thumb.jpg",
+        "nameWithoutExt": "diesel-denim-jacket-thumb",
+        "ext": ".jpg",
+        "size": 7896,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "13ad148935a89158540a818aec30a597cbf34fe01f109d7ebcbc4eb93b324a98",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/diesel-denim-jacket-thumb.webp",
+        "publicPath": "/images/thumbnails/diesel-denim-jacket-thumb.webp",
+        "basename": "diesel-denim-jacket-thumb.webp",
+        "nameWithoutExt": "diesel-denim-jacket-thumb",
+        "ext": ".webp",
+        "size": 6550,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "3b5a612acb39684710f8194799b5ca6ce96033fe51c29d3115612e6e1c5981e1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/hoka-clifton-9-thumb.avif",
+        "publicPath": "/images/thumbnails/hoka-clifton-9-thumb.avif",
+        "basename": "hoka-clifton-9-thumb.avif",
+        "nameWithoutExt": "hoka-clifton-9-thumb",
+        "ext": ".avif",
+        "size": 4925,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "e8249d82561cec0e11c79d1cb15222a87ceec8e25208874b666a5ebf58b6a103",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/hoka-clifton-9-thumb.jpg",
+        "publicPath": "/images/thumbnails/hoka-clifton-9-thumb.jpg",
+        "basename": "hoka-clifton-9-thumb.jpg",
+        "nameWithoutExt": "hoka-clifton-9-thumb",
+        "ext": ".jpg",
+        "size": 5261,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "33c21c532b0f689b2f36536b37a917a52a508ffc9ed841c648c2ca1c867d4d9a",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/hoka-clifton-9-thumb.webp",
+        "publicPath": "/images/thumbnails/hoka-clifton-9-thumb.webp",
+        "basename": "hoka-clifton-9-thumb.webp",
+        "nameWithoutExt": "hoka-clifton-9-thumb",
+        "ext": ".webp",
+        "size": 3516,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "01895c21fd582e93a1a226f61b8d31206f4c52576aef8b9f1041224b8f20f973",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/levis-501-original-thumb.avif",
+        "publicPath": "/images/thumbnails/levis-501-original-thumb.avif",
+        "basename": "levis-501-original-thumb.avif",
+        "nameWithoutExt": "levis-501-original-thumb",
+        "ext": ".avif",
+        "size": 8821,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "9922387945a28f8a1d8394ba2f28c085ef62abcc7a795515b222d6703de175d3",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/levis-501-original-thumb.jpg",
+        "publicPath": "/images/thumbnails/levis-501-original-thumb.jpg",
+        "basename": "levis-501-original-thumb.jpg",
+        "nameWithoutExt": "levis-501-original-thumb",
+        "ext": ".jpg",
+        "size": 9511,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "c11a43ead6a58fac487b1182c479e825de478ec549d650cf6e94df620e86cec3",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/levis-501-original-thumb.webp",
+        "publicPath": "/images/thumbnails/levis-501-original-thumb.webp",
+        "basename": "levis-501-original-thumb.webp",
+        "nameWithoutExt": "levis-501-original-thumb",
+        "ext": ".webp",
+        "size": 7778,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "4b42e9edd7dd991e599e4f91e25b59b9126ae51751723bbe0406043e62e78880",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-side-thumb.avif",
+        "publicPath": "/images/thumbnails/nike-air-max-270-side-thumb.avif",
+        "basename": "nike-air-max-270-side-thumb.avif",
+        "nameWithoutExt": "nike-air-max-270-side-thumb",
+        "ext": ".avif",
+        "size": 2489,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "80c19b13ad9c5de97ccc159d80928be903853cb2ada5bbdc0b2462d82f82ec63",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-side-thumb.jpg",
+        "publicPath": "/images/thumbnails/nike-air-max-270-side-thumb.jpg",
+        "basename": "nike-air-max-270-side-thumb.jpg",
+        "nameWithoutExt": "nike-air-max-270-side-thumb",
+        "ext": ".jpg",
+        "size": 3290,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "2d564db3ddd3ef2223a80b4015d68671f39215e6fcbab225ce43dfd3a123b893",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-side-thumb.webp",
+        "publicPath": "/images/thumbnails/nike-air-max-270-side-thumb.webp",
+        "basename": "nike-air-max-270-side-thumb.webp",
+        "nameWithoutExt": "nike-air-max-270-side-thumb",
+        "ext": ".webp",
+        "size": 1978,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "f2aa1b033ce155a63621bb9270c394a52f15cfe0b9b594295b87079dfbd37e52",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-sole-thumb.avif",
+        "publicPath": "/images/thumbnails/nike-air-max-270-sole-thumb.avif",
+        "basename": "nike-air-max-270-sole-thumb.avif",
+        "nameWithoutExt": "nike-air-max-270-sole-thumb",
+        "ext": ".avif",
+        "size": 7123,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "190567387832caf1cbc85c31d70215063e5a4e775b4bd9386963967879620cb0",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-sole-thumb.jpg",
+        "publicPath": "/images/thumbnails/nike-air-max-270-sole-thumb.jpg",
+        "basename": "nike-air-max-270-sole-thumb.jpg",
+        "nameWithoutExt": "nike-air-max-270-sole-thumb",
+        "ext": ".jpg",
+        "size": 7581,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "ce8e80fd549736fbd602c4e05541c8d408165553110eb7b14b11c4176abea0ed",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-sole-thumb.webp",
+        "publicPath": "/images/thumbnails/nike-air-max-270-sole-thumb.webp",
+        "basename": "nike-air-max-270-sole-thumb.webp",
+        "nameWithoutExt": "nike-air-max-270-sole-thumb",
+        "ext": ".webp",
+        "size": 6484,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "0dda41c4740e4589a73221a3e0fbe3cbacca04ca08f900addcf43b64f2b8e61c",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-thumb.avif",
+        "publicPath": "/images/thumbnails/nike-air-max-270-thumb.avif",
+        "basename": "nike-air-max-270-thumb.avif",
+        "nameWithoutExt": "nike-air-max-270-thumb",
+        "ext": ".avif",
+        "size": 3594,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "02e10269c22de28f9d483c1124b1e4854d5ccdf85b58423d9a47fd3201867df4",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-thumb.jpg",
+        "publicPath": "/images/thumbnails/nike-air-max-270-thumb.jpg",
+        "basename": "nike-air-max-270-thumb.jpg",
+        "nameWithoutExt": "nike-air-max-270-thumb",
+        "ext": ".jpg",
+        "size": 4561,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "5ee5ce9886ec487c013adc46febb198afdede654b907b7b7247bd61266dd2037",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-thumb.webp",
+        "publicPath": "/images/thumbnails/nike-air-max-270-thumb.webp",
+        "basename": "nike-air-max-270-thumb.webp",
+        "nameWithoutExt": "nike-air-max-270-thumb",
+        "ext": ".webp",
+        "size": 2950,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "7b3297ee6c9e112b41a3b442bca5c8c3f280833baae5c150a38af55517ade5b9",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-top-thumb.avif",
+        "publicPath": "/images/thumbnails/nike-air-max-270-top-thumb.avif",
+        "basename": "nike-air-max-270-top-thumb.avif",
+        "nameWithoutExt": "nike-air-max-270-top-thumb",
+        "ext": ".avif",
+        "size": 2789,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "0bbf534673f1fc25f66ae74b58690ad1f20102c96ed8b1087ad3aa10258f736f",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-top-thumb.jpg",
+        "publicPath": "/images/thumbnails/nike-air-max-270-top-thumb.jpg",
+        "basename": "nike-air-max-270-top-thumb.jpg",
+        "nameWithoutExt": "nike-air-max-270-top-thumb",
+        "ext": ".jpg",
+        "size": 3453,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "ae687401baf129fa7432b3503129da650fe031ac98454f77a10eafcfa88df65a",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-air-max-270-top-thumb.webp",
+        "publicPath": "/images/thumbnails/nike-air-max-270-top-thumb.webp",
+        "basename": "nike-air-max-270-top-thumb.webp",
+        "nameWithoutExt": "nike-air-max-270-top-thumb",
+        "ext": ".webp",
+        "size": 2432,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "836fc96bac3968731dbcc8deafacc802f5e84565ea61f77dbe6c5192dbc0450b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-club-hoodie-thumb.avif",
+        "publicPath": "/images/thumbnails/nike-club-hoodie-thumb.avif",
+        "basename": "nike-club-hoodie-thumb.avif",
+        "nameWithoutExt": "nike-club-hoodie-thumb",
+        "ext": ".avif",
+        "size": 6231,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "c62c7340347388bec8d724e99e30ccff0d2490d22c460a1220c016861cc7dfd8",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-club-hoodie-thumb.jpg",
+        "publicPath": "/images/thumbnails/nike-club-hoodie-thumb.jpg",
+        "basename": "nike-club-hoodie-thumb.jpg",
+        "nameWithoutExt": "nike-club-hoodie-thumb",
+        "ext": ".jpg",
+        "size": 6731,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "82d2f0b152f004a03a83499761eb233a27dcbc2e7ee67223baeb9b18fa026766",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/nike-club-hoodie-thumb.webp",
+        "publicPath": "/images/thumbnails/nike-club-hoodie-thumb.webp",
+        "basename": "nike-club-hoodie-thumb.webp",
+        "nameWithoutExt": "nike-club-hoodie-thumb",
+        "ext": ".webp",
+        "size": 5672,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "b747c07e6defbe5cd3562a96c46ffa71c014ad95364b87140ada66ce99f38794",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/puma-rs-x-thumb.avif",
+        "publicPath": "/images/thumbnails/puma-rs-x-thumb.avif",
+        "basename": "puma-rs-x-thumb.avif",
+        "nameWithoutExt": "puma-rs-x-thumb",
+        "ext": ".avif",
+        "size": 2357,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "ad69a13debfbf1a92b0bab8481a6b2702b9fe01b53810d12c57cc3429df99cf7",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/puma-rs-x-thumb.jpg",
+        "publicPath": "/images/thumbnails/puma-rs-x-thumb.jpg",
+        "basename": "puma-rs-x-thumb.jpg",
+        "nameWithoutExt": "puma-rs-x-thumb",
+        "ext": ".jpg",
+        "size": 3087,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "e08f3a46589a0add9047a92c8bb268f71afaa35f85570e5c71c51da29b2a6c83",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/puma-rs-x-thumb.webp",
+        "publicPath": "/images/thumbnails/puma-rs-x-thumb.webp",
+        "basename": "puma-rs-x-thumb.webp",
+        "nameWithoutExt": "puma-rs-x-thumb",
+        "ext": ".webp",
+        "size": 1994,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "ee8ae1bba5134257942166aaa30c466c413ab2f5f80035196a3897a8ec7a2c8e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/us-polo-classic-tee-thumb.avif",
+        "publicPath": "/images/thumbnails/us-polo-classic-tee-thumb.avif",
+        "basename": "us-polo-classic-tee-thumb.avif",
+        "nameWithoutExt": "us-polo-classic-tee-thumb",
+        "ext": ".avif",
+        "size": 6748,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "50762552810bb41a960c8b73d03cf1cb341f3cda82d500727eb8c77f51c03e12",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/us-polo-classic-tee-thumb.jpg",
+        "publicPath": "/images/thumbnails/us-polo-classic-tee-thumb.jpg",
+        "basename": "us-polo-classic-tee-thumb.jpg",
+        "nameWithoutExt": "us-polo-classic-tee-thumb",
+        "ext": ".jpg",
+        "size": 7617,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "7fd399e112f3827fd022d6e55eea08505f4c5f03cb775f581499549d8a9cf9be",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/thumbnails/us-polo-classic-tee-thumb.webp",
+        "publicPath": "/images/thumbnails/us-polo-classic-tee-thumb.webp",
+        "basename": "us-polo-classic-tee-thumb.webp",
+        "nameWithoutExt": "us-polo-classic-tee-thumb",
+        "ext": ".webp",
+        "size": 5674,
+        "dims": {
+          "width": 200,
+          "height": 250
+        },
+        "hash": "88e09b955c2efb51dfc8c47f6d6cc0883c21e7820f554a5dbc545d7e7d43a82c",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": true
+      }
+    ],
+    "cat3_duplicates": [
+      {
+        "imgPath": "public/images/originals/categories/category-apparel.jpg",
+        "publicPath": "/images/originals/categories/category-apparel.jpg",
+        "basename": "category-apparel.jpg",
+        "nameWithoutExt": "category-apparel",
+        "ext": ".jpg",
+        "size": 142893,
+        "dims": {
+          "width": 800,
+          "height": 1198
+        },
+        "hash": "8940e38501f5683e62d8756e71c37fd848d017b1b213e30e6ec9987f5798adac",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategories.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/categories/category-footwear.jpg",
+        "publicPath": "/images/originals/categories/category-footwear.jpg",
+        "basename": "category-footwear.jpg",
+        "nameWithoutExt": "category-footwear",
+        "ext": ".jpg",
+        "size": 83280,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "106358842ee638ac21c8f591c4fa3eb46ffd65ba791fc663ef671d831b21f53e",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategories.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/hero/hero-lifestyle-composite.jpg",
+        "publicPath": "/images/originals/hero/hero-lifestyle-composite.jpg",
+        "basename": "hero-lifestyle-composite.jpg",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".jpg",
+        "size": 48993,
+        "dims": {
+          "width": 1024,
+          "height": 512
+        },
+        "hash": "d2b86c7006c22fbd6528112e8e4c3db94faa6c2d28770aa8937af6db36153f68",
+        "isValid": true,
+        "usages": [
+          "src/components/admin/AdminDashboardClient.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/hero/hero-mobile.jpg",
+        "publicPath": "/images/originals/hero/hero-mobile.jpg",
+        "basename": "hero-mobile.jpg",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".jpg",
+        "size": 57921,
+        "dims": {
+          "width": 576,
+          "height": 1024
+        },
+        "hash": "ec9ef8526b2fd988f9d43bac12ba60497a5c63e34783d8116bce989ed59e71ea",
+        "isValid": true,
+        "usages": [
+          "src/components/home/HeroFullWidth.tsx",
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/hero/hero-offer-banner.jpg",
+        "publicPath": "/images/originals/hero/hero-offer-banner.jpg",
+        "basename": "hero-offer-banner.jpg",
+        "nameWithoutExt": "hero-offer-banner",
+        "ext": ".jpg",
+        "size": 535080,
+        "dims": {
+          "width": 1376,
+          "height": 768
+        },
+        "hash": "0c89a61592c4a7eafc40db01f6572796725df2333a47bd99a77b0a728e12de06",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/originals/hero/hero-sneaker-apparel.jpg",
+        "publicPath": "/images/originals/hero/hero-sneaker-apparel.jpg",
+        "basename": "hero-sneaker-apparel.jpg",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".jpg",
+        "size": 128221,
+        "dims": {
+          "width": 1200,
+          "height": 800
+        },
+        "hash": "f9fcd7cd1268851c771d8bed4e80510881f17d7f03c3fa0569923e8e534f93e8",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/hero/hero-stage.png",
+        "publicPath": "/images/originals/hero/hero-stage.png",
+        "basename": "hero-stage.png",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".png",
+        "size": 1854894,
+        "dims": {
+          "width": 959,
+          "height": 887
+        },
+        "hash": "75dd55e026eb1e6164cfb3face0e89456183f3ff8de7a5a69bf03eed68f47827",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/hero/hero.png",
+        "publicPath": "/images/originals/hero/hero.png",
+        "basename": "hero.png",
+        "nameWithoutExt": "hero",
+        "ext": ".png",
+        "size": 2357075,
+        "dims": {
+          "width": 1774,
+          "height": 887
+        },
+        "hash": "f99aa3dadf97ac66a78750a2e582f8021c6c1a0c4e2cf472585d9afa14d43ed0",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/hero/new-arrivals-banner.jpg",
+        "publicPath": "/images/originals/hero/new-arrivals-banner.jpg",
+        "basename": "new-arrivals-banner.jpg",
+        "nameWithoutExt": "new-arrivals-banner",
+        "ext": ".jpg",
+        "size": 318176,
+        "dims": {
+          "width": 1400,
+          "height": 2100
+        },
+        "hash": "88be41aad7f77665f359a101e2f1fd382d1c5735f9606eb647b21abd8f901481",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": true
+      },
+      {
+        "imgPath": "public/images/originals/products/adidas-ultraboost.jpg",
+        "publicPath": "/images/originals/products/adidas-ultraboost.jpg",
+        "basename": "adidas-ultraboost.jpg",
+        "nameWithoutExt": "adidas-ultraboost",
+        "ext": ".jpg",
+        "size": 28847,
+        "dims": {
+          "width": 800,
+          "height": 559
+        },
+        "hash": "b610610bf6a6adab42c08982c8f805bdf4dbbc31b2ec6d9513e54c859a9244a3",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/diesel-denim-jacket.jpg",
+        "publicPath": "/images/originals/products/diesel-denim-jacket.jpg",
+        "basename": "diesel-denim-jacket.jpg",
+        "nameWithoutExt": "diesel-denim-jacket",
+        "ext": ".jpg",
+        "size": 84863,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "ffbffa93231a84e91ca490ca3f558fcca3d7524bd7e6b9002e7ba468aa3fda0c",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/hoka-clifton-9.jpg",
+        "publicPath": "/images/originals/products/hoka-clifton-9.jpg",
+        "basename": "hoka-clifton-9.jpg",
+        "nameWithoutExt": "hoka-clifton-9",
+        "ext": ".jpg",
+        "size": 83280,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "106358842ee638ac21c8f591c4fa3eb46ffd65ba791fc663ef671d831b21f53e",
+        "isValid": true,
+        "usages": [
+          "src/components/home/ExploreCategories.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/levis-501-original.jpg",
+        "publicPath": "/images/originals/products/levis-501-original.jpg",
+        "basename": "levis-501-original.jpg",
+        "nameWithoutExt": "levis-501-original",
+        "ext": ".jpg",
+        "size": 172417,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "046e15c43bc84a72f8ae3424c38ceb0eea32b00c0eddbe61777ea3f23f4c9e96",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/nike-air-max-270-side.jpg",
+        "publicPath": "/images/originals/products/nike-air-max-270-side.jpg",
+        "basename": "nike-air-max-270-side.jpg",
+        "nameWithoutExt": "nike-air-max-270-side",
+        "ext": ".jpg",
+        "size": 55408,
+        "dims": {
+          "width": 800,
+          "height": 640
+        },
+        "hash": "208bde7b0039dca2db0a24a58b7341f759db6f344405cc98b4821d824417881b",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/nike-air-max-270-sole.jpg",
+        "publicPath": "/images/originals/products/nike-air-max-270-sole.jpg",
+        "basename": "nike-air-max-270-sole.jpg",
+        "nameWithoutExt": "nike-air-max-270-sole",
+        "ext": ".jpg",
+        "size": 129365,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "405e42ae058059329c2c588462fb9378eb180bed0b22af525182c831819330ad",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/nike-air-max-270-top.jpg",
+        "publicPath": "/images/originals/products/nike-air-max-270-top.jpg",
+        "basename": "nike-air-max-270-top.jpg",
+        "nameWithoutExt": "nike-air-max-270-top",
+        "ext": ".jpg",
+        "size": 42015,
+        "dims": {
+          "width": 800,
+          "height": 1000
+        },
+        "hash": "94bc848a7a1af298bfa1eee377f3f846e1b95542f3ffe16d3cc9fa22eb7d32c6",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/nike-air-max-270.jpg",
+        "publicPath": "/images/originals/products/nike-air-max-270.jpg",
+        "basename": "nike-air-max-270.jpg",
+        "nameWithoutExt": "nike-air-max-270",
+        "ext": ".jpg",
+        "size": 59791,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "670729dd5296d9e1e4c20037c8fdb72f5ca94019fafa3611748822f9b3561e9e",
+        "isValid": true,
+        "usages": [
+          "src/components/admin/AdminDashboardClient.tsx",
+          "src/components/admin/modals/CsvImportModal.tsx",
+          "src/components/home/ExploreCategories.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json",
+          "src/lib/images.ts",
+          "src/lib/server-db.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/nike-club-hoodie.jpg",
+        "publicPath": "/images/originals/products/nike-club-hoodie.jpg",
+        "basename": "nike-club-hoodie.jpg",
+        "nameWithoutExt": "nike-club-hoodie",
+        "ext": ".jpg",
+        "size": 94970,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "3212098a441912a32e6ca92e6cc3ef3a70ba44e43f84eca7b73bb4e13ffe6aa9",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/puma-rs-x.jpg",
+        "publicPath": "/images/originals/products/puma-rs-x.jpg",
+        "basename": "puma-rs-x.jpg",
+        "nameWithoutExt": "puma-rs-x",
+        "ext": ".jpg",
+        "size": 28735,
+        "dims": {
+          "width": 800,
+          "height": 600
+        },
+        "hash": "7439253cb75b85f74d053c7a1025dbce340fd9f6e653a51da85a753276382edf",
+        "isValid": true,
+        "usages": [
+          "src/components/admin/modals/CsvImportModal.tsx",
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/products/us-polo-classic-tee.jpg",
+        "publicPath": "/images/originals/products/us-polo-classic-tee.jpg",
+        "basename": "us-polo-classic-tee.jpg",
+        "nameWithoutExt": "us-polo-classic-tee",
+        "ext": ".jpg",
+        "size": 130434,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "3729f1df57f6a4cb99c4616c2f4e999ffd35bafe96e43b78525ce7dcf0824b89",
+        "isValid": true,
+        "usages": [
+          "src/constants/mock-data.ts",
+          "src/data/db.json"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/store/store-interior-1.jpg",
+        "publicPath": "/images/originals/store/store-interior-1.jpg",
+        "basename": "store-interior-1.jpg",
+        "nameWithoutExt": "store-interior-1",
+        "ext": ".jpg",
+        "size": 107252,
+        "dims": {
+          "width": 800,
+          "height": 534
+        },
+        "hash": "3b37ef41f4ca783e64a09116ed9f828d3c1d065f2d2621cee954c8081bd97970",
+        "isValid": true,
+        "usages": [
+          "src/lib/images.ts"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/store/store-interior-2.jpg",
+        "publicPath": "/images/originals/store/store-interior-2.jpg",
+        "basename": "store-interior-2.jpg",
+        "nameWithoutExt": "store-interior-2",
+        "ext": ".jpg",
+        "size": 73452,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "3cee84598e939d27bf4772407233c0d43858742d65cc92f2965f302251ba100b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/originals/store/store-interior-3.jpg",
+        "publicPath": "/images/originals/store/store-interior-3.jpg",
+        "basename": "store-interior-3.jpg",
+        "nameWithoutExt": "store-interior-3",
+        "ext": ".jpg",
+        "size": 143212,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "cdf3de91320355304cc259148626b6e7ebb55b7ed1829b413c7e7688699781d7",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      }
+    ],
+    "cat4_unused": [
+      {
+        "imgPath": "public/brand/logo-horizontal-dark.png",
+        "publicPath": "/brand/logo-horizontal-dark.png",
+        "basename": "logo-horizontal-dark.png",
+        "nameWithoutExt": "logo-horizontal-dark",
+        "ext": ".png",
+        "size": 22320,
+        "dims": {
+          "width": 1800,
+          "height": 260
+        },
+        "hash": "03e7e9735edb5632c16465845e30d2c07c21f45df0c68c642cd39af661920eb6",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-horizontal-dark.svg",
+        "publicPath": "/brand/logo-horizontal-dark.svg",
+        "basename": "logo-horizontal-dark.svg",
+        "nameWithoutExt": "logo-horizontal-dark",
+        "ext": ".svg",
+        "size": 1867,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "6b7467056a35d40c3f6384f6fc80f3af0abf449f9c9e755a40c6d08218912f74",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-horizontal-light.svg",
+        "publicPath": "/brand/logo-horizontal-light.svg",
+        "basename": "logo-horizontal-light.svg",
+        "nameWithoutExt": "logo-horizontal-light",
+        "ext": ".svg",
+        "size": 1916,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "69c87382a8f67dc4270294738c25094c624638789d2266c83819edd431c2b3c4",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-horizontal.png",
+        "publicPath": "/brand/logo-horizontal.png",
+        "basename": "logo-horizontal.png",
+        "nameWithoutExt": "logo-horizontal",
+        "ext": ".png",
+        "size": 24644,
+        "dims": {
+          "width": 1800,
+          "height": 260
+        },
+        "hash": "98ba7d7fc8eb086472138a9df34151aed9e99ec91869130ed63a821cfaf89904",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-horizontal.svg",
+        "publicPath": "/brand/logo-horizontal.svg",
+        "basename": "logo-horizontal.svg",
+        "nameWithoutExt": "logo-horizontal",
+        "ext": ".svg",
+        "size": 1867,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "111e8c3523926eb2ecc70b1db9b4f51d0543f47b3ceae351bbd621b5708c9238",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-monogram-dark.png",
+        "publicPath": "/brand/logo-monogram-dark.png",
+        "basename": "logo-monogram-dark.png",
+        "nameWithoutExt": "logo-monogram-dark",
+        "ext": ".png",
+        "size": 11291,
+        "dims": {
+          "width": 512,
+          "height": 512
+        },
+        "hash": "b4e457aaa68ec5af3a09e7ef70dec1d7f04bf625f3ace73c7ed9fa966d83966b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-monogram-dark.svg",
+        "publicPath": "/brand/logo-monogram-dark.svg",
+        "basename": "logo-monogram-dark.svg",
+        "nameWithoutExt": "logo-monogram-dark",
+        "ext": ".svg",
+        "size": 512,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "a2f1a9ef01bcf49cc398f13888a7154052ae161f07b08dd4d87b347d7a6eb96d",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-monogram-light.svg",
+        "publicPath": "/brand/logo-monogram-light.svg",
+        "basename": "logo-monogram-light.svg",
+        "nameWithoutExt": "logo-monogram-light",
+        "ext": ".svg",
+        "size": 561,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "b33b94f86147f9938816ce0e92961ee538788e458a171e0f6238a1814c44c3ed",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-monogram.png",
+        "publicPath": "/brand/logo-monogram.png",
+        "basename": "logo-monogram.png",
+        "nameWithoutExt": "logo-monogram",
+        "ext": ".png",
+        "size": 12196,
+        "dims": {
+          "width": 512,
+          "height": 512
+        },
+        "hash": "9814b76ff3115150727813293d4533a8ddc6b2a2669039dd3dcccdc6aaec72f1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-monogram.svg",
+        "publicPath": "/brand/logo-monogram.svg",
+        "basename": "logo-monogram.svg",
+        "nameWithoutExt": "logo-monogram",
+        "ext": ".svg",
+        "size": 512,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "7d116f8a82ead84029460c24a731a745754ab922decaff031b267996707585c9",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-primary-stacked-dark.png",
+        "publicPath": "/brand/logo-primary-stacked-dark.png",
+        "basename": "logo-primary-stacked-dark.png",
+        "nameWithoutExt": "logo-primary-stacked-dark",
+        "ext": ".png",
+        "size": 32749,
+        "dims": {
+          "width": 1460,
+          "height": 500
+        },
+        "hash": "1a7a1390e220989ed363dc18d52179555155e700c326bbe63fe1044999af9242",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-primary-stacked-dark.svg",
+        "publicPath": "/brand/logo-primary-stacked-dark.svg",
+        "basename": "logo-primary-stacked-dark.svg",
+        "nameWithoutExt": "logo-primary-stacked-dark",
+        "ext": ".svg",
+        "size": 3658,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "71f7b1f9f6c311be7fd64f2f17a76ceebabc5f80a050c7e691f92dfd566d4fd2",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-primary-stacked-light.png",
+        "publicPath": "/brand/logo-primary-stacked-light.png",
+        "basename": "logo-primary-stacked-light.png",
+        "nameWithoutExt": "logo-primary-stacked-light",
+        "ext": ".png",
+        "size": 33054,
+        "dims": {
+          "width": 1460,
+          "height": 500
+        },
+        "hash": "22a94df9949be12c3ef26459690cc4132507965756dc9fd6e1ae735f4e74ab38",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/logo-primary-stacked-light.svg",
+        "publicPath": "/brand/logo-primary-stacked-light.svg",
+        "basename": "logo-primary-stacked-light.svg",
+        "nameWithoutExt": "logo-primary-stacked-light",
+        "ext": ".svg",
+        "size": 3707,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "4db4d1aff0e0e14910a97d1d16234c04530987075bc41ad6c3cbd1313ee817e4",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/banners/category-apparel.avif",
+        "publicPath": "/images/banners/category-apparel.avif",
+        "basename": "category-apparel.avif",
+        "nameWithoutExt": "category-apparel",
+        "ext": ".avif",
+        "size": 52614,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "cb88dda20939b90e4b397e8d6d4d1e5bc957bbc83f11f4470cdf25f99610d668",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/banners/category-apparel.webp",
+        "publicPath": "/images/banners/category-apparel.webp",
+        "basename": "category-apparel.webp",
+        "nameWithoutExt": "category-apparel",
+        "ext": ".webp",
+        "size": 50044,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "359c56332de4f1b4f1bd741e485f3b3833dcafc1a6f067b70a3fb48663a01ed1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/banners/category-footwear.avif",
+        "publicPath": "/images/banners/category-footwear.avif",
+        "basename": "category-footwear.avif",
+        "nameWithoutExt": "category-footwear",
+        "ext": ".avif",
+        "size": 46931,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "b9a6f7262aa90dbc170b7ef7f6144c1eade939e91c9a9fbd8a3c0c7407d95bcf",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/banners/category-footwear.webp",
+        "publicPath": "/images/banners/category-footwear.webp",
+        "basename": "category-footwear.webp",
+        "nameWithoutExt": "category-footwear",
+        "ext": ".webp",
+        "size": 35016,
+        "dims": {
+          "width": 900,
+          "height": 1100
+        },
+        "hash": "afb084d4296ca61ee4baa977222f044daa2910071b6aa2dac33f62e060aeea27",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/categories/category-apparel.avif",
+        "publicPath": "/images/categories/category-apparel.avif",
+        "basename": "category-apparel.avif",
+        "nameWithoutExt": "category-apparel",
+        "ext": ".avif",
+        "size": 61875,
+        "dims": {
+          "width": 800,
+          "height": 1198
+        },
+        "hash": "d43c2067e7ac2547609407204f26aa9fced4c61bc99a23a591bcf698c45a5afb",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/categories/category-apparel.webp",
+        "publicPath": "/images/categories/category-apparel.webp",
+        "basename": "category-apparel.webp",
+        "nameWithoutExt": "category-apparel",
+        "ext": ".webp",
+        "size": 58672,
+        "dims": {
+          "width": 800,
+          "height": 1198
+        },
+        "hash": "c2474abd11a69ca0bfe3ec2fbfca2ab92c1d9f8b70ffbbd687e43f7ac2cbd4bd",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear.avif",
+        "publicPath": "/images/categories/category-footwear.avif",
+        "basename": "category-footwear.avif",
+        "nameWithoutExt": "category-footwear",
+        "ext": ".avif",
+        "size": 46368,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "70e85988246d6428992a1e8ee0df80efceb28645ef8fdc4f163bb928c5c1fa11",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/categories/category-footwear.webp",
+        "publicPath": "/images/categories/category-footwear.webp",
+        "basename": "category-footwear.webp",
+        "nameWithoutExt": "category-footwear",
+        "ext": ".webp",
+        "size": 34250,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "761e11b7ae43c499674e6e17ff9a7ff5694bf7f0b20611f0f1be22e7a9ade582",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/everyday-essentials.avif",
+        "publicPath": "/images/collections/everyday-essentials.avif",
+        "basename": "everyday-essentials.avif",
+        "nameWithoutExt": "everyday-essentials",
+        "ext": ".avif",
+        "size": 70996,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "9fb36d917e87f785cbaba2b6abffbf12d81a98182fc0786e8d54441758301ba1",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/everyday-essentials.jpg",
+        "publicPath": "/images/collections/everyday-essentials.jpg",
+        "basename": "everyday-essentials.jpg",
+        "nameWithoutExt": "everyday-essentials",
+        "ext": ".jpg",
+        "size": 70824,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "8c3d91841a49630582282d3b062c0375ff466681590a8e8f76778820d0b472b2",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/new-arrivals.avif",
+        "publicPath": "/images/collections/new-arrivals.avif",
+        "basename": "new-arrivals.avif",
+        "nameWithoutExt": "new-arrivals",
+        "ext": ".avif",
+        "size": 68460,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "121100d05f3ce312e04096dbb5a3f9dc3139a0860d4be814bfc26c21e1a74a7b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/new-arrivals.jpg",
+        "publicPath": "/images/collections/new-arrivals.jpg",
+        "basename": "new-arrivals.jpg",
+        "nameWithoutExt": "new-arrivals",
+        "ext": ".jpg",
+        "size": 86932,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "638d928ee7d2c9db2a07ca5c8a3b75e46a6c7904edb026279d08f05674398325",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/sneakers-collection.avif",
+        "publicPath": "/images/collections/sneakers-collection.avif",
+        "basename": "sneakers-collection.avif",
+        "nameWithoutExt": "sneakers-collection",
+        "ext": ".avif",
+        "size": 98484,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "3893ca3c48688ebf2c8d665d45e73f456cec484c54a310d35e70f87c29475cb2",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/sneakers-collection.jpg",
+        "publicPath": "/images/collections/sneakers-collection.jpg",
+        "basename": "sneakers-collection.jpg",
+        "nameWithoutExt": "sneakers-collection",
+        "ext": ".jpg",
+        "size": 105943,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "88be6fa373e340aea37c6dbb889f4f3ccf5af214657f86e2382e2d5b515e34c7",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/sports-performance.avif",
+        "publicPath": "/images/collections/sports-performance.avif",
+        "basename": "sports-performance.avif",
+        "nameWithoutExt": "sports-performance",
+        "ext": ".avif",
+        "size": 39659,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "62b3c453137251143e5746e5ea29cec3ae8889c3a3b2d515acdc4b79fbcc7ae9",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/sports-performance.jpg",
+        "publicPath": "/images/collections/sports-performance.jpg",
+        "basename": "sports-performance.jpg",
+        "nameWithoutExt": "sports-performance",
+        "ext": ".jpg",
+        "size": 51317,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "0579a235f62be6e2d6a09876ee07c337e6120283bdea389fac72042ad19167e0",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/trending-styles.avif",
+        "publicPath": "/images/collections/trending-styles.avif",
+        "basename": "trending-styles.avif",
+        "nameWithoutExt": "trending-styles",
+        "ext": ".avif",
+        "size": 36544,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "c6b26144ee43ecfbcc13ab898776bae325f10021537d4f30b654a1c9f7a16986",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/trending-styles.jpg",
+        "publicPath": "/images/collections/trending-styles.jpg",
+        "basename": "trending-styles.jpg",
+        "nameWithoutExt": "trending-styles",
+        "ext": ".jpg",
+        "size": 45001,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "c65264b18477c056199d723f1daf52e6665dc3e61b9872df322e35e57f4a0cfb",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/weekend-edit.avif",
+        "publicPath": "/images/collections/weekend-edit.avif",
+        "basename": "weekend-edit.avif",
+        "nameWithoutExt": "weekend-edit",
+        "ext": ".avif",
+        "size": 33232,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "ed28e7dfdff839d8037067b5815d4c97f5c738745cd99440755a402528b361e6",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/collections/weekend-edit.jpg",
+        "publicPath": "/images/collections/weekend-edit.jpg",
+        "basename": "weekend-edit.jpg",
+        "nameWithoutExt": "weekend-edit",
+        "ext": ".jpg",
+        "size": 41243,
+        "dims": {
+          "width": 1200,
+          "height": 600
+        },
+        "hash": "c883801f8845d6e8aecdd0bee0e29a68d05b34bb98f5a36c24860f258c91b083",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-lifestyle-composite.avif",
+        "publicPath": "/images/hero/hero-lifestyle-composite.avif",
+        "basename": "hero-lifestyle-composite.avif",
+        "nameWithoutExt": "hero-lifestyle-composite",
+        "ext": ".avif",
+        "size": 30633,
+        "dims": {
+          "width": 1024,
+          "height": 512
+        },
+        "hash": "0a2c001698b192deb26ff6a24517fe9cf8d97967663bfd1d7719671784e8486d",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-mobile.avif",
+        "publicPath": "/images/hero/hero-mobile.avif",
+        "basename": "hero-mobile.avif",
+        "nameWithoutExt": "hero-mobile",
+        "ext": ".avif",
+        "size": 36674,
+        "dims": {
+          "width": 576,
+          "height": 1024
+        },
+        "hash": "d8056c3cfd1e2fa56b7d3f513463c16d24e76fd9f2be0d9bb0b42547caaa6177",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-sneaker-apparel.avif",
+        "publicPath": "/images/hero/hero-sneaker-apparel.avif",
+        "basename": "hero-sneaker-apparel.avif",
+        "nameWithoutExt": "hero-sneaker-apparel",
+        "ext": ".avif",
+        "size": 86111,
+        "dims": {
+          "width": 1200,
+          "height": 800
+        },
+        "hash": "072c71533fb34d1693cd13144b7a1b9b876ecfad891e57618e11f2c3ca1c5acc",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-stage.avif",
+        "publicPath": "/images/hero/hero-stage.avif",
+        "basename": "hero-stage.avif",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".avif",
+        "size": 126797,
+        "dims": {
+          "width": 959,
+          "height": 887
+        },
+        "hash": "d293306afd0efb220890708096b49197a997d46e2bc7247e50d93c61aae292fe",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-stage.png",
+        "publicPath": "/images/hero/hero-stage.png",
+        "basename": "hero-stage.png",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".png",
+        "size": 423029,
+        "dims": {
+          "width": 959,
+          "height": 887
+        },
+        "hash": "c259fb9348a3d737a53a7cf0f852f2ae2cad0324c152a4179503874976160406",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero-stage.webp",
+        "publicPath": "/images/hero/hero-stage.webp",
+        "basename": "hero-stage.webp",
+        "nameWithoutExt": "hero-stage",
+        "ext": ".webp",
+        "size": 124524,
+        "dims": {
+          "width": 959,
+          "height": 887
+        },
+        "hash": "0c5297ca68e973ed7ee29594dc90e36d67eb3df9cc1f831716a35ec7529d60ee",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/hero/hero.avif",
+        "publicPath": "/images/hero/hero.avif",
+        "basename": "hero.avif",
+        "nameWithoutExt": "hero",
+        "ext": ".avif",
+        "size": 177177,
+        "dims": {
+          "width": 1774,
+          "height": 887
+        },
+        "hash": "0952c4544aab3230c3160ac5e845c16c7b14437b71732ced03396a5283d954ea",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/adidas-ultraboost.avif",
+        "publicPath": "/images/products/adidas-ultraboost.avif",
+        "basename": "adidas-ultraboost.avif",
+        "nameWithoutExt": "adidas-ultraboost",
+        "ext": ".avif",
+        "size": 14342,
+        "dims": {
+          "width": 800,
+          "height": 559
+        },
+        "hash": "f3717ce71edee1579907546f00ecd60a0123cff908f7cc0c1f9c9277be5549e5",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/adidas-ultraboost.webp",
+        "publicPath": "/images/products/adidas-ultraboost.webp",
+        "basename": "adidas-ultraboost.webp",
+        "nameWithoutExt": "adidas-ultraboost",
+        "ext": ".webp",
+        "size": 13564,
+        "dims": {
+          "width": 800,
+          "height": 559
+        },
+        "hash": "f8f9beb34a163964669b646b663bcdcf7b2211e7fd96877a90d1864345b37e08",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/diesel-denim-jacket.avif",
+        "publicPath": "/images/products/diesel-denim-jacket.avif",
+        "basename": "diesel-denim-jacket.avif",
+        "nameWithoutExt": "diesel-denim-jacket",
+        "ext": ".avif",
+        "size": 53006,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "e2430f0f140eabf229c1ce290336d79cd1c30b42f742aa80fbfb603803435b3b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/diesel-denim-jacket.webp",
+        "publicPath": "/images/products/diesel-denim-jacket.webp",
+        "basename": "diesel-denim-jacket.webp",
+        "nameWithoutExt": "diesel-denim-jacket",
+        "ext": ".webp",
+        "size": 52280,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "9243bde6a343bc594d03b007a60c0ef70526e2bd52d16420b1ee9cff1bd851f8",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/hoka-clifton-9.avif",
+        "publicPath": "/images/products/hoka-clifton-9.avif",
+        "basename": "hoka-clifton-9.avif",
+        "nameWithoutExt": "hoka-clifton-9",
+        "ext": ".avif",
+        "size": 49497,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "854363f6bf60d35c64a3693026aa194f04718eb4628c9aa74ff811d6bfc60a77",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/hoka-clifton-9.webp",
+        "publicPath": "/images/products/hoka-clifton-9.webp",
+        "basename": "hoka-clifton-9.webp",
+        "nameWithoutExt": "hoka-clifton-9",
+        "ext": ".webp",
+        "size": 39718,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "94819c9b4c71eafe8b4d945e556a208503c82afea2f584110dbeee7281e6b926",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/levis-501-original.avif",
+        "publicPath": "/images/products/levis-501-original.avif",
+        "basename": "levis-501-original.avif",
+        "nameWithoutExt": "levis-501-original",
+        "ext": ".avif",
+        "size": 115750,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "74bb5323226a8572513d68b751a6c7f8c0d92ab4650a8185a03800a92728d5c2",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/levis-501-original.webp",
+        "publicPath": "/images/products/levis-501-original.webp",
+        "basename": "levis-501-original.webp",
+        "nameWithoutExt": "levis-501-original",
+        "ext": ".webp",
+        "size": 96500,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "c7856a9777699287686029adacefb6406500c5cd1b7fe4c632a94ea96fe8c0c3",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-side.avif",
+        "publicPath": "/images/products/nike-air-max-270-side.avif",
+        "basename": "nike-air-max-270-side.avif",
+        "nameWithoutExt": "nike-air-max-270-side",
+        "ext": ".avif",
+        "size": 26803,
+        "dims": {
+          "width": 800,
+          "height": 640
+        },
+        "hash": "dde15f46e8092b2e8c20adb45878b88756ec18c89d16b0900628f045a97b2d29",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-side.webp",
+        "publicPath": "/images/products/nike-air-max-270-side.webp",
+        "basename": "nike-air-max-270-side.webp",
+        "nameWithoutExt": "nike-air-max-270-side",
+        "ext": ".webp",
+        "size": 19484,
+        "dims": {
+          "width": 800,
+          "height": 640
+        },
+        "hash": "16884cc038609407d6fbbbaf3532c48ad86fda66bf069be2c4a4d899b4870979",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-sole.avif",
+        "publicPath": "/images/products/nike-air-max-270-sole.avif",
+        "basename": "nike-air-max-270-sole.avif",
+        "nameWithoutExt": "nike-air-max-270-sole",
+        "ext": ".avif",
+        "size": 100127,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "71dc6c4cda632e844225dc9879d14fab2a3b3633bc6d010535188a9741004d52",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-sole.webp",
+        "publicPath": "/images/products/nike-air-max-270-sole.webp",
+        "basename": "nike-air-max-270-sole.webp",
+        "nameWithoutExt": "nike-air-max-270-sole",
+        "ext": ".webp",
+        "size": 101584,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "a33efc248e83146a7828c11b8528d69a0cd95175a0a372bb1b2a610007b553d4",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-top.avif",
+        "publicPath": "/images/products/nike-air-max-270-top.avif",
+        "basename": "nike-air-max-270-top.avif",
+        "nameWithoutExt": "nike-air-max-270-top",
+        "ext": ".avif",
+        "size": 24476,
+        "dims": {
+          "width": 800,
+          "height": 1000
+        },
+        "hash": "032f0daab1a47731bf7716c099006c7a88368a9cba24b2684ca7fb9a6c92178a",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270-top.webp",
+        "publicPath": "/images/products/nike-air-max-270-top.webp",
+        "basename": "nike-air-max-270-top.webp",
+        "nameWithoutExt": "nike-air-max-270-top",
+        "ext": ".webp",
+        "size": 22118,
+        "dims": {
+          "width": 800,
+          "height": 1000
+        },
+        "hash": "70fdf28ac873d89fea154bb7a46e86aaab92e4e8965fe75271ae9b5aba7a7611",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270.avif",
+        "publicPath": "/images/products/nike-air-max-270.avif",
+        "basename": "nike-air-max-270.avif",
+        "nameWithoutExt": "nike-air-max-270",
+        "ext": ".avif",
+        "size": 41612,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "80119ec5800e33eb827e08887e3d159d7a62642743fee0864c2035d8bd082d59",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-air-max-270.webp",
+        "publicPath": "/images/products/nike-air-max-270.webp",
+        "basename": "nike-air-max-270.webp",
+        "nameWithoutExt": "nike-air-max-270",
+        "ext": ".webp",
+        "size": 36608,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "ff6e8cb0a037642f6064a784a615b30ac4cb06c2bab1b58b379cfa47d15df828",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-club-hoodie.avif",
+        "publicPath": "/images/products/nike-club-hoodie.avif",
+        "basename": "nike-club-hoodie.avif",
+        "nameWithoutExt": "nike-club-hoodie",
+        "ext": ".avif",
+        "size": 62235,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "226c0d2400b66db39ce4cd588e631bbc5bb9356bf47a1769411c653514bd36a4",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/nike-club-hoodie.webp",
+        "publicPath": "/images/products/nike-club-hoodie.webp",
+        "basename": "nike-club-hoodie.webp",
+        "nameWithoutExt": "nike-club-hoodie",
+        "ext": ".webp",
+        "size": 61706,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "70363a405c6488fc0e5c9d2f3141a545c7b2af4cb602bd68fb68f8a8e8277fd6",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/puma-rs-x.avif",
+        "publicPath": "/images/products/puma-rs-x.avif",
+        "basename": "puma-rs-x.avif",
+        "nameWithoutExt": "puma-rs-x",
+        "ext": ".avif",
+        "size": 16869,
+        "dims": {
+          "width": 800,
+          "height": 600
+        },
+        "hash": "7245864815662482fa1da2e6f27b0acf4eac363f86314a812732c8337e394a48",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/puma-rs-x.webp",
+        "publicPath": "/images/products/puma-rs-x.webp",
+        "basename": "puma-rs-x.webp",
+        "nameWithoutExt": "puma-rs-x",
+        "ext": ".webp",
+        "size": 15182,
+        "dims": {
+          "width": 800,
+          "height": 600
+        },
+        "hash": "c7483fd6dccabae45d3ad2faf3ebe9babaa3c56709a8c98ef925492ab0f04777",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/us-polo-classic-tee.avif",
+        "publicPath": "/images/products/us-polo-classic-tee.avif",
+        "basename": "us-polo-classic-tee.avif",
+        "nameWithoutExt": "us-polo-classic-tee",
+        "ext": ".avif",
+        "size": 80211,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "23aacd3a53e98ffdcf97c7e1b6ddc303e121ec44ddcd850f09cf25be02c9f742",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/products/us-polo-classic-tee.webp",
+        "publicPath": "/images/products/us-polo-classic-tee.webp",
+        "basename": "us-polo-classic-tee.webp",
+        "nameWithoutExt": "us-polo-classic-tee",
+        "ext": ".webp",
+        "size": 67396,
+        "dims": {
+          "width": 800,
+          "height": 1200
+        },
+        "hash": "a69028a84ed278533edf880598966c32c8fb8bb250465ea043ad1b5c812986ee",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-1.avif",
+        "publicPath": "/images/store/store-interior-1.avif",
+        "basename": "store-interior-1.avif",
+        "nameWithoutExt": "store-interior-1",
+        "ext": ".avif",
+        "size": 62633,
+        "dims": {
+          "width": 800,
+          "height": 534
+        },
+        "hash": "8da97663af5ec1ca7ee2f800f8068bc1495ee9aedda8f86f0eec070154b1b458",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-2.avif",
+        "publicPath": "/images/store/store-interior-2.avif",
+        "basename": "store-interior-2.avif",
+        "nameWithoutExt": "store-interior-2",
+        "ext": ".avif",
+        "size": 36619,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "05bdee2bb4e623c2c9b41fe09781d6191839a83cc040a856981d45e637e9b90f",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-2.jpg",
+        "publicPath": "/images/store/store-interior-2.jpg",
+        "basename": "store-interior-2.jpg",
+        "nameWithoutExt": "store-interior-2",
+        "ext": ".jpg",
+        "size": 50853,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "fdcf82b18ae01ba86f756e3c6576707ffd7a4083c7f830014fcafb3e68c18f04",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-3.avif",
+        "publicPath": "/images/store/store-interior-3.avif",
+        "basename": "store-interior-3.avif",
+        "nameWithoutExt": "store-interior-3",
+        "ext": ".avif",
+        "size": 97003,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "d296928a92a6b765a38be2565d9299c21d68cff6069c0fd4f82e0923abdc622e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/images/store/store-interior-3.jpg",
+        "publicPath": "/images/store/store-interior-3.jpg",
+        "basename": "store-interior-3.jpg",
+        "nameWithoutExt": "store-interior-3",
+        "ext": ".jpg",
+        "size": 102867,
+        "dims": {
+          "width": 800,
+          "height": 533
+        },
+        "hash": "95c4a4b45587866a6a80c31e49c36dead44f59011884b07e47eecf77dc460c16",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      }
+    ],
+    "cat5_broken": [],
+    "cat6_dev_only": [
+      {
+        "imgPath": "public/brand/packaging/price-tag-mockup.svg",
+        "publicPath": "/brand/packaging/price-tag-mockup.svg",
+        "basename": "price-tag-mockup.svg",
+        "nameWithoutExt": "price-tag-mockup",
+        "ext": ".svg",
+        "size": 4447,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "7b87a0e4269b37477ee26f69de2d640424102bdfcca637aef0ce5135897fd3fa",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/packaging/shopping-bag-mockup.svg",
+        "publicPath": "/brand/packaging/shopping-bag-mockup.svg",
+        "basename": "shopping-bag-mockup.svg",
+        "nameWithoutExt": "shopping-bag-mockup",
+        "ext": ".svg",
+        "size": 3442,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "d4d4a77daaa261f6402f5e67de379ad9c03f5d764504e0b8a0a7090b095c5058",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/packaging/thank-you-card-mockup.svg",
+        "publicPath": "/brand/packaging/thank-you-card-mockup.svg",
+        "basename": "thank-you-card-mockup.svg",
+        "nameWithoutExt": "thank-you-card-mockup",
+        "ext": ".svg",
+        "size": 3082,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "a5bf6e95b2252b7f4c4bd5d2fe467da92cb13911dfb988226971af4a0da18f7a",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/reference/Luxury INESTYLOUTLET Shopping Bags.png",
+        "publicPath": "/reference/Luxury INESTYLOUTLET Shopping Bags.png",
+        "basename": "Luxury INESTYLOUTLET Shopping Bags.png",
+        "nameWithoutExt": "Luxury INESTYLOUTLET Shopping Bags",
+        "ext": ".png",
+        "size": 1772738,
+        "dims": {
+          "width": 1536,
+          "height": 1024
+        },
+        "hash": "2d010f1ac3aa86e03539a45968e4d4dc2debe0aea2f0ca4aa2652aa192055488",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/reference/Luxury iNESTYL Shopping Bag Mockup.png",
+        "publicPath": "/reference/Luxury iNESTYL Shopping Bag Mockup.png",
+        "basename": "Luxury iNESTYL Shopping Bag Mockup.png",
+        "nameWithoutExt": "Luxury iNESTYL Shopping Bag Mockup",
+        "ext": ".png",
+        "size": 1848555,
+        "dims": {
+          "width": 1536,
+          "height": 1024
+        },
+        "hash": "ba9a4a858a37791c2d8535013244c320096de8a061afa07542bac5da52331596",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/reference/iNESTYL Outlet Logo with Gold Accent.png",
+        "publicPath": "/reference/iNESTYL Outlet Logo with Gold Accent.png",
+        "basename": "iNESTYL Outlet Logo with Gold Accent.png",
+        "nameWithoutExt": "iNESTYL Outlet Logo with Gold Accent",
+        "ext": ".png",
+        "size": 1004985,
+        "dims": {
+          "width": 1536,
+          "height": 1024
+        },
+        "hash": "7c229bf061fecc2cc18e24ab008f5eba1b10031ab7eeb81bd8661c08d0b79a44",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/reference/iNESTYL Outlet Website Showcase.png",
+        "publicPath": "/reference/iNESTYL Outlet Website Showcase.png",
+        "basename": "iNESTYL Outlet Website Showcase.png",
+        "nameWithoutExt": "iNESTYL Outlet Website Showcase",
+        "ext": ".png",
+        "size": 2065231,
+        "dims": {
+          "width": 1536,
+          "height": 1024
+        },
+        "hash": "c971757bcdea1a3fc43a442e0d977c1c2b5ebf3affdedd270f9f0fe9846a7d4d",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/reference/iNESTYLOUTLET Minimalist Logo.png",
+        "publicPath": "/reference/iNESTYLOUTLET Minimalist Logo.png",
+        "basename": "iNESTYLOUTLET Minimalist Logo.png",
+        "nameWithoutExt": "iNESTYLOUTLET Minimalist Logo",
+        "ext": ".png",
+        "size": 142059,
+        "dims": {
+          "width": 2172,
+          "height": 724
+        },
+        "hash": "b9c97f6ba1fb10b7097a95f258bb003eb63fd2b502958312ddb0643f315dea0d",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "src/components/brands/adidas-svgrepo-com.svg",
+        "publicPath": "src/components/brands/adidas-svgrepo-com.svg",
+        "basename": "adidas-svgrepo-com.svg",
+        "nameWithoutExt": "adidas-svgrepo-com",
+        "ext": ".svg",
+        "size": 531,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "1f447b86435d914f8f42fbb75c07f90cf1fca559cd93f948415cd57dd1b27c73",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "src/components/brands/jockey.svg",
+        "publicPath": "src/components/brands/jockey.svg",
+        "basename": "jockey.svg",
+        "nameWithoutExt": "jockey",
+        "ext": ".svg",
+        "size": 5010,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "65fc00dac418b1425236dd2358b2395b96bef4a1e07109cb9fdb6fceedb6ba4b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "src/components/brands/levis-logo-svgrepo-com.svg",
+        "publicPath": "src/components/brands/levis-logo-svgrepo-com.svg",
+        "basename": "levis-logo-svgrepo-com.svg",
+        "nameWithoutExt": "levis-logo-svgrepo-com",
+        "ext": ".svg",
+        "size": 1874,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "938971752ee2e32335c5c6618561302a0641f0d3d163967a67db01c54d893c4c",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "src/components/brands/nike-4-logo-svgrepo-com.svg",
+        "publicPath": "src/components/brands/nike-4-logo-svgrepo-com.svg",
+        "basename": "nike-4-logo-svgrepo-com.svg",
+        "nameWithoutExt": "nike-4-logo-svgrepo-com",
+        "ext": ".svg",
+        "size": 717,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "39b2e5f78270987e5b51fdeaedd510ecbb92618e140842bbc721cd2bc7bb035e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "src/components/brands/polo-ralph-lauren.svg",
+        "publicPath": "src/components/brands/polo-ralph-lauren.svg",
+        "basename": "polo-ralph-lauren.svg",
+        "nameWithoutExt": "polo-ralph-lauren",
+        "ext": ".svg",
+        "size": 19144,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "524b44748cb107f1fcb6b8534148c344764df0b983072e80f6b733d38eb4184e",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "src/components/brands/puma-logo-logo-svgrepo-com.svg",
+        "publicPath": "src/components/brands/puma-logo-logo-svgrepo-com.svg",
+        "basename": "puma-logo-logo-svgrepo-com.svg",
+        "nameWithoutExt": "puma-logo-logo-svgrepo-com",
+        "ext": ".svg",
+        "size": 3482,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "ca4e4aed1c94289797174ce1288ee7168191b53823913fdd9563d615cca90acf",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      }
+    ],
+    "cat7_system_local": [
+      {
+        "imgPath": "public/brand/favicon-180x180.png",
+        "publicPath": "/brand/favicon-180x180.png",
+        "basename": "favicon-180x180.png",
+        "nameWithoutExt": "favicon-180x180",
+        "ext": ".png",
+        "size": 4991,
+        "dims": {
+          "width": 180,
+          "height": 180
+        },
+        "hash": "779292f674201dd43bd73590296c2cde20e4b0bd60e74828e7db0dd51a5acf23",
+        "isValid": true,
+        "usages": [
+          "src/app/layout.tsx"
+        ],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/favicon-32x32.png",
+        "publicPath": "/brand/favicon-32x32.png",
+        "basename": "favicon-32x32.png",
+        "nameWithoutExt": "favicon-32x32",
+        "ext": ".png",
+        "size": 1072,
+        "dims": {
+          "width": 32,
+          "height": 32
+        },
+        "hash": "f379191600d5a1a7c28b7d3dec1e52b450378b0a1f2c85116af2e708916fda6b",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/favicon.ico",
+        "publicPath": "/brand/favicon.ico",
+        "basename": "favicon.ico",
+        "nameWithoutExt": "favicon",
+        "ext": ".ico",
+        "size": 4414,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "89b4e714df85fc554739ef682271be68ac725255336a8c1c2d410dc6db790966",
+        "isValid": true,
+        "usages": [],
+        "isDynamicVariant": false
+      },
+      {
+        "imgPath": "public/brand/favicon.svg",
+        "publicPath": "/brand/favicon.svg",
+        "basename": "favicon.svg",
+        "nameWithoutExt": "favicon",
+        "ext": ".svg",
+        "size": 607,
+        "dims": {
+          "width": null,
+          "height": null
+        },
+        "hash": "fce7c165a0836aa4d54de594ce623b71cd825d33681ca1a9d75106170ab89a95",
+        "isValid": true,
+        "usages": [
+          "src/app/layout.tsx"
+        ],
+        "isDynamicVariant": false
+      }
+    ]
+  }
+}

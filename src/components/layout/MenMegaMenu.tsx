@@ -83,7 +83,7 @@ export function MenMegaMenu({ onClose }: MenMegaMenuProps) {
               className="group block relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#F5F5F7] border border-[#E5E7EB]"
             >
               <Image
-                src="/images/hero/hero-lifestyle-composite.webp"
+                src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/homepage/desktop/hero-lifestyle-composite"
                 alt="Men's Collection Campaign"
                 fill
                 loading="lazy"

@@ -35,7 +35,7 @@ export default function TheEditPage() {
       {/* 3. Hero Feature Photograph (Large Editorial Image) */}
       <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-subtle group">
         <Image
-          src="/images/hero/desktop/hero-lifestyle-composite.webp"
+          src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/homepage/desktop/hero-lifestyle-composite"
           alt="The INESTYLE Edit — Visual Editorial Curation"
           fill
           priority
@@ -60,7 +60,7 @@ export default function TheEditPage() {
         <article className="space-y-4 group">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#FFFFFF]">
             <Image
-              src="/images/categories/category-footwear-card.webp"
+              src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/categories/footwear/category-footwear-card"
               alt="Footwear Engineering Story"
               fill
               loading="lazy"
@@ -89,7 +89,7 @@ export default function TheEditPage() {
         <article className="space-y-4 group">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#FFFFFF]">
             <Image
-              src="/images/categories/category-apparel-card.webp"
+              src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/categories/clothing/category-apparel-card"
               alt="Denim & Outerwear Curation"
               fill
               loading="lazy"
@@ -118,7 +118,7 @@ export default function TheEditPage() {
         <article className="space-y-4 group">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] bg-[#FFFFFF]">
             <Image
-              src="/images/store/store-interior-1.webp"
+              src="https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/store/store-interior-1"
               alt="The In-Person Touch"
               fill
               loading="lazy"

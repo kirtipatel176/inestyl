@@ -4,7 +4,14 @@ import { getNavigation, updateNavigation } from "@/lib/server-db";
 export async function GET() {
   try {
     const navigation = getNavigation();
-    return NextResponse.json({ success: true, navigation });
+    return NextResponse.json(
+      { success: true, navigation },
+      {
+        headers: {
+          "Cache-Control": "public, max-age=300, stale-while-revalidate=86400",
+        },
+      }
+    );
   } catch (error: any) {
     return NextResponse.json(
       { success: false, error: error.message || "Failed to fetch navigation" },

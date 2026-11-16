@@ -1,7 +1,11 @@
 /**
  * INESTYLE OUTLET — Image Optimization System
- * Provides responsive variant mapping, blur data placeholders, and standard sizes.
+ * Provides responsive variant mapping, blur data placeholders, and Cloudinary CDN URL delivery.
  */
+
+import { getOptimizedImageUrl, getCloudinaryUrl, TARGET_DIMENSIONS } from "./image-url";
+
+export { getOptimizedImageUrl, getCloudinaryUrl, TARGET_DIMENSIONS };
 
 export const IMAGE_SIZES = {
   hero: "100vw",
@@ -15,7 +19,11 @@ export const IMAGE_SIZES = {
   searchResultThumb: "48px",
 } as const;
 
+const DEFAULT_BLUR =
+  "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoQAAwABUB8JZwAAutFX0dvCgD+7UhuyWxyH0oY6/ngYOkuZlZbYzZCBHSTTzRub+AAAA==";
+
 export const BLUR_PLACEHOLDERS: Record<string, string> = {
+  // Legacy local paths
   "/images/hero/hero-lifestyle-composite.jpg":
     "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoQAAwABUB8JZwAAutFX0dvCgD+7UhuyWxyH0oY6/ngYOkuZlZbYzZCBHSTTzRub+AAAA==",
   "/images/hero/desktop/hero-lifestyle-composite.webp":
@@ -38,93 +46,42 @@ export const BLUR_PLACEHOLDERS: Record<string, string> = {
     "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQAAwABUB8JbACdACqQLprGwAA+9boCq+IE7y6BvRlbL8eusd5cmym4dYOBP/uTf+U29Q5vPO1kiRRN/AAAA==",
   "/images/store/store-interior-1.jpg":
     "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoQAAwABUB8JZQC/OEO7xNsIuAAAP6EDLr8b0391r7OlkbxZCloIT9lSqyO9GTrPMGI4tuGYrfxb/ZOZZzvy3PZpiFzYykAAAA=",
+
+  // Cloudinary Delivery URLs & Public IDs
+  "inestyle-outlet/homepage/desktop/hero-lifestyle-composite": DEFAULT_BLUR,
+  "inestyle-outlet/homepage/mobile/hero-mobile":
+    "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBACdASoQABwAPzmGulOvKSWisAgB4CcJZwAAWlzWPHwhQnINTx3YYwAA/t6W4gWJVme9zVVibXkSI/kP2AsxjfFwR1rclXb2IA9h+1z1Lmd/PCKPKsQ4LmXZ+PssZQ6ekffw1BgIW4aEYLu0b85S4a7AMxmAAAA=",
+  "https://res.cloudinary.com/inestyle-outlet/image/upload/f_auto,q_auto/inestyle-outlet/homepage/desktop/hero-lifestyle-composite":
+    DEFAULT_BLUR,
+  "https://res.cloudinary.com/inestyle-outlet/image/upload/f_auto,q_auto/inestyle-outlet/homepage/mobile/hero-mobile":
+    "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBACdASoQABwAPzmGulOvKSWisAgB4CcJZwAAWlzWPHwhQnINTx3YYwAA/t6W4gWJVme9zVVibXkSI/kP2AsxjfFwR1rclXb2IA9h+1z1Lmd/PCKPKsQ4LmXZ+PssZQ6ekffw1BgIW4aEYLu0b85S4a7AMxmAAAA=",
 };
 
-const FOOTWEAR_NAMES = new Set([
-  "adidas-ultraboost",
-  "hoka-clifton-9",
-  "nike-air-max-270",
-  "nike-air-max-270-side",
-  "nike-air-max-270-sole",
-  "nike-air-max-270-top",
-  "puma-rs-x",
-]);
+export function getBlurDataUrl(src?: string | null): string {
+  if (!src) return DEFAULT_BLUR;
+  if (BLUR_PLACEHOLDERS[src]) return BLUR_PLACEHOLDERS[src];
 
-const CLOTHING_NAMES = new Set([
-  "diesel-denim-jacket",
-  "levis-501-original",
-  "nike-club-hoodie",
-  "us-polo-classic-tee",
-]);
+  // Match by public ID substring
+  if (src.includes("hero-mobile")) {
+    return BLUR_PLACEHOLDERS["inestyle-outlet/homepage/mobile/hero-mobile"];
+  }
+  if (src.includes("hero-lifestyle-composite")) {
+    return DEFAULT_BLUR;
+  }
+
+  return DEFAULT_BLUR;
+}
 
 /**
- * Resolves optimized variant for a given image path.
+ * Resolves optimized Cloudinary delivery URL for a given image path.
  * 
- * @param src Original image path (e.g. "/images/products/nike-air-max-270.jpg")
+ * @param src Original image path or Cloudinary public ID
  * @param variant 'listing' (600x750) | 'detail' (1200x1500) | 'thumb' (200x250) | 'original'
- * @returns Optimized image path (e.g. "/images/products/footwear/nike-air-max-270-listing.webp")
+ * @returns Cloudinary CDN URL with auto-format, auto-quality, and dimensional transformations
  */
 export function getOptimizedImagePath(
   src: string | undefined | null,
   variant: "listing" | "detail" | "thumb" | "original" = "original"
 ): string {
-  if (!src) return "/images/hero/hero-lifestyle-composite.webp";
-
-  // If already an optimized variant or external URL or svg, return as is
-  if (
-    src.startsWith("http://") ||
-    src.startsWith("https://") ||
-    src.endsWith(".svg") ||
-    src.includes("-listing.") ||
-    src.includes("-detail.") ||
-    src.includes("-thumb.")
-  ) {
-    return src;
-  }
-
-  // Extract base filename without directory and extension
-  const match = src.match(/\/([^\/]+)\.(jpe?g|png|webp|avif)$/i);
-  if (!match) return src;
-
-  const baseName = match[1];
-
-  if (variant === "thumb") {
-    if (FOOTWEAR_NAMES.has(baseName) || CLOTHING_NAMES.has(baseName)) {
-      return `/images/thumbnails/${baseName}-thumb.webp`;
-    }
-  }
-
-  if (FOOTWEAR_NAMES.has(baseName)) {
-    if (variant === "listing") {
-      return `/images/products/footwear/${baseName}-listing.webp`;
-    }
-    if (variant === "detail") {
-      return `/images/products/footwear/${baseName}-detail.webp`;
-    }
-  }
-
-  if (CLOTHING_NAMES.has(baseName)) {
-    if (variant === "listing") {
-      return `/images/products/clothing/${baseName}-listing.webp`;
-    }
-    if (variant === "detail") {
-      return `/images/products/clothing/${baseName}-detail.webp`;
-    }
-  }
-
-  // Categories
-  if (baseName === "category-footwear" || baseName === "category-apparel") {
-    if (variant === "listing") {
-      return `/images/categories/${baseName}-card.webp`;
-    }
-    return `/images/categories/${baseName}-banner.webp`;
-  }
-
-  // Check if original is in /images/hero/hero.png
-  if (src === "/images/hero/hero.png") {
-    return "/images/hero/desktop/hero.webp";
-  }
-
-  // Return WebP sibling if original was .jpg or .png
-  return src.replace(/\.(jpe?g|png)$/i, ".webp");
+  return getOptimizedImageUrl(src, variant);
 }

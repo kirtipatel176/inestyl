@@ -1,129 +1,170 @@
-# iNESTYL OUTLET — Phase 1 Deliverables
-## Complete Brand Identity + Design System + Technical Foundation
+# iNESTYL OUTLET — Enterprise Monorepo Architecture
+## Decoupled Public Storefront + Private Admin Management Console
 
-**iNESTYL OUTLET** is a premium multi-brand footwear and apparel outlet offering 100% original, authentic branded products (Nike, Puma, adidas, HOKA, Levi's, DIESEL, U.S. Polo Assn.) at attractive outlet value.
+**iNESTYL OUTLET** is an omnichannel discovery index and multi-brand outlet catalogue for verified authentic footwear (Nike, Puma, adidas, HOKA) and apparel (Levi's, DIESEL, U.S. Polo Assn.) located at Station Road, Kapadwanj, Gujarat.
 
 > **CRITICAL BUSINESS MODEL NOTICE**:  
 > **This is NOT an e-commerce checkout website.**  
-> The system is intentionally architected as a **product catalogue, stock discovery index, and store enquiry portal**. There is no shopping cart, no checkout, and no payment processing. Customer enquiries are directed to **WhatsApp** or to our physical flagship outlet store in **Kapadwanj, Gujarat**.
+> The platform is intentionally architected as a **product catalogue, stock discovery index, and store enquiry portal**. There is no shopping cart, no checkout, and no payment processing. Customer enquiries are directed to **WhatsApp Concierge** or to our physical flagship store in **Kapadwanj, Gujarat**.
 
 ---
 
-## Phase 1 Deliverables Directory Structure
+## 1. Monorepo Architecture (`pnpm` Workspaces)
 
 ```
-IneStyl/
-├── docs/                                  # 10 Comprehensive Documentation Manuals
-│   ├── brand-guidelines.md                # Brand positioning, target audience, retail packaging
-│   ├── logo-guidelines.md                 # Geometric mark anatomy, variations, clear space, dos & don'ts
-│   ├── design-system.md                   # 70-25-5 palette, layout, elevation, Lucide iconography
-│   ├── typography-guidelines.md           # Manrope & Inter typographic scale, pricing typography
-│   ├── photography-guidelines.md          # Sneaker & apparel photo direction, 5-shot angle library
-│   ├── animation-guidelines.md            # Motion philosophy, Framer Motion, GSAP, timing curves
-│   ├── technical-architecture.md          # Next.js App Router, Supabase schema, Cloudinary, WhatsApp dispatcher
-│   ├── component-guidelines.md            # Reusable UI component specs (Buttons, Cards, Inputs, Pills)
-│   ├── responsive-guidelines.md           # Breakpoints (1440px, 1280px, 768px, 390px), touch targets
-│   └── phase-roadmap.md                   # Phase 1 through Phase 9 project roadmap & milestone criteria
-├── public/
-│   ├── brand/                             # Scalable Vector Graphics & High-Resolution PNG Exports
-│   │   ├── logo-primary-stacked.svg       # Master stacked logo (Black & Gold on Transparent)
-│   │   ├── logo-primary-stacked-dark.svg  # Master inverted stacked logo (White & Gold)
-│   │   ├── logo-primary-stacked-light.svg # Master stacked logo on Warm Ivory (#F4EFE7)
-│   │   ├── logo-horizontal.svg            # Horizontal navbar logo lockup
-│   │   ├── logo-horizontal-dark.svg       # Inverted horizontal logo lockup
-│   │   ├── logo-horizontal-light.svg      # Horizontal logo lockup on Warm Ivory
-│   │   ├── logo-monogram.svg              # 'iN' monogram icon with gold underline
-│   │   ├── logo-monogram-dark.svg         # Inverted 'iN' monogram icon
-│   │   ├── logo-monogram-light.svg        # 'iN' monogram icon on Warm Ivory
-│   │   ├── favicon.svg                    # Scalable vector favicon
-│   │   ├── favicon.ico                    # Multi-resolution browser icon (32x32)
-│   │   ├── logo-primary-stacked.png       # 1460x500 Transparent high-res raster
-│   │   ├── logo-primary-stacked-dark.png  # 1460x500 Transparent inverted raster
-│   │   ├── logo-horizontal.png            # 1800x260 Transparent horizontal raster
-│   │   ├── logo-monogram.png              # 512x512 App Icon / Social Avatar
-│   │   ├── favicon-180x180.png            # Apple Touch Icon
-│   │   └── packaging/                     # Physical Retail Packaging Mockups
-│   │       ├── shopping-bag-mockup.svg    # 240gsm craft shopping bag with gold foil accent
-│   │       ├── price-tag-mockup.svg       # 350gsm hang tag with outlet pricing & WhatsApp QR
-│   │       └── thank-you-card-mockup.svg  # A6 black-and-gold foil customer thank-you card
-│   ├── images/                            # Static asset placeholder trees
-│   │   ├── hero/
-│   │   ├── products/
-│   │   ├── categories/
-│   │   ├── brands/
-│   │   └── campaigns/
-│   ├── fonts/
-│   └── icons/
-├── src/                                   # Clean Next.js Skeleton Architecture
-│   ├── app/
-│   │   └── globals.css
-│   ├── components/
-│   │   ├── ui/
-│   │   ├── layout/
-│   │   ├── home/
-│   │   ├── products/
-│   │   ├── brands/
-│   │   └── shared/
-│   ├── config/
-│   ├── constants/
-│   │   └── index.ts
-│   ├── hooks/
-│   ├── lib/
-│   ├── services/
-│   ├── types/
-│   │   └── index.ts
-│   └── styles/
-│       └── globals.css
-├── design-system/                         # Reusable Code Tokens & Presets
-│   ├── tokens.json                        # Machine-readable design tokens (Colors, Typography, Spacing)
-│   ├── tailwind-preset.js                 # Tailwind CSS configuration preset
-│   └── theme.css                          # CSS custom properties and core utility classes
-├── preview/
-│   └── index.html                         # Interactive Brand Showcase & Design System Specimen
+inestyle-outlet/
+│
+├── apps/
+│   ├── storefront/                 # Public Catalogue & Store Discovery (inestyle.vercel.app)
+│   │   ├── src/
+│   │   │   ├── app/                # Public Next.js 15 App Router pages & public APIs
+│   │   │   ├── components/         # Luxury Apple-minimal storefront UI components
+│   │   │   ├── features/           # Discovery, search, and enquiry modules
+│   │   │   ├── hooks/              # Faceted filtering & URL sync hooks
+│   │   │   ├── lib/                # Client-safe utilities & database repository access
+│   │   │   └── styles/             # Global Tailwind stylesheets
+│   │   ├── public/                 # Optimized assets & brand vectors
+│   │   ├── next.config.ts          # Independent Next.js configuration & image domains
+│   │   ├── vercel.json             # Independent Vercel deployment configuration
+│   │   └── package.json            # @inestyle/storefront
+│   │
+│   └── admin/                      # Private Administrative Portal (admin.inestyle.com)
+│       ├── src/
+│       │   ├── app/                # Protected admin routes (/admin, /admin/login, 2FA, APIs)
+│       │   ├── components/         # Dashboard tabs, modals, auth screens, data tables
+│       │   ├── features/           # Products, inventory, media, navigation, enquiries
+│       │   ├── hooks/              # Admin auth & table filtering hooks
+│       │   ├── lib/                # Server session validation & Cloudinary SDK
+│       │   ├── middleware.ts       # Server-side HttpOnly session gatekeeper
+│       │   └── styles/             # Admin console themes & typography
+│       ├── public/                 # Brand assets & dashboard favicons
+│       ├── next.config.ts          # Independent Next.js configuration & security headers
+│       ├── vercel.json             # Independent Vercel deployment configuration
+│       └── package.json            # @inestyle/admin
+│
+├── packages/
+│   ├── database/                   # Unified durable persistence layer (PostgreSQL / atomic file DB)
+│   ├── shared-types/               # Domain interfaces (Product, Brand, Enquiry, Session, etc.)
+│   ├── validations/                # Zod validation contracts (product, login, enquiry, 2FA)
+│   ├── shared-utils/               # Cloudinary CDN transformations, INR currency, PBKDF2 crypto, cn
+│   ├── api-client/                 # Resilient HTTP client with retry logic & error taxonomy
+│   ├── config/                     # Flagship store parameters, business hours, default menus & seed data
+│   └── ui/                         # Shared UI primitives (loaders, toasts, buttons, dialogs)
+│
 ├── scripts/
-│   ├── generate_brand_assets.py           # Vector extraction and raster generation pipeline
-│   └── generate_packaging_assets.py       # Vector packaging mockup generator
-├── .env.example                           # Environment configuration template
-├── components.json                        # shadcn/ui configuration
-├── next.config.ts                         # Next.js build configuration
-├── package.json                           # Dependencies and scripts
-├── tsconfig.json                          # Strict TypeScript configuration
-└── README.md                              # Project overview
+│   ├── verify-monorepo.js          # Architecture separation & regression test runner
+│   ├── test-regression.js          # Route regression test
+│   └── update-image-references.ts  # Cloudinary asset synchronizer
+│
+├── package.json                    # Monorepo root scripts & dev dependencies
+├── pnpm-workspace.yaml             # pnpm workspace definition (apps/*, packages/*)
+├── tsconfig.base.json              # Shared TypeScript path alias foundation
+├── tsconfig.json                   # Root TypeScript project reference
+├── .env.example                    # Complete environment variables guide
+└── .gitignore                      # Git exclusion rules
 ```
 
 ---
 
-## The Official 70-25-5 Colour System
+## 2. Independent Applications
 
-- **Warm Ivory & Pure White (70%)**: `#F4EFE7` and `#FFFFFF`
-- **Primary Black (25%)**: `#111111`
-- **Champagne Gold (5%)**: `#C6A15B`
-- **Supporting Elements**: `#EAE3D9` (Cream), `#D8D0C5` (Border), `#777777` (Muted Charcoal)
+### A. Public Storefront (`apps/storefront`)
+- **Suggested Domain**: `inestyle.vercel.app`
+- **Port (Local)**: `http://localhost:3000`
+- **Scope**:
+  - Full product catalog discovery & faceted filtering (Footwear, Apparel, Brands, Collections).
+  - Editorial Curations: The Inestyle Edit, New Arrivals Drop, Trend Spotlights.
+  - Product Detail Pages: High-resolution Cloudinary imagery, size selector, real-time store stock availability indicator.
+  - WhatsApp Concierge deep-linking and store enquiry dispatching.
+  - Station Road, Kapadwanj flagship store guide, timings, and location.
+  - Zero cart, zero checkout, zero admin code or secrets in client bundle.
 
----
-
-## Typography Standards
-
-- **Primary Headings**: Manrope (800 ExtraBold, 700 Bold, 600 SemiBold)
-- **Body & Product Information**: Inter (400 Regular, 500 Medium)
-- **Outlet Prices**: Inter SemiBold / Bold (700)
-- **Logo Wordmark**: Preserved custom architectural geometric stencil typography
-
----
-
-## Viewing the Interactive Visual Showcase
-
-To view the interactive Brand Identity & Design System visual showcase:
-
-1. Open [`preview/index.html`](preview/index.html) in any web browser.
-2. Toggle between **Warm Ivory**, **Pure White**, and **Black** background themes.
-3. Test interactive buttons, size pill selectors, search inputs, packaging mockups, and the authentic product card specimen.
-4. Click on any color hex code to copy it directly to your clipboard.
+### B. Private Admin Console (`apps/admin`)
+- **Suggested Domain**: `admin.inestyle.com`
+- **Port (Local)**: `http://localhost:3001`
+- **Scope**:
+  - Full catalogue management: Product CRUD, batch price adjustments, collection assignment, CSV import/export.
+  - Footwear & Apparel inventory matrix with low-stock thresholds.
+  - Cloudinary Digital Asset Management: Direct image uploads, folder browsing, asset tagging, and CDN delivery preview.
+  - Navigation & Mega-Menu Manager: Re-order and toggle header/footer links in real time.
+  - Store Enquiries & Customer CRM: Track incoming customer requests from WhatsApp and web forms.
+  - Enterprise Security: Salted PBKDF2 password verification, optional 2FA OTP challenges, rate-limiting lockout protection, and immutable audit logs.
 
 ---
 
-## Phase Status
+## 3. Getting Started & Development
 
-- **Phase 1: Brand Identity, Design System & Project Foundation** — **COMPLETED**
-- **Phase 2: Homepage Development** — **AWAITING CLIENT APPROVAL**
-# inestyl
+### Prerequisites
+- Node.js >= 20.x
+- `pnpm` >= 9.x
+
+### Installation
+```bash
+# Install workspace dependencies
+pnpm install
+```
+
+### Running Applications
+```bash
+# Run both Storefront and Admin in parallel
+pnpm dev
+
+# Run Storefront only (http://localhost:3000)
+pnpm dev:storefront
+
+# Run Admin Dashboard only (http://localhost:3001)
+pnpm dev:admin
+```
+
+### Independent Production Builds
+```bash
+# Build both applications
+pnpm build
+
+# Build Storefront independently
+pnpm build:storefront
+
+# Build Admin independently
+pnpm build:admin
+```
+
+### Type Checking & Regression Verification
+```bash
+# Typecheck across all workspace packages and apps
+pnpm typecheck
+
+# Run architectural boundary & regression test suite
+node scripts/verify-monorepo.js
+```
+
+---
+
+## 4. Environment Variables
+
+Copy `.env.example` to `.env.local` in `apps/storefront` and `apps/admin`:
+
+```bash
+# Storefront (apps/storefront/.env.local)
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_WHATSAPP_PHONE=919876543210
+NEXT_PUBLIC_STORE_LOCATION="Station Road, Kapadwanj, Gujarat 387620"
+NEXT_PUBLIC_STORE_HOURS="Mon - Sun: 10:00 AM - 9:00 PM"
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=egjn8ayb
+
+# Admin (apps/admin/.env.local)
+NEXT_PUBLIC_ADMIN_URL=http://localhost:3001
+NEXT_PUBLIC_STOREFRONT_URL=http://localhost:3000
+CLOUDINARY_CLOUD_NAME=egjn8ayb
+CLOUDINARY_API_KEY=your-cloudinary-api-key
+CLOUDINARY_API_SECRET=your-cloudinary-api-secret
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=egjn8ayb
+```
+
+---
+
+## 5. Security Architecture
+
+1. **Role-Based Access Control (RBAC)**: Supports `super_admin`, `admin`, and `inventory_manager` roles.
+2. **HttpOnly Session Cookies**: Session tokens are stored in `SameSite=Lax`, `HttpOnly` cookies (`inestyl_admin_session`).
+3. **Dedicated Admin Middleware**: Intercepts unauthenticated page requests and redirects to `/admin/login?returnUrl=...`. API requests without valid sessions return `401 Unauthorized`.
+4. **Secret Isolation**: Cloudinary API secret and admin database service tokens are strictly isolated in `apps/admin` and never exposed to the Storefront application bundle.

@@ -14,32 +14,32 @@ const BRANDS: BrandShowcaseItem[] = [
   {
     name: "Nike",
     slug: "nike",
-    logo: "/brand/partners/nike.svg",
+    logo: "https://res.cloudinary.com/egjn8ayb/image/upload/inestyle-outlet/brands/logos/nike.svg",
   },
   {
     name: "Adidas",
     slug: "adidas",
-    logo: "/brand/partners/adidas.svg",
+    logo: "https://res.cloudinary.com/egjn8ayb/image/upload/inestyle-outlet/brands/logos/adidas.svg",
   },
   {
     name: "Puma",
     slug: "puma",
-    logo: "/brand/partners/puma.svg",
+    logo: "https://res.cloudinary.com/egjn8ayb/image/upload/inestyle-outlet/brands/logos/puma.svg",
   },
   {
     name: "HOKA",
     slug: "hoka",
-    logo: "/brand/partners/hoka.svg",
+    logo: "https://res.cloudinary.com/egjn8ayb/image/upload/inestyle-outlet/brands/logos/hoka.svg",
   },
   {
     name: "Levi's",
     slug: "levis",
-    logo: "/brand/partners/levis.svg",
+    logo: "https://res.cloudinary.com/egjn8ayb/image/upload/inestyle-outlet/brands/logos/levis.svg",
   },
   {
     name: "Diesel",
     slug: "diesel",
-    logo: "/brand/partners/diesel.svg",
+    logo: "https://res.cloudinary.com/egjn8ayb/image/upload/inestyle-outlet/brands/logos/diesel.svg",
   },
 ];
 

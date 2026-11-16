@@ -76,6 +76,8 @@ import { SizeGuideManagerTab } from "./tabs/SizeGuideManagerTab";
 import { AnalyticsTab } from "./tabs/AnalyticsTab";
 import { NotificationsTab } from "./tabs/NotificationsTab";
 import { AuditRecoveryTab } from "./tabs/AuditRecoveryTab";
+import { MediaLibraryTab } from "./tabs/MediaLibraryTab";
+import { MediaPickerModal } from "./modals/MediaPickerModal";
 import { apiClient } from "@/lib/api-client";
 import { LoadingButton } from "@/components/ui/LoadingButton";
 import { DashboardSkeleton } from "@/components/ui/DashboardSkeleton";
@@ -171,6 +173,10 @@ function AdminDashboardInner() {
   const [isNewCollectionModalOpen, setIsNewCollectionModalOpen] = useState(false);
   const [assigningCollection, setAssigningCollection] = useState<CollectionItem | null>(null);
 
+  // Cloudinary Media Picker Modal
+  const [isMediaPickerOpen, setIsMediaPickerOpen] = useState(false);
+  const [mediaPickerTarget, setMediaPickerTarget] = useState<"product" | "collection">("product");
+
   // Confirmation dialogs
   const [confirmDialog, setConfirmDialog] = useState<{
     isOpen: boolean;
@@ -205,7 +211,7 @@ function AdminDashboardInner() {
     sleeve: "Half Sleeve",
     sizes: "7, 8, 9, 10",
     colours: "Black (#111111), White (#FFFFFF)",
-    image: "/images/products/nike-air-max-270.jpg",
+    image: "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/products/footwear/men/nike-air-max-270",
     status: "published" as "published" | "draft" | "scheduled",
     scheduledPublishDate: "",
     hasVideo: false,
@@ -220,7 +226,7 @@ function AdminDashboardInner() {
     slug: "",
     description: "",
     badge: "Special Curation",
-    image: "/images/hero/hero-lifestyle-composite.jpg",
+    image: "https://res.cloudinary.com/egjn8ayb/image/upload/f_auto,q_auto/inestyle-outlet/homepage/desktop/hero-lifestyle-composite",
   });
 
   // Fetch live catalogue, navigation, notifications from API on mount
@@ -317,6 +323,7 @@ function AdminDashboardInner() {
     audit: "Audit Trail & Recovery Strategy",
     enquiries: "Customer Enquiries & Reservations",
     homepage: "Homepage Section Controls",
+    media: "Cloudinary Media Library & Optimization",
   };
 
   // Selection handlers
@@ -1533,6 +1540,18 @@ function AdminDashboardInner() {
               </div>
             </div>
           )}
+
+          {/* ========================================================= */}
+          {/* TAB: CLOUDINARY MEDIA LIBRARY & OPTIMIZATION */}
+          {/* ========================================================= */}
+          {activeTab === "media" && (
+            <MediaLibraryTab
+              onSelectImage={(url) => {
+                success("Image Selected", `Cloudinary delivery URL copied to clipboard: ${url}`);
+                navigator.clipboard.writeText(url);
+              }}
+            />
+          )}
         </main>
       </div>
 
@@ -1823,6 +1842,43 @@ function AdminDashboardInner() {
                 />
               </div>
 
+              {/* Cloudinary Product Image */}
+              <div className="p-3 bg-[#F5F5F7] rounded-2xl border border-[#E5E7EB] space-y-2">
+                <div className="flex items-center justify-between">
+                  <label className="font-semibold text-xs text-[#1D1D1F]">Product Catalogue Image (Cloudinary)</label>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMediaPickerTarget("product");
+                      setIsMediaPickerOpen(true);
+                    }}
+                    className="px-3 py-1 rounded-lg bg-[#0071E3] hover:bg-[#0077ED] text-white text-[11px] font-semibold transition-all cursor-pointer"
+                  >
+                    Select from Cloudinary Library
+                  </button>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E5E7EB] overflow-hidden relative shrink-0">
+                    <Image
+                      src={productForm.image}
+                      alt="Product preview"
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    value={productForm.image}
+                    onChange={(e) => {
+                      setProductFormDirty(true);
+                      setProductForm({ ...productForm, image: e.target.value });
+                    }}
+                    placeholder="https://res.cloudinary.com/... or public ID"
+                    className="flex-1 h-9 px-3 rounded-xl bg-white border border-[#E5E7EB] text-xs font-mono text-[#1D1D1F]"
+                  />
+                </div>
+              </div>
+
               {/* Action Buttons */}
               <div className="pt-3 border-t border-[#E5E7EB] flex items-center justify-end gap-2">
                 <button
@@ -2073,6 +2129,42 @@ function AdminDashboardInner() {
                 />
               </div>
 
+              {/* Cloudinary Collection Image */}
+              <div className="p-3 bg-[#F5F5F7] rounded-2xl border border-[#E5E7EB] space-y-2">
+                <div className="flex items-center justify-between">
+                  <label className="font-semibold text-xs text-[#1D1D1F]">Collection Cover Image (Cloudinary)</label>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMediaPickerTarget("collection");
+                      setIsMediaPickerOpen(true);
+                    }}
+                    className="px-3 py-1 rounded-lg bg-[#0071E3] hover:bg-[#0077ED] text-white text-[11px] font-semibold transition-all cursor-pointer"
+                  >
+                    Select from Cloudinary Library
+                  </button>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-white border border-[#E5E7EB] overflow-hidden relative shrink-0">
+                    <Image
+                      src={newCollectionForm.image}
+                      alt="Collection preview"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    value={newCollectionForm.image}
+                    onChange={(e) =>
+                      setNewCollectionForm({ ...newCollectionForm, image: e.target.value })
+                    }
+                    placeholder="https://res.cloudinary.com/... or public ID"
+                    className="flex-1 h-9 px-3 rounded-xl bg-white border border-[#E5E7EB] text-xs font-mono text-[#1D1D1F]"
+                  />
+                </div>
+              </div>
+
               <div className="pt-2 flex items-center justify-end gap-2">
                 <button
                   type="button"
@@ -2209,6 +2301,30 @@ function AdminDashboardInner() {
           setIsProductModalOpen(false);
         }}
         onKeepEditing={() => setShowUnsavedWarning(false)}
+      />
+
+      {/* ========================================================= */}
+      {/* CLOUDINARY MEDIA PICKER MODAL */}
+      {/* ========================================================= */}
+      <MediaPickerModal
+        isOpen={isMediaPickerOpen}
+        onClose={() => setIsMediaPickerOpen(false)}
+        onSelect={(url) => {
+          if (mediaPickerTarget === "product") {
+            setProductFormDirty(true);
+            setProductForm((prev) => ({
+              ...prev,
+              image: url,
+            }));
+            success("Image Selected", "Cloudinary image assigned to product.");
+          } else {
+            setNewCollectionForm((prev) => ({
+              ...prev,
+              image: url,
+            }));
+            success("Image Selected", "Cloudinary image assigned to collection.");
+          }
+        }}
       />
     </div>
   );
