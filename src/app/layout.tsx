@@ -1,9 +1,9 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { BackToTop } from "@/components/layout/BackToTop";
+import { StorefrontShell } from "@/components/layout/StorefrontShell";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { NetworkStatusProvider } from "@/components/providers/NetworkStatusProvider";
+import { RouteProgressLoader } from "@/components/ui/RouteProgressLoader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -49,13 +49,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#1D1D1F] antialiased">
-        <SmoothScrollProvider>
-          <AnnouncementBar />
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <BackToTop />
-        </SmoothScrollProvider>
+        <NetworkStatusProvider>
+          <Suspense fallback={null}>
+            <RouteProgressLoader />
+          </Suspense>
+          <SmoothScrollProvider>
+            <StorefrontShell>{children}</StorefrontShell>
+          </SmoothScrollProvider>
+        </NetworkStatusProvider>
       </body>
     </html>
   );

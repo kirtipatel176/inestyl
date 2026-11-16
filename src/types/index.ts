@@ -123,6 +123,154 @@ export interface Product {
   // SEO
   metaTitle?: string;
   metaDescription?: string;
+
+  // Publishing Workflow & Lifecycle
+  status?: "draft" | "published" | "scheduled" | "archived";
+  publishedAt?: string;
+  scheduledPublishDate?: string;
+
+  // Media Enhancements
+  hasVideo?: boolean;
+  videoUrl?: string;
+
+  // Change History / Audit
+  changeHistory?: ProductChangeHistoryItem[];
+}
+
+export interface ProductChangeHistoryItem {
+  id: string;
+  timestamp: string;
+  author: string;
+  field: string;
+  from?: any;
+  to?: any;
+  summary: string;
+}
+
+export interface NavigationLink {
+  id: string;
+  label: string;
+  href: string;
+  badge?: string;
+  visible: boolean;
+  order: number;
+  openInNewTab?: boolean;
+}
+
+export interface MegaMenuSection {
+  id: string;
+  title: string;
+  links: NavigationLink[];
+  visible: boolean;
+  order: number;
+  featuredCard?: {
+    title: string;
+    description: string;
+    image: string;
+    href: string;
+    cta: string;
+  };
+}
+
+export interface NavigationConfig {
+  header: NavigationLink[];
+  footwearMegaMenu: MegaMenuSection[];
+  clothingMegaMenu: MegaMenuSection[];
+  menMegaMenu: MegaMenuSection[];
+  womenMegaMenu: MegaMenuSection[];
+  collections: NavigationLink[];
+  brands: NavigationLink[];
+  footer: {
+    id: string;
+    title: string;
+    links: NavigationLink[];
+    visible: boolean;
+    order: number;
+  }[];
+}
+
+export interface SizeGuideRow {
+  id: string;
+  [key: string]: string;
+}
+
+export interface SizeGuideTable {
+  id: string;
+  key: "menFootwear" | "womenFootwear" | "unisexFootwear" | "menClothing" | "womenClothing";
+  title: string;
+  category: "footwear" | "clothing";
+  gender: "Men" | "Women" | "Unisex";
+  description: string;
+  measuringTip: string;
+  headers: { key: string; label: string }[];
+  rows: SizeGuideRow[];
+  updatedAt: string;
+  isPublished: boolean;
+}
+
+export interface AnalyticsEvent {
+  id: string;
+  type:
+    | "product_view"
+    | "collection_view"
+    | "brand_view"
+    | "search_query"
+    | "product_enquiry"
+    | "whatsapp_click";
+  targetId?: string;
+  targetName?: string;
+  metadata?: Record<string, any>;
+  timestamp: string;
+}
+
+export interface NotificationItem {
+  id: string;
+  type: "enquiry" | "low_stock" | "out_of_stock" | "banner" | "publication" | "media";
+  title: string;
+  message: string;
+  severity: "info" | "warning" | "alert" | "success";
+  timestamp: string;
+  read: boolean;
+  link?: string;
+}
+
+export interface NotificationSettings {
+  lowStockThreshold: number;
+  alertLowStock: boolean;
+  alertOutOfStock: boolean;
+  alertNewEnquiry: boolean;
+  alertScheduledBanner: boolean;
+  alertProductPublication: boolean;
+  alertFailedUploads: boolean;
+}
+
+export interface AuditLogEntry {
+  id: string;
+  action: string;
+  entity: "Product" | "Collection" | "Brand" | "Navigation" | "SizeGuide" | "Store" | "Backup" | "Enquiry";
+  entityId: string;
+  entityName?: string;
+  author: string;
+  timestamp: string;
+  previousValue?: any;
+  updatedValue?: any;
+  details: string;
+}
+
+export interface BackupSnapshotMeta {
+  id: string;
+  timestamp: string;
+  author: string;
+  reason: string;
+  productsCount: number;
+  sizeKb: number;
+}
+
+export interface HomepageSectionConfig {
+  id: string;
+  label: string;
+  enabled: boolean;
+  order: number;
 }
 
 export interface StoreEnquiry {
@@ -139,5 +287,8 @@ export interface StoreEnquiry {
   message?: string;
   channel: "whatsapp" | "form" | "store_visit";
   status: "New" | "Contacted" | "In Store Visit" | "Resolved";
+  resolutionNotes?: string;
+  resolvedAt?: string;
+  updatedAt?: string;
   createdAt: string;
 }

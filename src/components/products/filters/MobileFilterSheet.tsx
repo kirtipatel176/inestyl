@@ -76,8 +76,8 @@ export function MobileFilterSheet({
   const handleToggleCategory = (cat: string) => {
     setDraft((prev) => ({
       ...prev,
-      categories: prev.categories.includes(cat)
-        ? prev.categories.filter((c) => c !== cat)
+      categories: prev.categories.some((c) => c.toLowerCase() === cat.toLowerCase())
+        ? prev.categories.filter((c) => c.toLowerCase() !== cat.toLowerCase())
         : [...prev.categories, cat],
     }));
   };
@@ -87,7 +87,9 @@ export function MobileFilterSheet({
       const arr = prev.shoeTypes ?? [];
       return {
         ...prev,
-        shoeTypes: arr.includes(st) ? arr.filter((s) => s !== st) : [...arr, st],
+        shoeTypes: arr.some((s) => s.toLowerCase() === st.toLowerCase())
+          ? arr.filter((s) => s.toLowerCase() !== st.toLowerCase())
+          : [...arr, st],
       };
     });
   };
@@ -95,8 +97,8 @@ export function MobileFilterSheet({
   const handleToggleBrand = (brand: string) => {
     setDraft((prev) => ({
       ...prev,
-      brands: prev.brands.includes(brand)
-        ? prev.brands.filter((b) => b !== brand)
+      brands: prev.brands.some((b) => b.toLowerCase() === brand.toLowerCase())
+        ? prev.brands.filter((b) => b.toLowerCase() !== brand.toLowerCase())
         : [...prev.brands, brand],
     }));
   };
@@ -104,8 +106,8 @@ export function MobileFilterSheet({
   const handleToggleGender = (gender: string) => {
     setDraft((prev) => ({
       ...prev,
-      genders: prev.genders.includes(gender)
-        ? prev.genders.filter((g) => g !== gender)
+      genders: prev.genders.some((g) => g.toLowerCase() === gender.toLowerCase())
+        ? prev.genders.filter((g) => g.toLowerCase() !== gender.toLowerCase())
         : [...prev.genders, gender],
     }));
   };
@@ -113,8 +115,8 @@ export function MobileFilterSheet({
   const handleToggleSize = (size: string) => {
     setDraft((prev) => ({
       ...prev,
-      sizes: prev.sizes.includes(size)
-        ? prev.sizes.filter((s) => s !== size)
+      sizes: prev.sizes.some((s) => s.toLowerCase() === size.toLowerCase())
+        ? prev.sizes.filter((s) => s.toLowerCase() !== size.toLowerCase())
         : [...prev.sizes, size],
     }));
   };
@@ -122,8 +124,8 @@ export function MobileFilterSheet({
   const handleToggleColour = (colour: string) => {
     setDraft((prev) => ({
       ...prev,
-      colours: prev.colours.includes(colour)
-        ? prev.colours.filter((c) => c !== colour)
+      colours: prev.colours.some((c) => c.toLowerCase() === colour.toLowerCase())
+        ? prev.colours.filter((c) => c.toLowerCase() !== colour.toLowerCase())
         : [...prev.colours, colour],
     }));
   };
@@ -133,7 +135,9 @@ export function MobileFilterSheet({
       const arr = prev.fits ?? [];
       return {
         ...prev,
-        fits: arr.includes(fit) ? arr.filter((f) => f !== fit) : [...arr, fit],
+        fits: arr.some((f) => f.toLowerCase() === fit.toLowerCase())
+          ? arr.filter((f) => f.toLowerCase() !== fit.toLowerCase())
+          : [...arr, fit],
       };
     });
   };
@@ -143,7 +147,9 @@ export function MobileFilterSheet({
       const arr = prev.sleeves ?? [];
       return {
         ...prev,
-        sleeves: arr.includes(sleeve) ? arr.filter((s) => s !== sleeve) : [...arr, sleeve],
+        sleeves: arr.some((s) => s.toLowerCase() === sleeve.toLowerCase())
+          ? arr.filter((s) => s.toLowerCase() !== sleeve.toLowerCase())
+          : [...arr, sleeve],
       };
     });
   };
@@ -153,7 +159,9 @@ export function MobileFilterSheet({
       const arr = prev.fabrics ?? [];
       return {
         ...prev,
-        fabrics: arr.includes(fabric) ? arr.filter((f) => f !== fabric) : [...arr, fabric],
+        fabrics: arr.some((f) => f.toLowerCase() === fabric.toLowerCase())
+          ? arr.filter((f) => f.toLowerCase() !== fabric.toLowerCase())
+          : [...arr, fabric],
       };
     });
   };
@@ -163,7 +171,9 @@ export function MobileFilterSheet({
       const arr = prev.collections ?? [];
       return {
         ...prev,
-        collections: arr.includes(col) ? arr.filter((c) => c !== col) : [...arr, col],
+        collections: arr.some((c) => c.toLowerCase() === col.toLowerCase())
+          ? arr.filter((c) => c.toLowerCase() !== col.toLowerCase())
+          : [...arr, col],
       };
     });
   };
@@ -171,8 +181,8 @@ export function MobileFilterSheet({
   const handleToggleAvailability = (status: string) => {
     setDraft((prev) => ({
       ...prev,
-      availability: prev.availability.includes(status)
-        ? prev.availability.filter((a) => a !== status)
+      availability: prev.availability.some((a) => a.toLowerCase() === status.toLowerCase())
+        ? prev.availability.filter((a) => a.toLowerCase() !== status.toLowerCase())
         : [...prev.availability, status],
     }));
   };

@@ -1,37 +1,119 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { MessageSquare, MapPin, Clock, Phone, Check } from "lucide-react";
+import { MessageSquare, MapPin, Clock, Phone, Check, AlertCircle, RefreshCw } from "lucide-react";
 import { STORE_DETAILS } from "@/constants";
+import { apiClient } from "@/lib/api-client";
+import { LoadingButton } from "@/components/ui/LoadingButton";
+import { WhatsAppFallbackModal } from "@/components/shared/WhatsAppFallbackModal";
+import { saveFormDraft, getFormDraft, clearFormDraft, generateIdempotencyKey } from "@/lib/form-recovery";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("Product Availability");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isWhatsAppFallbackOpen, setIsWhatsAppFallbackOpen] = useState(false);
+  const [waMessage, setWaMessage] = useState("");
+
+  // Restore draft on mount
+  useEffect(() => {
+    const draft = getFormDraft<{ name: string; phone: string; subject: string; message: string }>("contact_form");
+    if (draft) {
+      if (draft.name) setName(draft.name);
+      if (draft.phone) setPhone(draft.phone);
+      if (draft.subject) setSubject(draft.subject);
+      if (draft.message) setMessage(draft.message);
+    }
+  }, []);
+
+  const handleNameChange = (val: string) => {
+    setName(val);
+    saveFormDraft("contact_form", { name: val, phone, subject, message });
+  };
+  const handlePhoneChange = (val: string) => {
+    setPhone(val);
+    saveFormDraft("contact_form", { name, phone: val, subject, message });
+  };
+  const handleSubjectChange = (val: string) => {
+    setSubject(val);
+    saveFormDraft("contact_form", { name, phone, subject: val, message });
+  };
+  const handleMessageChange = (val: string) => {
+    setMessage(val);
+    saveFormDraft("contact_form", { name, phone, subject, message: val });
+  };
 
   const handleWhatsAppClick = () => {
     const text =
       `Hello iNESTYL OUTLET Kapadwanj,\n\n` +
       `I would like to enquire about store inventory and timings.\n` +
       (name ? `Name: ${name}\n` : "") +
+      `Enquiry Subject: ${subject}\n` +
       `Please let me know if someone from the store team is available.`;
 
+    setWaMessage(text);
     const url = `https://wa.me/${STORE_DETAILS.whatsappNumber}?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank");
+
+    try {
+      const win = window.open(url, "_blank");
+      if (!win || win.closed || typeof win.closed === "undefined") {
+        setIsWhatsAppFallbackOpen(true);
+      }
+    } catch {
+      setIsWhatsAppFallbackOpen(true);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setName("");
-      setPhone("");
-      setMessage("");
-    }, 3000);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const idempotencyKey = generateIdempotencyKey("contact_enquiry");
+
+    const res = await apiClient("/api/enquiries", {
+      method: "POST",
+      body: JSON.stringify({
+        customerName: name,
+        customerPhone: phone,
+        productTitle: `Customer Contact: ${subject}`,
+        productSku: "GENERAL",
+        message,
+        channel: "contact_page",
+        idempotencyKey,
+      }),
+      idempotent: false,
+    });
+
+    setIsSubmitting(false);
+
+    if (res.ok) {
+      trackEvent("product_enquiry", undefined, subject, {
+        customerName: name,
+        customerPhone: phone,
+      });
+
+      clearFormDraft("contact_form");
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setName("");
+        setPhone("");
+        setMessage("");
+      }, 3500);
+    } else {
+      setErrorMessage(
+        res.error?.userMessage || "Unable to send your enquiry. Please try again or use WhatsApp."
+      );
+    }
   };
 
   return (
@@ -45,7 +127,7 @@ export default function ContactPage() {
         <span className="text-[#1D1D1F] font-semibold">Contact</span>
       </nav>
 
-      {/* 2. Main Two-Column Contact Layout (Matching Reference Screenshot) */}
+      {/* 2. Main Two-Column Contact Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
         {/* Left Column: Get in Touch & Actions */}
         <div className="lg:col-span-7 space-y-8">
@@ -64,6 +146,7 @@ export default function ContactPage() {
           {/* Quick Action Pill Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <button
+              type="button"
               onClick={handleWhatsAppClick}
               className="inline-flex items-center gap-2.5 min-h-[44px] px-6 py-2.5 rounded-full bg-[#0071E3] text-white text-sm font-semibold tracking-normal hover:bg-[#0066CC] transition-all shadow-subtle active:scale-98"
             >
@@ -85,6 +168,22 @@ export default function ContactPage() {
               Submit a Product Enquiry
             </h2>
 
+            {errorMessage && (
+              <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setErrorMessage(null)}
+                  className="text-rose-600 hover:text-rose-900 font-bold"
+                >
+                  Dismiss
+                </button>
+              </div>
+            )}
+
             {isSubmitted ? (
               <div className="p-5 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-800 text-sm font-medium flex items-center gap-3">
                 <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />
@@ -104,7 +203,7 @@ export default function ContactPage() {
                       required
                       placeholder="e.g. Rahul Patel"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => handleNameChange(e.target.value)}
                       className="w-full px-4 py-2.5 rounded-lg border border-[#E5E7EB] text-sm text-[#1D1D1F] outline-none focus:border-[#0071E3]"
                     />
                   </div>
@@ -117,7 +216,7 @@ export default function ContactPage() {
                       required
                       placeholder="+91 98765 43210"
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) => handlePhoneChange(e.target.value)}
                       className="w-full px-4 py-2.5 rounded-lg border border-[#E5E7EB] text-sm text-[#1D1D1F] outline-none focus:border-[#0071E3]"
                     />
                   </div>
@@ -129,7 +228,7 @@ export default function ContactPage() {
                   </label>
                   <select
                     value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
+                    onChange={(e) => handleSubjectChange(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-lg border border-[#E5E7EB] text-sm text-[#1D1D1F] outline-none focus:border-[#0071E3] bg-white cursor-pointer"
                   >
                     <option value="Product Availability">Product Size &amp; Stock Availability</option>
@@ -148,17 +247,19 @@ export default function ContactPage() {
                     rows={4}
                     placeholder="Provide sneaker model, denim style or size you are looking for..."
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={(e) => handleMessageChange(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-lg border border-[#E5E7EB] text-sm text-[#1D1D1F] outline-none focus:border-[#0071E3] resize-none"
                   />
                 </div>
 
-                <button
+                <LoadingButton
                   type="submit"
-                  className="w-full min-h-[44px] py-2.5 px-6 rounded-full bg-[#0071E3] text-white text-xs font-semibold tracking-normal hover:bg-[#0066CC] transition-colors flex items-center justify-center shadow-subtle active:scale-98"
+                  isLoading={isSubmitting}
+                  loadingText="Sending Enquiry..."
+                  className="w-full min-h-[44px]"
                 >
                   Send Enquiry to Store
-                </button>
+                </LoadingButton>
               </form>
             )}
           </div>
@@ -241,6 +342,12 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      <WhatsAppFallbackModal
+        isOpen={isWhatsAppFallbackOpen}
+        onClose={() => setIsWhatsAppFallbackOpen(false)}
+        messageText={waMessage}
+      />
     </div>
   );
 }

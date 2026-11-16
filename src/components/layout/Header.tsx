@@ -15,14 +15,38 @@ import { WomenMegaMenu } from "@/components/layout/WomenMegaMenu";
 import { BrandsDropdown } from "@/components/layout/BrandsDropdown";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
 import { STORE_DETAILS } from "@/constants";
+import { NavigationConfig } from "@/types";
 
 export function Header() {
   const pathname = usePathname();
+  const [navigationConfig, setNavigationConfig] = useState<NavigationConfig | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isEnquireOpen, setIsEnquireOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  // Fetch navigation settings from database
+  useEffect(() => {
+    fetch("/api/navigation")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.success && data.navigation) {
+          setNavigationConfig(data.navigation);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const isLinkVisible = (label: string) => {
+    if (!navigationConfig) return true;
+    const item = navigationConfig.header.find(
+      (h) =>
+        h.label.toLowerCase() === label.toLowerCase() ||
+        h.href.toLowerCase().includes(label.toLowerCase())
+    );
+    return item ? item.visible : true;
+  };
 
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -127,177 +151,224 @@ export function Header() {
           {/* 2. CENTER: Desktop Navigation Links (Requirement 1 Structure) */}
           <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1">
             {/* 1. New Arrivals */}
-            <Link
-              href="/new-arrivals"
-              className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
-                isNewArrivalsActive
-                  ? "text-[#1D1D1F] font-semibold"
-                  : "text-[#6E6E73] hover:text-[#1D1D1F]"
-              }`}
-            >
-              <span>New Arrivals</span>
-              {isNewArrivalsActive && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
-              )}
-            </Link>
+            {isLinkVisible("New Arrivals") && (
+              <Link
+                href="/new-arrivals"
+                className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
+                  isNewArrivalsActive
+                    ? "text-[#1D1D1F] font-semibold"
+                    : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                }`}
+              >
+                <span>New Arrivals</span>
+                {isNewArrivalsActive && (
+                  <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
+                )}
+              </Link>
+            )}
 
             {/* 2. Men (Mega Menu) */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleDropdownHover("men")}
-            >
-              <Link
-                href="/men"
-                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
-                  isMenActive || activeDropdown === "men"
-                    ? "text-[#1D1D1F] font-semibold"
-                    : "text-[#6E6E73] hover:text-[#1D1D1F]"
-                }`}
+            {isLinkVisible("Men") && (
+              <div
+                className="relative"
+                onMouseEnter={() => handleDropdownHover("men")}
               >
-                <span>Men</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
-                    activeDropdown === "men" ? "rotate-180 text-[#0071E3]" : ""
+                <Link
+                  href="/men"
+                  className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
+                    isMenActive || activeDropdown === "men"
+                      ? "text-[#1D1D1F] font-semibold"
+                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
                   }`}
-                />
-              </Link>
-              {isMenActive && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
-              )}
-            </div>
+                >
+                  <span>Men</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
+                      activeDropdown === "men" ? "rotate-180 text-[#0071E3]" : ""
+                    }`}
+                  />
+                </Link>
+                {isMenActive && (
+                  <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
+                )}
+              </div>
+            )}
 
             {/* 3. Women (Mega Menu) */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleDropdownHover("women")}
-            >
-              <Link
-                href="/women"
-                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
-                  isWomenActive || activeDropdown === "women"
-                    ? "text-[#1D1D1F] font-semibold"
-                    : "text-[#6E6E73] hover:text-[#1D1D1F]"
-                }`}
+            {isLinkVisible("Women") && (
+              <div
+                className="relative"
+                onMouseEnter={() => handleDropdownHover("women")}
               >
-                <span>Women</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
-                    activeDropdown === "women" ? "rotate-180 text-[#0071E3]" : ""
+                <Link
+                  href="/women"
+                  className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
+                    isWomenActive || activeDropdown === "women"
+                      ? "text-[#1D1D1F] font-semibold"
+                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
                   }`}
-                />
-              </Link>
-              {isWomenActive && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
-              )}
-            </div>
+                >
+                  <span>Women</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
+                      activeDropdown === "women" ? "rotate-180 text-[#0071E3]" : ""
+                    }`}
+                  />
+                </Link>
+                {isWomenActive && (
+                  <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
+                )}
+              </div>
+            )}
 
             {/* 4. Shoes (Mega Menu) */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleDropdownHover("shoes")}
-            >
-              <Link
-                href="/shoes"
-                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
-                  isShoesActive || activeDropdown === "shoes"
-                    ? "text-[#1D1D1F] font-semibold"
-                    : "text-[#6E6E73] hover:text-[#1D1D1F]"
-                }`}
+            {isLinkVisible("Shoes") && (
+              <div
+                className="relative"
+                onMouseEnter={() => handleDropdownHover("shoes")}
               >
-                <span>Shoes</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
-                    activeDropdown === "shoes" ? "rotate-180 text-[#0071E3]" : ""
+                <Link
+                  href="/shoes"
+                  className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
+                    isShoesActive || activeDropdown === "shoes"
+                      ? "text-[#1D1D1F] font-semibold"
+                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
                   }`}
-                />
-              </Link>
-              {isShoesActive && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
-              )}
-            </div>
+                >
+                  <span>Shoes</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
+                      activeDropdown === "shoes" ? "rotate-180 text-[#0071E3]" : ""
+                    }`}
+                  />
+                </Link>
+                {isShoesActive && (
+                  <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
+                )}
+              </div>
+            )}
 
             {/* 5. Clothing (Mega Menu) */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleDropdownHover("clothing")}
-            >
-              <Link
-                href="/clothing"
-                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
-                  isClothingActive || activeDropdown === "clothing"
-                    ? "text-[#1D1D1F] font-semibold"
-                    : "text-[#6E6E73] hover:text-[#1D1D1F]"
-                }`}
+            {isLinkVisible("Clothing") && (
+              <div
+                className="relative"
+                onMouseEnter={() => handleDropdownHover("clothing")}
               >
-                <span>Clothing</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
-                    activeDropdown === "clothing" ? "rotate-180 text-[#0071E3]" : ""
+                <Link
+                  href="/clothing"
+                  className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
+                    isClothingActive || activeDropdown === "clothing"
+                      ? "text-[#1D1D1F] font-semibold"
+                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
                   }`}
-                />
-              </Link>
-              {isClothingActive && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
-              )}
-            </div>
+                >
+                  <span>Clothing</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
+                      activeDropdown === "clothing" ? "rotate-180 text-[#0071E3]" : ""
+                    }`}
+                  />
+                </Link>
+                {isClothingActive && (
+                  <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
+                )}
+              </div>
+            )}
 
             {/* 6. Collections */}
-            <Link
-              href="/collections"
-              className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
-                isCollectionsActive
-                  ? "text-[#1D1D1F] font-semibold"
-                  : "text-[#6E6E73] hover:text-[#1D1D1F]"
-              }`}
-            >
-              <span>Collections</span>
-              {isCollectionsActive && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
-              )}
-            </Link>
-
-            {/* 7. Brands (Dropdown) */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleDropdownHover("brands")}
-            >
+            {isLinkVisible("Collections") && (
               <Link
-                href="/brands"
-                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
-                  isBrandsActive || activeDropdown === "brands"
+                href="/collections"
+                className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
+                  isCollectionsActive
                     ? "text-[#1D1D1F] font-semibold"
                     : "text-[#6E6E73] hover:text-[#1D1D1F]"
                 }`}
               >
-                <span>Brands</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
-                    activeDropdown === "brands" ? "rotate-180 text-[#0071E3]" : ""
-                  }`}
-                />
+                <span>Collections</span>
+                {isCollectionsActive && (
+                  <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
+                )}
               </Link>
-              {isBrandsActive && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
-              )}
-            </div>
+            )}
+
+            {/* 7. Brands (Dropdown) */}
+            {isLinkVisible("Brands") && (
+              <div
+                className="relative"
+                onMouseEnter={() => handleDropdownHover("brands")}
+              >
+                <Link
+                  href="/brands"
+                  className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
+                    isBrandsActive || activeDropdown === "brands"
+                      ? "text-[#1D1D1F] font-semibold"
+                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                  }`}
+                >
+                  <span>Brands</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 text-[#86868B] transition-transform duration-200 ${
+                      activeDropdown === "brands" ? "rotate-180 text-[#0071E3]" : ""
+                    }`}
+                  />
+                </Link>
+                {isBrandsActive && (
+                  <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
+                )}
+              </div>
+            )}
 
             {/* 8. Our Label */}
-            <Link
-              href="/our-label"
-              className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
-                isOurLabelActive
-                  ? "text-[#1D1D1F] font-semibold"
-                  : "text-[#6E6E73] hover:text-[#1D1D1F]"
-              }`}
-            >
-              <span className="flex items-center gap-1">
-                <span>Our Label</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0071E3]" />
-              </span>
-              {isOurLabelActive && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
-              )}
-            </Link>
+            {isLinkVisible("Our Label") && (
+              <Link
+                href="/our-label"
+                className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
+                  isOurLabelActive
+                    ? "text-[#1D1D1F] font-semibold"
+                    : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                }`}
+              >
+                <span className="flex items-center gap-1">
+                  <span>Our Label</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0071E3]" />
+                </span>
+                {isOurLabelActive && (
+                  <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
+                )}
+              </Link>
+            )}
+
+            {/* 9. Dynamic Custom Navigation Links configured by Admin */}
+            {navigationConfig?.header
+              .filter(
+                (h) =>
+                  h.visible &&
+                  ![
+                    "men",
+                    "women",
+                    "shoes",
+                    "clothing",
+                    "collections",
+                    "brands",
+                    "our label",
+                    "new arrivals",
+                  ].includes(h.label.toLowerCase())
+              )
+              .map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium text-[#6E6E73] hover:text-[#1D1D1F] transition-colors flex items-center gap-1"
+                >
+                  <span>{item.label}</span>
+                  {item.badge && (
+                    <span className="text-[9px] bg-blue-50 text-[#0071E3] font-bold px-1.5 py-0.5 rounded">
+                      {item.badge}
+                    </span>
+                  )}
+                </Link>
+              ))}
           </nav>
 
           {/* 3. RIGHT ACTIONS: Search, Contact Us, WhatsApp & Enquire */}

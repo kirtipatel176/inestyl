@@ -33,13 +33,14 @@ export function AvailabilityFilter({
 
       <div className="space-y-1.5">
         {AVAILABILITY_OPTIONS.map((status) => {
-          const isSelected = selectedAvailability.includes(status);
-          const isAvailable = status === "In Stock" || status === "Limited Stock";
+          const isSelected = selectedAvailability.some(
+            (a) => a.toLowerCase() === status.toLowerCase()
+          );
 
           return (
             <label
               key={status}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-colors ${
+              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer select-none transition-colors focus-within:ring-2 focus-within:ring-[#0071E3] focus-within:ring-offset-1 ${
                 isSelected
                   ? "bg-[#0071E3]/10 text-[#0071E3] font-medium"
                   : "text-[#1D1D1F] hover:bg-[#F5F5F7]"
@@ -47,6 +48,7 @@ export function AvailabilityFilter({
             >
               <div className="flex items-center gap-2.5">
                 <div
+                  aria-hidden="true"
                   className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${
                     isSelected
                       ? "bg-[#0071E3] border-[#0071E3] text-white"
@@ -57,15 +59,26 @@ export function AvailabilityFilter({
                 </div>
                 <span>{status}</span>
               </div>
-              <span
-                className={`w-2 h-2 rounded-full ${
-                  status === "In Stock"
-                    ? "bg-emerald-500"
-                    : status === "Limited Stock"
-                    ? "bg-amber-500"
-                    : "bg-neutral-400"
-                }`}
-              />
+              <div className="flex items-center gap-2">
+                <span
+                  className={`w-2 h-2 rounded-full ${
+                    status === "In Stock"
+                      ? "bg-emerald-500"
+                      : status === "Limited Stock"
+                      ? "bg-amber-500"
+                      : "bg-neutral-400"
+                  }`}
+                  aria-hidden="true"
+                />
+                <input
+                  type="checkbox"
+                  name="availability"
+                  value={status}
+                  checked={isSelected}
+                  onChange={() => onToggleAvailability(status)}
+                  className="sr-only"
+                />
+              </div>
             </label>
           );
         })}

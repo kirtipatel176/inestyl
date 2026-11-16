@@ -329,6 +329,16 @@ export function useProductFilters({
     (items: ProductItem[], criteria: FilterState) => {
       let result = [...items];
 
+      // 0. Publishing Workflow: Never show unpublished, draft, or archived products on storefront
+      const now = new Date().toISOString();
+      result = result.filter((p) => {
+        if (p.status === "draft" || p.status === "archived") return false;
+        if (p.status === "scheduled" && p.scheduledPublishDate) {
+          return p.scheduledPublishDate <= now;
+        }
+        return true;
+      });
+
       // 1. Department Filter
       if (resolvedDept === "footwear") {
         result = result.filter((p) => p.type === "footwear");
@@ -560,9 +570,9 @@ export function useProductFilters({
   const toggleCategory = useCallback(
     (cat: string) => {
       setFilters((prev) => {
-        const exists = prev.categories.includes(cat);
+        const exists = prev.categories.some((c) => c.toLowerCase() === cat.toLowerCase());
         const nextCategories = exists
-          ? prev.categories.filter((c) => c !== cat)
+          ? prev.categories.filter((c) => c.toLowerCase() !== cat.toLowerCase())
           : [...prev.categories, cat];
         const next = { ...prev, categories: nextCategories };
         syncToUrl(next);
@@ -575,9 +585,9 @@ export function useProductFilters({
   const toggleShoeType = useCallback(
     (st: string) => {
       setFilters((prev) => {
-        const exists = prev.shoeTypes.includes(st);
+        const exists = prev.shoeTypes.some((item) => item.toLowerCase() === st.toLowerCase());
         const nextShoeTypes = exists
-          ? prev.shoeTypes.filter((item) => item !== st)
+          ? prev.shoeTypes.filter((item) => item.toLowerCase() !== st.toLowerCase())
           : [...prev.shoeTypes, st];
         const next = { ...prev, shoeTypes: nextShoeTypes };
         syncToUrl(next);
@@ -590,9 +600,9 @@ export function useProductFilters({
   const toggleClothingCategory = useCallback(
     (cc: string) => {
       setFilters((prev) => {
-        const exists = prev.clothingCategories.includes(cc);
+        const exists = prev.clothingCategories.some((item) => item.toLowerCase() === cc.toLowerCase());
         const nextClothingCategories = exists
-          ? prev.clothingCategories.filter((item) => item !== cc)
+          ? prev.clothingCategories.filter((item) => item.toLowerCase() !== cc.toLowerCase())
           : [...prev.clothingCategories, cc];
         const next = { ...prev, clothingCategories: nextClothingCategories };
         syncToUrl(next);
@@ -605,9 +615,9 @@ export function useProductFilters({
   const toggleBrand = useCallback(
     (brand: string) => {
       setFilters((prev) => {
-        const exists = prev.brands.includes(brand);
+        const exists = prev.brands.some((b) => b.toLowerCase() === brand.toLowerCase());
         const nextBrands = exists
-          ? prev.brands.filter((b) => b !== brand)
+          ? prev.brands.filter((b) => b.toLowerCase() !== brand.toLowerCase())
           : [...prev.brands, brand];
         const next = { ...prev, brands: nextBrands };
         syncToUrl(next);
@@ -620,9 +630,9 @@ export function useProductFilters({
   const toggleGender = useCallback(
     (gender: string) => {
       setFilters((prev) => {
-        const exists = prev.genders.includes(gender);
+        const exists = prev.genders.some((g) => g.toLowerCase() === gender.toLowerCase());
         const nextGenders = exists
-          ? prev.genders.filter((g) => g !== gender)
+          ? prev.genders.filter((g) => g.toLowerCase() !== gender.toLowerCase())
           : [...prev.genders, gender];
         const next = { ...prev, genders: nextGenders };
         syncToUrl(next);
@@ -635,9 +645,9 @@ export function useProductFilters({
   const toggleSize = useCallback(
     (size: string) => {
       setFilters((prev) => {
-        const exists = prev.sizes.includes(size);
+        const exists = prev.sizes.some((s) => s.toLowerCase() === size.toLowerCase());
         const nextSizes = exists
-          ? prev.sizes.filter((s) => s !== size)
+          ? prev.sizes.filter((s) => s.toLowerCase() !== size.toLowerCase())
           : [...prev.sizes, size];
         const next = { ...prev, sizes: nextSizes };
         syncToUrl(next);
@@ -650,9 +660,9 @@ export function useProductFilters({
   const toggleColour = useCallback(
     (colour: string) => {
       setFilters((prev) => {
-        const exists = prev.colours.includes(colour);
+        const exists = prev.colours.some((c) => c.toLowerCase() === colour.toLowerCase());
         const nextColours = exists
-          ? prev.colours.filter((c) => c !== colour)
+          ? prev.colours.filter((c) => c.toLowerCase() !== colour.toLowerCase())
           : [...prev.colours, colour];
         const next = { ...prev, colours: nextColours };
         syncToUrl(next);
@@ -665,9 +675,9 @@ export function useProductFilters({
   const toggleFit = useCallback(
     (fit: string) => {
       setFilters((prev) => {
-        const exists = prev.fits.includes(fit);
+        const exists = prev.fits.some((f) => f.toLowerCase() === fit.toLowerCase());
         const nextFits = exists
-          ? prev.fits.filter((f) => f !== fit)
+          ? prev.fits.filter((f) => f.toLowerCase() !== fit.toLowerCase())
           : [...prev.fits, fit];
         const next = { ...prev, fits: nextFits };
         syncToUrl(next);
@@ -680,9 +690,9 @@ export function useProductFilters({
   const toggleSleeve = useCallback(
     (sleeve: string) => {
       setFilters((prev) => {
-        const exists = prev.sleeves.includes(sleeve);
+        const exists = prev.sleeves.some((s) => s.toLowerCase() === sleeve.toLowerCase());
         const nextSleeves = exists
-          ? prev.sleeves.filter((s) => s !== sleeve)
+          ? prev.sleeves.filter((s) => s.toLowerCase() !== sleeve.toLowerCase())
           : [...prev.sleeves, sleeve];
         const next = { ...prev, sleeves: nextSleeves };
         syncToUrl(next);
@@ -695,9 +705,9 @@ export function useProductFilters({
   const toggleFabric = useCallback(
     (fabric: string) => {
       setFilters((prev) => {
-        const exists = prev.fabrics.includes(fabric);
+        const exists = prev.fabrics.some((f) => f.toLowerCase() === fabric.toLowerCase());
         const nextFabrics = exists
-          ? prev.fabrics.filter((f) => f !== fabric)
+          ? prev.fabrics.filter((f) => f.toLowerCase() !== fabric.toLowerCase())
           : [...prev.fabrics, fabric];
         const next = { ...prev, fabrics: nextFabrics };
         syncToUrl(next);
@@ -710,9 +720,9 @@ export function useProductFilters({
   const toggleCollection = useCallback(
     (col: string) => {
       setFilters((prev) => {
-        const exists = prev.collections.includes(col);
+        const exists = prev.collections.some((c) => c.toLowerCase() === col.toLowerCase());
         const nextCollections = exists
-          ? prev.collections.filter((c) => c !== col)
+          ? prev.collections.filter((c) => c.toLowerCase() !== col.toLowerCase())
           : [...prev.collections, col];
         const next = { ...prev, collections: nextCollections };
         syncToUrl(next);
@@ -725,9 +735,9 @@ export function useProductFilters({
   const toggleAvailability = useCallback(
     (status: string) => {
       setFilters((prev) => {
-        const exists = prev.availability.includes(status);
+        const exists = prev.availability.some((a) => a.toLowerCase() === status.toLowerCase());
         const nextAvailability = exists
-          ? prev.availability.filter((a) => a !== status)
+          ? prev.availability.filter((a) => a.toLowerCase() !== status.toLowerCase())
           : [...prev.availability, status];
         const next = { ...prev, availability: nextAvailability };
         syncToUrl(next);
@@ -804,32 +814,33 @@ export function useProductFilters({
     (chip: ActiveFilterChip) => {
       setFilters((prev) => {
         const next = { ...prev };
+        const key = String(chip.rawKey).toLowerCase();
         if (chip.type === "categories") {
-          next.categories = next.categories.filter((c) => c !== chip.rawKey);
+          next.categories = next.categories.filter((c) => c.toLowerCase() !== key);
         } else if (chip.type === "shoeTypes") {
-          next.shoeTypes = next.shoeTypes.filter((st) => st !== chip.rawKey);
+          next.shoeTypes = next.shoeTypes.filter((st) => st.toLowerCase() !== key);
         } else if (chip.type === "clothingCategories") {
           next.clothingCategories = next.clothingCategories.filter(
-            (cc) => cc !== chip.rawKey
+            (cc) => cc.toLowerCase() !== key
           );
         } else if (chip.type === "brands") {
-          next.brands = next.brands.filter((b) => b !== chip.rawKey);
+          next.brands = next.brands.filter((b) => b.toLowerCase() !== key);
         } else if (chip.type === "genders") {
-          next.genders = next.genders.filter((g) => g !== chip.rawKey);
+          next.genders = next.genders.filter((g) => g.toLowerCase() !== key);
         } else if (chip.type === "sizes") {
-          next.sizes = next.sizes.filter((s) => s !== chip.rawKey);
+          next.sizes = next.sizes.filter((s) => s.toLowerCase() !== key);
         } else if (chip.type === "colours") {
-          next.colours = next.colours.filter((c) => c !== chip.rawKey);
+          next.colours = next.colours.filter((c) => c.toLowerCase() !== key);
         } else if (chip.type === "fits") {
-          next.fits = next.fits.filter((f) => f !== chip.rawKey);
+          next.fits = next.fits.filter((f) => f.toLowerCase() !== key);
         } else if (chip.type === "sleeves") {
-          next.sleeves = next.sleeves.filter((s) => s !== chip.rawKey);
+          next.sleeves = next.sleeves.filter((s) => s.toLowerCase() !== key);
         } else if (chip.type === "fabrics") {
-          next.fabrics = next.fabrics.filter((f) => f !== chip.rawKey);
+          next.fabrics = next.fabrics.filter((f) => f.toLowerCase() !== key);
         } else if (chip.type === "collections") {
-          next.collections = next.collections.filter((c) => c !== chip.rawKey);
+          next.collections = next.collections.filter((c) => c.toLowerCase() !== key);
         } else if (chip.type === "availability") {
-          next.availability = next.availability.filter((a) => a !== chip.rawKey);
+          next.availability = next.availability.filter((a) => a.toLowerCase() !== key);
         } else if (chip.type === "minPrice" || chip.type === "maxPrice") {
           next.minPrice = null;
           next.maxPrice = null;

@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useMemo, Suspense } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { PRODUCTS_DATA, BRANDS_DATA } from "@/constants/mock-data";
 import { ProductCard } from "@/components/products/ProductCard";
+import { trackEvent } from "@/lib/analytics";
 
 function SearchPageContent() {
   const searchParams = useSearchParams();
@@ -16,7 +17,15 @@ function SearchPageContent() {
   const [selectedType, setSelectedType] = useState<string>("all");
 
   const filteredResults = useMemo(() => {
-    let list = [...PRODUCTS_DATA];
+    // Strictly filter out unpublished, draft, or archived products
+    const now = new Date().toISOString();
+    let list = PRODUCTS_DATA.filter((p) => {
+      if (p.status === "draft" || p.status === "archived") return false;
+      if (p.status === "scheduled" && p.scheduledPublishDate && p.scheduledPublishDate > now) {
+        return false;
+      }
+      return true;
+    });
 
     const cleanQ = query.trim().toLowerCase();
     if (cleanQ) {
@@ -40,6 +49,19 @@ function SearchPageContent() {
 
     return list;
   }, [query, selectedBrand, selectedType]);
+
+  // Track search telemetry
+  useEffect(() => {
+    if (!query.trim() || query.length < 2) return;
+    const timer = setTimeout(() => {
+      trackEvent("search_query", undefined, query.trim(), {
+        resultsCount: filteredResults.length,
+        selectedBrand,
+        selectedType,
+      });
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [query, filteredResults.length, selectedBrand, selectedType]);
 
   const popularSearches = [
     "Nike Air Max",

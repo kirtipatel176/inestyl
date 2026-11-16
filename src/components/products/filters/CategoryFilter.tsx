@@ -33,11 +33,13 @@ export function CategoryFilter({
 
       <div className="space-y-1.5 max-h-60 overflow-y-auto pr-1">
         {AVAILABLE_CATEGORIES.map((item) => {
-          const isSelected = selectedCategories.includes(item.value);
+          const isSelected = selectedCategories.some(
+            (c) => c.toLowerCase() === item.value.toLowerCase()
+          );
           return (
             <label
               key={item.value}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-colors ${
+              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer select-none transition-colors focus-within:ring-2 focus-within:ring-[#0071E3] focus-within:ring-offset-1 ${
                 isSelected
                   ? "bg-[#0071E3]/10 text-[#0071E3] font-medium"
                   : "text-[#1D1D1F] hover:bg-[#F5F5F7]"
@@ -45,6 +47,7 @@ export function CategoryFilter({
             >
               <div className="flex items-center gap-2.5">
                 <div
+                  aria-hidden="true"
                   className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${
                     isSelected
                       ? "bg-[#0071E3] border-[#0071E3] text-white"
@@ -55,6 +58,14 @@ export function CategoryFilter({
                 </div>
                 <span>{item.label}</span>
               </div>
+              <input
+                type="checkbox"
+                name="category"
+                value={item.value}
+                checked={isSelected}
+                onChange={() => onToggleCategory(item.value)}
+                className="sr-only"
+              />
             </label>
           );
         })}

@@ -55,11 +55,13 @@ export function BrandFilter({
       {/* Brand Options List */}
       <div className="space-y-1 max-h-56 overflow-y-auto pr-1">
         {filteredBrands.map((brand) => {
-          const isSelected = selectedBrands.includes(brand);
+          const isSelected = selectedBrands.some(
+            (b) => b.toLowerCase() === brand.toLowerCase()
+          );
           return (
             <label
               key={brand}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-colors ${
+              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer select-none transition-colors focus-within:ring-2 focus-within:ring-[#0071E3] focus-within:ring-offset-1 ${
                 isSelected
                   ? "bg-[#0071E3]/10 text-[#0071E3] font-medium"
                   : "text-[#1D1D1F] hover:bg-[#F5F5F7]"
@@ -67,6 +69,7 @@ export function BrandFilter({
             >
               <div className="flex items-center gap-2.5">
                 <div
+                  aria-hidden="true"
                   className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${
                     isSelected
                       ? "bg-[#0071E3] border-[#0071E3] text-white"
@@ -77,6 +80,14 @@ export function BrandFilter({
                 </div>
                 <span>{brand}</span>
               </div>
+              <input
+                type="checkbox"
+                name="brand"
+                value={brand}
+                checked={isSelected}
+                onChange={() => onToggleBrand(brand)}
+                className="sr-only"
+              />
             </label>
           );
         })}

@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Search, X } from "lucide-react";
+import { Search, X, Loader2, ShoppingBag, ArrowRight } from "lucide-react";
 import { PRODUCTS_DATA, BRANDS_DATA } from "@/constants/mock-data";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import { getOptimizedImagePath } from "@/lib/images";
+import { trackEvent } from "@/lib/analytics";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -16,6 +17,7 @@ interface SearchModalProps {
 
 export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [query, setQuery] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
   const { stop: stopScroll, start: startScroll } = useSmoothScroll();
 
   // Lock background Lenis smooth scroll while modal is active
@@ -41,13 +43,46 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
+  // Simulate search debounce state
+  useEffect(() => {
+    if (!query) {
+      setIsSearching(false);
+      return;
+    }
+    setIsSearching(true);
+    const timer = setTimeout(() => {
+      setIsSearching(false);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [query]);
+
+  // Track search query with debounce
+  useEffect(() => {
+    if (!query.trim() || query.length < 2) return;
+    const timer = setTimeout(() => {
+      trackEvent("search_query", undefined, query.trim(), {
+        resultsCount: filteredProducts.length,
+      });
+    }, 600);
+    return () => clearTimeout(timer);
+  }, [query]);
+
   const filteredProducts = query.trim()
-    ? PRODUCTS_DATA.filter(
-      (p) =>
-        p.title.toLowerCase().includes(query.toLowerCase()) ||
-        p.brand.toLowerCase().includes(query.toLowerCase()) ||
-        p.category.toLowerCase().includes(query.toLowerCase())
-    )
+    ? PRODUCTS_DATA.filter((p) => {
+        // Exclude unpublished/draft/archived products from storefront search
+        if (p.status === "draft" || p.status === "archived") return false;
+        if (p.status === "scheduled" && p.scheduledPublishDate && p.scheduledPublishDate > new Date().toISOString()) {
+          return false;
+        }
+
+        const q = query.toLowerCase();
+        return (
+          p.title.toLowerCase().includes(q) ||
+          p.brand.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.sku.toLowerCase().includes(q)
+        );
+      })
     : [];
 
   return (
@@ -73,7 +108,11 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           >
             {/* Search Input Bar */}
             <div className="flex items-center px-6 py-4 border-b border-[#E5E7EB]">
-              <Search className="w-5 h-5 text-[#0071E3] mr-3 flex-shrink-0" />
+              {isSearching ? (
+                <Loader2 className="w-5 h-5 text-[#0071E3] mr-3 animate-spin shrink-0" />
+              ) : (
+                <Search className="w-5 h-5 text-[#0071E3] mr-3 shrink-0" />
+              )}
               <input
                 type="text"
                 placeholder="Search sneakers, apparel, brands (e.g. Nike, Air Max, 501)..."
@@ -82,9 +121,21 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 autoFocus
                 className="w-full bg-transparent text-[#1D1D1F] placeholder:text-[#86868B] text-base outline-none font-body"
               />
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  className="p-1 text-[#86868B] hover:text-[#1D1D1F] rounded-full mr-1 text-xs"
+                  title="Clear input"
+                >
+                  Clear
+                </button>
+              )}
               <button
+                type="button"
                 onClick={onClose}
-                className="p-1.5 text-[#86868B] hover:text-[#1D1D1F] rounded-full hover:bg-black/5 transition-colors ml-2"
+                className="p-1.5 text-[#86868B] hover:text-[#1D1D1F] rounded-full hover:bg-black/5 transition-colors ml-1"
+                aria-label="Close search"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -101,6 +152,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     {BRANDS_DATA.map((brand) => (
                       <button
                         key={brand.id}
+                        type="button"
                         onClick={() => setQuery(brand.name)}
                         className="px-3.5 py-1.5 rounded-full border border-[#E5E7EB] text-xs font-medium text-[#1D1D1F] hover:border-[#0071E3] hover:text-[#0071E3] hover:bg-[#F5F5F7] transition-all active:scale-98"
                       >
@@ -124,6 +176,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     ].map((cat) => (
                       <button
                         key={cat}
+                        type="button"
                         onClick={() => setQuery(cat)}
                         className="px-3.5 py-1.5 rounded-full bg-[#F5F5F7] text-xs font-medium text-[#1D1D1F] hover:bg-[#E5E7EB] transition-colors"
                       >
@@ -150,10 +203,12 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       className="flex items-center justify-between p-3 rounded-lg hover:bg-[#F5F5F7] transition-colors group"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="relative w-14 h-14 bg-[#F5F5F7] border border-[#E5E7EB] rounded-lg overflow-hidden flex-shrink-0">
-                          <Image
+                        <div className="relative w-14 h-14 bg-[#F5F5F7] border border-[#E5E7EB] rounded-lg overflow-hidden shrink-0">
+                          <ImageWithFallback
                             src={getOptimizedImagePath(product.image, "thumb")}
                             alt={product.title}
+                            fallbackTitle={product.title}
+                            fallbackBrand={product.brand}
                             fill
                             sizes="56px"
                             loading="lazy"
@@ -184,8 +239,35 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     </Link>
                   ))
                 ) : (
-                  <div className="text-center py-10 text-[#86868B] text-sm">
-                    No products found matching &quot;{query}&quot;. Try searching for Nike, Puma, Levi&apos;s or Jeans.
+                  <div className="text-center py-12 px-6 space-y-4">
+                    <div className="w-12 h-12 rounded-full bg-[#F5F5F7] border border-[#E5E7EB] flex items-center justify-center text-[#86868B] mx-auto">
+                      <ShoppingBag className="w-6 h-6" />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-sm font-semibold text-[#1D1D1F]">
+                        No products found matching &quot;{query}&quot;
+                      </p>
+                      <p className="text-xs text-[#86868B] max-w-sm mx-auto">
+                        Check your spelling, try broader search keywords like &quot;Nike&quot;, &quot;Shoes&quot;, or browse our complete catalogue.
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-center gap-3 pt-2">
+                      <button
+                        type="button"
+                        onClick={() => setQuery("")}
+                        className="px-4 py-2 rounded-full bg-[#F5F5F7] hover:bg-[#E5E7EB] text-xs font-semibold text-[#1D1D1F]"
+                      >
+                        Clear Search
+                      </button>
+                      <Link
+                        href="/products"
+                        onClick={onClose}
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#0071E3] hover:bg-[#0066CC] text-white text-xs font-semibold"
+                      >
+                        <span>Browse All Products</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>

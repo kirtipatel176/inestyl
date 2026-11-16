@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ProductItem, BrandItem } from "@/constants/mock-data";
 import { useProductFilters } from "@/hooks/useProductFilters";
 import { ProductFilterToolbar } from "@/components/products/filters/ProductFilterToolbar";
 import { ProductCard } from "@/components/products/ProductCard";
 import { EmptyFilterResults } from "@/components/products/filters/EmptyFilterResults";
+import { trackEvent } from "@/lib/analytics";
 
 interface BrandListingClientProps {
   brand: BrandItem;
@@ -14,6 +15,14 @@ interface BrandListingClientProps {
 
 export function BrandListingClient({ brand, initialProducts }: BrandListingClientProps) {
   const [visibleCount, setVisibleCount] = useState(12);
+
+  // Track brand view
+  useEffect(() => {
+    trackEvent("brand_view", brand.slug, brand.name, {
+      category: brand.category,
+      itemCount: initialProducts.length,
+    });
+  }, [brand.slug, brand.name, brand.category, initialProducts.length]);
 
   const {
     filters,

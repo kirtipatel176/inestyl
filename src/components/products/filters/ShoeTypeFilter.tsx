@@ -33,11 +33,13 @@ export function ShoeTypeFilter({
 
       <div className="space-y-1 max-h-56 overflow-y-auto pr-1">
         {SHOE_TYPES.map((type) => {
-          const isSelected = selectedShoeTypes.includes(type);
+          const isSelected = selectedShoeTypes.some(
+            (st) => st.toLowerCase() === type.toLowerCase()
+          );
           return (
             <label
               key={type}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-colors ${
+              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer select-none transition-colors focus-within:ring-2 focus-within:ring-[#0071E3] focus-within:ring-offset-1 ${
                 isSelected
                   ? "bg-[#0071E3]/10 text-[#0071E3] font-medium"
                   : "text-[#1D1D1F] hover:bg-[#F5F5F7]"
@@ -45,6 +47,7 @@ export function ShoeTypeFilter({
             >
               <div className="flex items-center gap-2.5">
                 <div
+                  aria-hidden="true"
                   className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${
                     isSelected
                       ? "bg-[#0071E3] border-[#0071E3] text-white"
@@ -55,6 +58,14 @@ export function ShoeTypeFilter({
                 </div>
                 <span>{type}</span>
               </div>
+              <input
+                type="checkbox"
+                name="shoeType"
+                value={type}
+                checked={isSelected}
+                onChange={() => onToggleShoeType(type)}
+                className="sr-only"
+              />
             </label>
           );
         })}

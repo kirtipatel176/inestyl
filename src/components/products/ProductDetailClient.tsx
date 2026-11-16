@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   MessageSquare,
@@ -12,10 +11,15 @@ import {
   Ruler,
   AlertCircle,
   X,
+  Video,
 } from "lucide-react";
 import { ProductItem } from "@/constants/mock-data";
 import { STORE_DETAILS } from "@/constants";
 import { getOptimizedImagePath } from "@/lib/images";
+import { trackEvent } from "@/lib/analytics";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
+import { VideoPlaceholder } from "@/components/ui/VideoPlaceholder";
+import { WhatsAppFallbackModal } from "@/components/shared/WhatsAppFallbackModal";
 
 interface ProductDetailClientProps {
   product: ProductItem;
@@ -33,6 +37,8 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   );
   const [copiedLink, setCopiedLink] = useState(false);
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
+  const [isWhatsAppFallbackOpen, setIsWhatsAppFallbackOpen] = useState(false);
+  const [waMessage, setWaMessage] = useState("");
 
   const isFootwear = product.type === "footwear";
 
@@ -44,7 +50,25 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const isSizeInStock = product.inStockSizes.includes(selectedSize);
   const stockQuantity = matchedVariant?.stockQuantity ?? (isSizeInStock ? 2 : 0);
 
+  // Track product view on mount
+  useEffect(() => {
+    trackEvent("product_view", product.id, product.title, {
+      sku: product.sku,
+      brand: product.brand,
+      category: product.category,
+      price: product.outletPrice,
+    });
+  }, [product.id, product.title, product.sku, product.brand, product.category, product.outletPrice]);
+
   const handleWhatsAppEnquiry = () => {
+    trackEvent("whatsapp_click", product.id, product.title, {
+      sku: product.sku,
+      brand: product.brand,
+      size: selectedSize,
+      colour: selectedColour,
+      price: product.outletPrice,
+    });
+
     const sizeFormat = isFootwear ? `UK ${selectedSize}` : selectedSize;
     const message =
       `Hello iNESTYL OUTLET Kapadwanj,\n\n` +
@@ -60,7 +84,16 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
     const url = `https://wa.me/${STORE_DETAILS.whatsappNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(url, "_blank");
+    setWaMessage(message);
+
+    try {
+      const opened = window.open(url, "_blank");
+      if (!opened || opened.closed || typeof opened.closed === "undefined") {
+        setIsWhatsAppFallbackOpen(true);
+      }
+    } catch {
+      setIsWhatsAppFallbackOpen(true);
+    }
   };
 
   const handleCopyLink = () => {
@@ -91,9 +124,11 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                       : "border-[#E5E7EB] hover:border-[#86868B]"
                   }`}
                 >
-                  <Image
+                  <ImageWithFallback
                     src={getOptimizedImagePath(img, "thumb")}
                     alt={`${product.title} view ${idx + 1}`}
+                    fallbackTitle={product.title}
+                    fallbackBrand={product.brand}
                     fill
                     sizes="80px"
                     loading="lazy"
@@ -131,9 +166,11 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             </button>
 
             <div className="relative w-full h-full">
-              <Image
+              <ImageWithFallback
                 src={getOptimizedImagePath(activeImage, "detail")}
                 alt={product.title}
+                fallbackTitle={product.title}
+                fallbackBrand={product.brand}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 60vw"
@@ -484,6 +521,28 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
         </div>
       </div>
 
+      {/* 2. HD Product Video Showcase Section (when available) */}
+      {(product.hasVideo || product.videoUrl) && (
+        <div className="p-6 sm:p-8 bg-[#FAFAFA] rounded-2xl border border-[#E5E7EB] space-y-4">
+          <div className="flex items-center gap-2 pb-2 border-b border-[#E5E7EB]">
+            <Video className="w-5 h-5 text-[#0071E3]" />
+            <h2 className="font-heading text-lg font-bold text-[#1D1D1F]">
+              4K Product Showcase Video
+            </h2>
+          </div>
+          <p className="text-xs text-[#86868B]">
+            Watch detailed physical craftsmanship, material texture, and 360° store angles recorded directly at our Kapadwanj flagship outlet.
+          </p>
+          <div className="max-w-3xl mx-auto">
+            <VideoPlaceholder
+              videoUrl={product.videoUrl || "/videos/sample-shoe-showcase.mp4"}
+              title={product.title}
+              poster={getOptimizedImagePath(product.image, "detail")}
+            />
+          </div>
+        </div>
+      )}
+
       {/* 3. Interactive Size Guide Modal */}
       {isSizeGuideOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
@@ -571,6 +630,14 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
           </div>
         </div>
       )}
+
+      {/* 4. WhatsApp Fallback Modal */}
+      <WhatsAppFallbackModal
+        isOpen={isWhatsAppFallbackOpen}
+        onClose={() => setIsWhatsAppFallbackOpen(false)}
+        messageText={waMessage}
+        productTitle={product.title}
+      />
     </div>
   );
 }

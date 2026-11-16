@@ -29,11 +29,13 @@ export function FitFilter({ selectedFits, onToggleFit, onClear }: FitFilterProps
 
       <div className="space-y-1">
         {CLOTHING_FITS.map((fit) => {
-          const isSelected = selectedFits.includes(fit);
+          const isSelected = selectedFits.some(
+            (f) => f.toLowerCase() === fit.toLowerCase()
+          );
           return (
             <label
               key={fit}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-colors ${
+              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer select-none transition-colors focus-within:ring-2 focus-within:ring-[#0071E3] focus-within:ring-offset-1 ${
                 isSelected
                   ? "bg-[#0071E3]/10 text-[#0071E3] font-medium"
                   : "text-[#1D1D1F] hover:bg-[#F5F5F7]"
@@ -41,6 +43,7 @@ export function FitFilter({ selectedFits, onToggleFit, onClear }: FitFilterProps
             >
               <div className="flex items-center gap-2.5">
                 <div
+                  aria-hidden="true"
                   className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${
                     isSelected
                       ? "bg-[#0071E3] border-[#0071E3] text-white"
@@ -51,6 +54,14 @@ export function FitFilter({ selectedFits, onToggleFit, onClear }: FitFilterProps
                 </div>
                 <span>{fit}</span>
               </div>
+              <input
+                type="checkbox"
+                name="fit"
+                value={fit}
+                checked={isSelected}
+                onChange={() => onToggleFit(fit)}
+                className="sr-only"
+              />
             </label>
           );
         })}
@@ -85,11 +96,13 @@ export function SleeveFilter({ selectedSleeves, onToggleSleeve, onClear }: Sleev
 
       <div className="space-y-1">
         {SLEEVE_TYPES.map((sleeve) => {
-          const isSelected = selectedSleeves.includes(sleeve);
+          const isSelected = selectedSleeves.some(
+            (s) => s.toLowerCase() === sleeve.toLowerCase()
+          );
           return (
             <label
               key={sleeve}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-colors ${
+              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer select-none transition-colors focus-within:ring-2 focus-within:ring-[#0071E3] focus-within:ring-offset-1 ${
                 isSelected
                   ? "bg-[#0071E3]/10 text-[#0071E3] font-medium"
                   : "text-[#1D1D1F] hover:bg-[#F5F5F7]"
@@ -97,6 +110,7 @@ export function SleeveFilter({ selectedSleeves, onToggleSleeve, onClear }: Sleev
             >
               <div className="flex items-center gap-2.5">
                 <div
+                  aria-hidden="true"
                   className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${
                     isSelected
                       ? "bg-[#0071E3] border-[#0071E3] text-white"
@@ -107,6 +121,14 @@ export function SleeveFilter({ selectedSleeves, onToggleSleeve, onClear }: Sleev
                 </div>
                 <span>{sleeve}</span>
               </div>
+              <input
+                type="checkbox"
+                name="sleeve"
+                value={sleeve}
+                checked={isSelected}
+                onChange={() => onToggleSleeve(sleeve)}
+                className="sr-only"
+              />
             </label>
           );
         })}
@@ -141,11 +163,13 @@ export function FabricFilter({ selectedFabrics, onToggleFabric, onClear }: Fabri
 
       <div className="space-y-1">
         {FABRICS.map((fabric) => {
-          const isSelected = selectedFabrics.includes(fabric);
+          const isSelected = selectedFabrics.some(
+            (fab) => fab.toLowerCase() === fabric.toLowerCase()
+          );
           return (
             <label
               key={fabric}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition-colors ${
+              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs cursor-pointer select-none transition-colors focus-within:ring-2 focus-within:ring-[#0071E3] focus-within:ring-offset-1 ${
                 isSelected
                   ? "bg-[#0071E3]/10 text-[#0071E3] font-medium"
                   : "text-[#1D1D1F] hover:bg-[#F5F5F7]"
@@ -153,6 +177,7 @@ export function FabricFilter({ selectedFabrics, onToggleFabric, onClear }: Fabri
             >
               <div className="flex items-center gap-2.5">
                 <div
+                  aria-hidden="true"
                   className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${
                     isSelected
                       ? "bg-[#0071E3] border-[#0071E3] text-white"
@@ -163,6 +188,14 @@ export function FabricFilter({ selectedFabrics, onToggleFabric, onClear }: Fabri
                 </div>
                 <span>{fabric}</span>
               </div>
+              <input
+                type="checkbox"
+                name="fabric"
+                value={fabric}
+                checked={isSelected}
+                onChange={() => onToggleFabric(fabric)}
+                className="sr-only"
+              />
             </label>
           );
         })}

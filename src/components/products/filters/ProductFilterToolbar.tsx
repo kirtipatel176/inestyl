@@ -148,7 +148,7 @@ export function ProductFilterToolbar({
               <CategoryFilter
                 selectedCategories={filters.categories}
                 onToggleCategory={onToggleCategory}
-                onClear={() => filters.categories.forEach((c) => onToggleCategory(c))}
+                onClear={() => onApplyCompleteState({ ...filters, categories: [] })}
               />
             </FilterPopover>
           )}
@@ -166,7 +166,7 @@ export function ProductFilterToolbar({
               <ShoeTypeFilter
                 selectedShoeTypes={filters.shoeTypes ?? []}
                 onToggleShoeType={onToggleShoeType}
-                onClear={() => (filters.shoeTypes ?? []).forEach((st) => onToggleShoeType(st))}
+                onClear={() => onApplyCompleteState({ ...filters, shoeTypes: [] })}
               />
             </FilterPopover>
           )}
@@ -184,7 +184,7 @@ export function ProductFilterToolbar({
               <CategoryFilter
                 selectedCategories={filters.categories}
                 onToggleCategory={onToggleCategory}
-                onClear={() => filters.categories.forEach((c) => onToggleCategory(c))}
+                onClear={() => onApplyCompleteState({ ...filters, categories: [] })}
               />
             </FilterPopover>
           )}
@@ -201,7 +201,7 @@ export function ProductFilterToolbar({
             <BrandFilter
               selectedBrands={filters.brands}
               onToggleBrand={onToggleBrand}
-              onClear={() => filters.brands.forEach((b) => onToggleBrand(b))}
+              onClear={() => onApplyCompleteState({ ...filters, brands: [] })}
             />
           </FilterPopover>
 
@@ -217,7 +217,7 @@ export function ProductFilterToolbar({
             <GenderFilter
               selectedGenders={filters.genders}
               onToggleGender={onToggleGender}
-              onClear={() => filters.genders.forEach((g) => onToggleGender(g))}
+              onClear={() => onApplyCompleteState({ ...filters, genders: [] })}
             />
           </FilterPopover>
 
@@ -234,7 +234,7 @@ export function ProductFilterToolbar({
               selectedSizes={filters.sizes}
               selectedCategories={filters.categories}
               onToggleSize={onToggleSize}
-              onClear={() => filters.sizes.forEach((s) => onToggleSize(s))}
+              onClear={() => onApplyCompleteState({ ...filters, sizes: [] })}
             />
           </FilterPopover>
 
@@ -250,7 +250,7 @@ export function ProductFilterToolbar({
             <ColourFilter
               selectedColours={filters.colours}
               onToggleColour={onToggleColour}
-              onClear={() => filters.colours.forEach((c) => onToggleColour(c))}
+              onClear={() => onApplyCompleteState({ ...filters, colours: [] })}
             />
           </FilterPopover>
 
@@ -267,7 +267,7 @@ export function ProductFilterToolbar({
               <FitFilter
                 selectedFits={filters.fits ?? []}
                 onToggleFit={onToggleFit}
-                onClear={() => (filters.fits ?? []).forEach((f) => onToggleFit(f))}
+                onClear={() => onApplyCompleteState({ ...filters, fits: [] })}
               />
             </FilterPopover>
           )}
@@ -285,7 +285,7 @@ export function ProductFilterToolbar({
               <SleeveFilter
                 selectedSleeves={filters.sleeves ?? []}
                 onToggleSleeve={onToggleSleeve}
-                onClear={() => (filters.sleeves ?? []).forEach((s) => onToggleSleeve(s))}
+                onClear={() => onApplyCompleteState({ ...filters, sleeves: [] })}
               />
             </FilterPopover>
           )}
@@ -303,7 +303,7 @@ export function ProductFilterToolbar({
               <FabricFilter
                 selectedFabrics={filters.fabrics ?? []}
                 onToggleFabric={onToggleFabric}
-                onClear={() => (filters.fabrics ?? []).forEach((f) => onToggleFabric(f))}
+                onClear={() => onApplyCompleteState({ ...filters, fabrics: [] })}
               />
             </FilterPopover>
           )}
@@ -338,7 +338,7 @@ export function ProductFilterToolbar({
               <CollectionFilter
                 selectedCollections={filters.collections ?? []}
                 onToggleCollection={onToggleCollection}
-                onClear={() => (filters.collections ?? []).forEach((c) => onToggleCollection(c))}
+                onClear={() => onApplyCompleteState({ ...filters, collections: [] })}
               />
             </FilterPopover>
           )}
@@ -355,7 +355,7 @@ export function ProductFilterToolbar({
             <AvailabilityFilter
               selectedAvailability={filters.availability}
               onToggleAvailability={onToggleAvailability}
-              onClear={() => filters.availability.forEach((a) => onToggleAvailability(a))}
+              onClear={() => onApplyCompleteState({ ...filters, availability: [] })}
             />
           </FilterPopover>
         </div>

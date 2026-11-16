@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ProductItem, CollectionItem } from "@/constants/mock-data";
 import { useProductFilters } from "@/hooks/useProductFilters";
@@ -8,6 +8,7 @@ import { ProductFilterToolbar } from "@/components/products/filters/ProductFilte
 import { ProductCard } from "@/components/products/ProductCard";
 import { EmptyFilterResults } from "@/components/products/filters/EmptyFilterResults";
 import { getOptimizedImagePath } from "@/lib/images";
+import { trackEvent } from "@/lib/analytics";
 
 interface CollectionListingClientProps {
   collection: CollectionItem;
@@ -19,6 +20,13 @@ export function CollectionListingClient({
   initialProducts,
 }: CollectionListingClientProps) {
   const [visibleCount, setVisibleCount] = useState(12);
+
+  // Track collection view
+  useEffect(() => {
+    trackEvent("collection_view", collection.slug, collection.title, {
+      itemCount: initialProducts.length,
+    });
+  }, [collection.slug, collection.title, initialProducts.length]);
 
   // Requirement 3: "The Collection filter should not be redundantly displayed when the user is already browsing a single collection."
   const {
