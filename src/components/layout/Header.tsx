@@ -106,7 +106,7 @@ export function Header() {
             : "bg-[#FFFFFF] border-b border-[#E5E7EB]"
         }`}
       >
-        <div className="container-luxury flex items-center justify-between h-[74px]">
+        <div className="container-luxury flex items-center justify-between h-[56px] sm:h-[60px]">
           {/* 1. LEFT: iNESTYL OUTLET Logo */}
           <Link
             href="/"
@@ -117,19 +117,19 @@ export function Header() {
             <Image
               src="/brand/logo-primary-stacked.svg"
               alt="iNESTYL OUTLET"
-              width={145}
-              height={48}
-              className="h-9 md:h-10 w-auto object-contain transition-transform group-hover:scale-102"
+              width={130}
+              height={42}
+              className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-102"
               priority
             />
           </Link>
 
           {/* 2. CENTER: Desktop Navigation Links (Requirement 1 Structure) */}
-          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5">
+          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1">
             {/* 1. New Arrivals */}
             <Link
               href="/new-arrivals"
-              className={`relative px-3 py-2 text-xs 2xl:text-sm font-medium transition-colors ${
+              className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
                 isNewArrivalsActive
                   ? "text-[#1D1D1F] font-semibold"
                   : "text-[#6E6E73] hover:text-[#1D1D1F]"
@@ -137,7 +137,7 @@ export function Header() {
             >
               <span>New Arrivals</span>
               {isNewArrivalsActive && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0071E3] rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
               )}
             </Link>
 
@@ -148,7 +148,7 @@ export function Header() {
             >
               <Link
                 href="/men"
-                className={`flex items-center gap-1 px-3 py-2 text-xs 2xl:text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
                   isMenActive || activeDropdown === "men"
                     ? "text-[#1D1D1F] font-semibold"
                     : "text-[#6E6E73] hover:text-[#1D1D1F]"
@@ -162,7 +162,7 @@ export function Header() {
                 />
               </Link>
               {isMenActive && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0071E3] rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
               )}
             </div>
 
@@ -173,7 +173,7 @@ export function Header() {
             >
               <Link
                 href="/women"
-                className={`flex items-center gap-1 px-3 py-2 text-xs 2xl:text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
                   isWomenActive || activeDropdown === "women"
                     ? "text-[#1D1D1F] font-semibold"
                     : "text-[#6E6E73] hover:text-[#1D1D1F]"
@@ -187,7 +187,7 @@ export function Header() {
                 />
               </Link>
               {isWomenActive && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0071E3] rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
               )}
             </div>
 
@@ -198,7 +198,7 @@ export function Header() {
             >
               <Link
                 href="/shoes"
-                className={`flex items-center gap-1 px-3 py-2 text-xs 2xl:text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
                   isShoesActive || activeDropdown === "shoes"
                     ? "text-[#1D1D1F] font-semibold"
                     : "text-[#6E6E73] hover:text-[#1D1D1F]"
@@ -212,7 +212,7 @@ export function Header() {
                 />
               </Link>
               {isShoesActive && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0071E3] rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
               )}
             </div>
 
@@ -223,7 +223,7 @@ export function Header() {
             >
               <Link
                 href="/clothing"
-                className={`flex items-center gap-1 px-3 py-2 text-xs 2xl:text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
                   isClothingActive || activeDropdown === "clothing"
                     ? "text-[#1D1D1F] font-semibold"
                     : "text-[#6E6E73] hover:text-[#1D1D1F]"
@@ -237,14 +237,14 @@ export function Header() {
                 />
               </Link>
               {isClothingActive && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0071E3] rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
               )}
             </div>
 
             {/* 6. Collections */}
             <Link
               href="/collections"
-              className={`relative px-3 py-2 text-xs 2xl:text-sm font-medium transition-colors ${
+              className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
                 isCollectionsActive
                   ? "text-[#1D1D1F] font-semibold"
                   : "text-[#6E6E73] hover:text-[#1D1D1F]"
@@ -252,7 +252,7 @@ export function Header() {
             >
               <span>Collections</span>
               {isCollectionsActive && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0071E3] rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
               )}
             </Link>
 
@@ -263,7 +263,7 @@ export function Header() {
             >
               <Link
                 href="/brands"
-                className={`flex items-center gap-1 px-3 py-2 text-xs 2xl:text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
                   isBrandsActive || activeDropdown === "brands"
                     ? "text-[#1D1D1F] font-semibold"
                     : "text-[#6E6E73] hover:text-[#1D1D1F]"
@@ -277,14 +277,14 @@ export function Header() {
                 />
               </Link>
               {isBrandsActive && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0071E3] rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
               )}
             </div>
 
             {/* 8. Our Label */}
             <Link
               href="/our-label"
-              className={`relative px-3 py-2 text-xs 2xl:text-sm font-medium transition-colors ${
+              className={`relative px-2.5 2xl:px-3 py-1.5 text-xs 2xl:text-sm font-medium transition-colors ${
                 isOurLabelActive
                   ? "text-[#1D1D1F] font-semibold"
                   : "text-[#6E6E73] hover:text-[#1D1D1F]"
@@ -295,26 +295,26 @@ export function Header() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0071E3]" />
               </span>
               {isOurLabelActive && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#0071E3] rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0071E3] rounded-full" />
               )}
             </Link>
           </nav>
 
           {/* 3. RIGHT ACTIONS: Search, Contact Us, WhatsApp & Enquire */}
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             {/* Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
               aria-label="Search shoes and clothing"
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[#1D1D1F] hover:bg-black/5 transition-colors"
+              className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full flex items-center justify-center text-[#1D1D1F] hover:bg-black/5 transition-colors"
             >
-              <Search className="w-4 h-4 sm:w-5 sm:h-5" />
+              <Search className="w-4 h-4 text-[#1D1D1F]" />
             </button>
 
             {/* Contact Us Link */}
             <Link
               href="/contact"
-              className={`hidden md:inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
+              className={`hidden md:inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
                 isContactActive
                   ? "text-[#0071E3] bg-[#0071E3]/10"
                   : "text-[#1D1D1F] hover:bg-black/5"
@@ -328,16 +328,16 @@ export function Header() {
               onClick={handleWhatsAppAction}
               aria-label="Connect on WhatsApp Concierge"
               title="Chat with Kapadwanj Store Concierge"
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 transition-all text-xs font-semibold"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 transition-all text-xs font-semibold"
             >
-              <MessageCircle className="w-4 h-4 text-[#25D366] fill-[#25D366]" />
+              <MessageCircle className="w-3.5 h-3.5 text-[#25D366] fill-[#25D366]" />
               <span className="hidden sm:inline">WhatsApp</span>
             </button>
 
             {/* Enquire Now Pill Button */}
             <button
               onClick={() => setIsEnquireOpen(true)}
-              className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#0071E3] text-white text-xs font-semibold tracking-normal hover:bg-[#0066CC] transition-all shadow-subtle active:scale-98"
+              className="hidden lg:inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#0071E3] text-white text-xs font-semibold tracking-normal hover:bg-[#0066CC] transition-all shadow-subtle active:scale-98"
             >
               <span>Enquire</span>
             </button>
@@ -346,9 +346,9 @@ export function Header() {
             <button
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open mobile menu"
-              className="xl:hidden w-10 h-10 rounded-full flex items-center justify-center text-[#1D1D1F] hover:bg-black/5 transition-colors"
+              className="xl:hidden w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full flex items-center justify-center text-[#1D1D1F] hover:bg-black/5 transition-colors"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </div>
