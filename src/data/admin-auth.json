@@ -8,15 +8,15 @@
       "status": "active",
       "emailVerified": true,
       "twoFactorEnabled": false,
-      "passwordHash": "cb21c77a32c39a127cf19eeac673349f4b22d699dbe14952a71e63b6323149dc8fa975f2682a58d856e465eb289a17f381b0c191177e5d58460c896ab6039a3a",
-      "passwordSalt": "eda637766530e40be03c12bce50f37e5",
+      "passwordHash": "8fe69cbbd921ceb7614ad5aa9571f9a311d6a2a3a630644b4a65ce0ea52d2939e726d6fb77af5da68d7f5b04961d934b7454f1e49b27caacce73cdf7931a36b8",
+      "passwordSalt": "1de5dbea3cf3abdc62c2ec382b23e26c",
       "backupCodes": [
         "ADM-9988-7766",
         "ADM-1122-3344"
       ],
-      "lastLoginAt": "2026-11-16T15:40:02.427Z",
-      "createdAt": "2026-11-16T15:32:42.035Z",
-      "updatedAt": "2026-11-16T15:40:02.427Z"
+      "lastLoginAt": null,
+      "createdAt": "2026-11-16T15:49:44.583Z",
+      "updatedAt": "2026-11-16T15:49:44.583Z"
     },
     {
       "id": "adm_security_02",
@@ -26,16 +26,16 @@
       "status": "active",
       "emailVerified": true,
       "twoFactorEnabled": true,
-      "passwordHash": "2afcc3fe63b28aaa2eaad58c79e1c751d73b591934716a611cd41c1fd011d16e83daf6ea3991952dee5d837d2f5b8c8975248e5e31446a3c88ec76a5b50ba91e",
-      "passwordSalt": "5987e2215ec6e7b6854b437aa586f2a3",
+      "passwordHash": "7817b7a886eddb3d20e43d52552c2e24068aa41136eec9b817ac262bb4e29c9a6db0c74149c3cd808689339cf169e9c6b75010627dd9285cda9bd84b98b3c760",
+      "passwordSalt": "5df23235ea428cdc7bc8bf19ac8195b4",
       "backupCodes": [
         "SEC-7788-9900",
         "SEC-1122-3344",
         "SEC-5566-7788"
       ],
-      "lastLoginAt": "2026-11-16T15:40:34.472Z",
-      "createdAt": "2026-11-16T15:32:42.035Z",
-      "updatedAt": "2026-11-16T15:32:42.035Z"
+      "lastLoginAt": null,
+      "createdAt": "2026-11-16T15:49:44.583Z",
+      "updatedAt": "2026-11-16T15:49:44.583Z"
     },
     {
       "id": "adm_manager_03",
@@ -45,15 +45,15 @@
       "status": "active",
       "emailVerified": true,
       "twoFactorEnabled": false,
-      "passwordHash": "f0f26fc25c329975b85c58101c0aad5d8d3149ed59db388acfee57e7faff973e1915d02b6655ae40b037e5250e359909cdab831d1ec32378f9294c241a54bd41",
-      "passwordSalt": "c21467a8ded5251d52bf4d37fe5c6d78",
+      "passwordHash": "3256ba789784081becdd11c3c3906d16bbb52e9d9de17123e3f8bd07bc8fb1b167a4e117675b5b8b7b3b60e0d6c5b90589c5f571da55a1c49cdc53414cd022b4",
+      "passwordSalt": "c9532f0893089104a55da9cfc3509436",
       "backupCodes": [
         "MGR-4455-6677",
         "MGR-8899-0011"
       ],
-      "lastLoginAt": "2026-11-16T15:40:23.917Z",
-      "createdAt": "2026-11-16T15:32:42.035Z",
-      "updatedAt": "2026-11-16T15:40:23.917Z"
+      "lastLoginAt": null,
+      "createdAt": "2026-11-16T15:49:44.583Z",
+      "updatedAt": "2026-11-16T15:49:44.583Z"
     },
     {
       "id": "adm_disabled_04",
@@ -63,14 +63,14 @@
       "status": "disabled",
       "emailVerified": true,
       "twoFactorEnabled": false,
-      "passwordHash": "6b6f9998de214276a86b894d8f4cd3807d628bed2b642a9eb5f7c856aaffcad5dfc348edf81903998842266ad9d2b5bbb366cb6e0b765e65109d492f6b2c41fd",
-      "passwordSalt": "e62322d744bee9624920ca660633c3be",
+      "passwordHash": "b973095e96974ac0d26331eee71dce5e0b4e6459a338a08203aa6c32234824fcd7923460ad48654f11e5edbf2bdb9b0e9a96ec24ddbb70dfd5702534fdee7e15",
+      "passwordSalt": "a805b2981b39b5e5b97b586f385a3e66",
       "backupCodes": [
         "DIS-0000-1111"
       ],
       "lastLoginAt": null,
-      "createdAt": "2026-11-16T15:32:42.035Z",
-      "updatedAt": "2026-11-16T15:32:42.035Z"
+      "createdAt": "2026-11-16T15:49:44.583Z",
+      "updatedAt": "2026-11-16T15:49:44.583Z"
     },
     {
       "id": "adm_unverified_05",
@@ -80,14 +80,14 @@
       "status": "pending_verification",
       "emailVerified": false,
       "twoFactorEnabled": false,
-      "passwordHash": "f337a37b5d21a8967afa11f7f7a27ae627bbbb35d47f166f41f86395d864aa4e960efc3d69b8c52c6284a04011601eecd77e989158d6acff852725dd921db0a9",
-      "passwordSalt": "f0eb71ffd232d5b0952315b3677c2d4f",
+      "passwordHash": "e3eea308d8c1ffe4e29a8a96b4c72b2670f201dc48a906de55ae3cd2854f5b8f058f58ca7895894fa3567e5f2bb3acd69730654321dd1644f0b416b24749de3c",
+      "passwordSalt": "5976a057f820b34bdcb22f4fa987e59c",
       "backupCodes": [
         "TRN-2233-4455"
       ],
       "lastLoginAt": null,
-      "createdAt": "2026-11-16T15:32:42.035Z",
-      "updatedAt": "2026-11-16T15:32:42.035Z"
+      "createdAt": "2026-11-16T15:49:44.583Z",
+      "updatedAt": "2026-11-16T15:49:44.583Z"
     }
   ],
   "sessions": [],
@@ -95,11 +95,11 @@
   "twoFactorChallenges": [],
   "verificationTokens": [
     {
-      "token": "14a5fb57ab46c95b446610fd25dbd447d79c64bccd9a81c1accb016f8f2d5893",
+      "token": "63d4d35390a4e10a8c7f7a6c1ae4b7b9758dfe06f10bf7fe91ef0b38986e38ce",
       "adminId": "adm_unverified_05",
       "email": "newjoiner@inestyl.com",
-      "createdAt": 1794843161473,
-      "expiresAt": 1794929561473,
+      "createdAt": 1794844184554,
+      "expiresAt": 1794930584554,
       "used": true
     }
   ],
