@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" fill="currentColor">
+  <text x="2" y="32" font-family="'Arial Black', Impact, sans-serif" font-size="34" font-weight="900" letter-spacing="3">HOKA</text>
+  <!-- Flying bird silhouette inside/above O -->
+  <path d="M 62 10 Q 69 4 75 11 Q 72 7 62 10 Z" fill="currentColor"/>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 460" width="680" height="460">
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#111111" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="680" height="460" fill="#EAE3D9" />
+
+  <!-- FRONT: Black Luxury Foil Card -->
+  <g transform="translate(40, 50)" filter="url(#cardShadow)">
+    <rect width="280" height="360" rx="10" fill="#111111" stroke="#222222" stroke-width="1" />
+    
+    <!-- Monogram in Gold -->
+    <g transform="translate(95, 110) scale(0.55)">
+      <rect x="192" y="263" width="26" height="24" fill="#C6A15B" />
+      <rect x="195" y="300" width="22" height="64" fill="#FFFFFF" />
+      <path d="M 240,287 L 259,306 L 259,364 L 240,364 Z M 237,264 L 264,264 L 360,364 L 334,364 Z M 334,264 L 353,264 L 353,336 L 334,317 Z" fill="#FFFFFF" />
+      <rect x="192" y="390" width="161" height="3.5" rx="1.5" fill="#C6A15B" />
+    </g>
+
+    <text x="140" y="240" font-family="Manrope, sans-serif" font-size="14" font-weight="700" letter-spacing="4" fill="#C6A15B" text-anchor="middle">THANK YOU</text>
+    <text x="140" y="264" font-family="Inter, sans-serif" font-size="11" font-weight="400" letter-spacing="1" fill="#999999" text-anchor="middle">FOR SHOPPING ORIGINAL</text>
+    <text x="140" y="310" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#777777" text-anchor="middle">iNESTYL OUTLET • KAPADWANJ</text>
+  </g>
+
+  <!-- BACK: Warm Ivory Editorial Note -->
+  <g transform="translate(360, 50)" filter="url(#cardShadow)">
+    <rect width="280" height="360" rx="10" fill="#F4EFE7" stroke="#D8D0C5" stroke-width="1" />
+
+    <text x="32" y="60" font-family="Manrope, sans-serif" font-size="18" font-weight="800" fill="#111111">Pure Value.</text>
+    <text x="32" y="80" font-family="Manrope, sans-serif" font-size="18" font-weight="800" fill="#111111">Original Quality.</text>
+
+    <line x1="32" y1="100" x2="90" y2="100" stroke="#C6A15B" stroke-width="2" />
+
+    <text x="32" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#444444" width="216">
+      <tspan x="32" dy="0">We curate only 100% original</tspan>
+      <tspan x="32" dy="18">footwear and apparel from</tspan>
+      <tspan x="32" dy="18">global iconic brands at genuine</tspan>
+      <tspan x="32" dy="18">outlet savings.</tspan>
+    </text>
+
+    <text x="32" y="230" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#111111">
+      <tspan x="32" dy="0">Need care tips or restock alerts?</tspan>
+      <tspan x="32" dy="18">Reach our Kapadwanj store team</tspan>
+      <tspan x="32" dy="18">anytime via WhatsApp.</tspan>
+    </text>
+
+    <text x="32" y="320" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#C6A15B">WA: +91 98765 43210</text>
+    <text x="32" y="336" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#777777">Mon - Sun: 10:00 AM - 9:00 PM</text>
+  </g>
+</svg>

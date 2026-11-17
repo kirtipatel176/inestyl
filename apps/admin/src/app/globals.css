@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Apple Minimal Design System Tokens */
+  --color-primary: #0071E3;
+  --color-primary-strong: #0066CC;
+  --color-secondary: #2997FF;
+  --color-tertiary: #1D1D1F;
+  --color-neutral: #F5F5F7;
+  --color-surface: #FFFFFF;
+  --color-on-surface: #1D1D1F;
+  --color-muted: #E5E7EB;
+  --color-backdrop: #000000;
+  --color-error: #D92D20;
+
+  /* Backward Compatibility Aliases */
+  --color-primary-black: #1D1D1F;
+  --color-warm-ivory: #F5F5F7;
+  --color-champagne-gold: #0071E3;
+  --color-pure-white: #FFFFFF;
+  --color-supporting-cream: #F5F5F7;
+  --color-supporting-border: #E5E7EB;
+  --color-muted-charcoal: #86868B;
+
+  --background: 240 5% 96%;     /* #F5F5F7 */
+  --foreground: 240 3% 12%;     /* #1D1D1F */
+  --border: 220 13% 91%;         /* #E5E7EB */
+  --input: 220 13% 91%;
+  --ring: 211 100% 45%;         /* #0071E3 */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Avoid scroll-behavior: smooth to prevent conflict with Lenis momentum physics */
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.015em;
+  color: var(--color-on-surface);
+}
+
+/* =========================================================================
+   Modern SaaS Fluid Scroll Architecture & Lenis Integration
+   ========================================================================= */
+
+/* 1. Lenis Smooth Scroll Engine Core Rules */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* 2. Modern SaaS Micro-Scrollbar (Clean, Floating, Non-intrusive) */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.16) transparent;
+}
+
+/* WebKit & Chromium (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(29, 29, 31, 0.16);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 113, 227, 0.65);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* 3. Utility: Pure Hidden Scrollbar (For carousels, tabs, and clean canvas) */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 4. Utility: SaaS In-Container Sleek Scrollbar */
+.saas-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.14) transparent;
+}
+
+.saas-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.saas-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.saas-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(29, 29, 31, 0.16);
+  border-radius: 9999px;
+}
+
+.saas-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 113, 227, 0.7);
+}
+
+/* Container widths */
+.container-luxury {
+  width: 100%;
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+}
+
+/* Apple Minimal UI utilities */
+.glass-luxury {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #E5E7EB;
+}
+
+.glass-dark {
+  background: rgba(29, 29, 31, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blue-gradient-text,
+.gold-gradient-text {
+  color: #1D1D1F;
+}
+
+/* Smooth marquee masking */
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================================
+   Product Image Presentation & Responsive Layout Architecture
+   ========================================================================= */
+.product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5F5F7;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}

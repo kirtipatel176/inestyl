@@ -19,8 +19,8 @@ const {
   validateSessionToken,
   destroySession,
   clearRateLimit,
-} = require("../src/lib/auth/admin-auth-service");
-const { hashPassword, verifyPassword } = require("../src/lib/auth/crypto");
+} = require("../apps/admin/src/lib/auth/admin-auth-service");
+const { hashPassword, verifyPassword } = require("../apps/admin/src/lib/auth/crypto");
 
 let passed = 0;
 let total = 0;

@@ -6,7 +6,9 @@
 const fs = require("fs");
 const path = require("path");
 
-const DB_FILE = path.join(__dirname, "..", "src", "data", "db.json");
+const DB_FILE = fs.existsSync(path.join(__dirname, "..", "apps", "admin", "src", "data", "db.json"))
+  ? path.join(__dirname, "..", "apps", "admin", "src", "data", "db.json")
+  : path.join(__dirname, "..", "apps", "storefront", "src", "data", "db.json");
 
 function readDb() {
   return JSON.parse(fs.readFileSync(DB_FILE, "utf-8"));
