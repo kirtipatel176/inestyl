@@ -74,10 +74,12 @@ export function Header() {
 
   const isLinkVisible = (label: string) => {
     if (!navigationConfig) return true;
+    const lower = label.toLowerCase();
     const item = navigationConfig.header.find(
       (h) =>
-        h.label.toLowerCase() === label.toLowerCase() ||
-        h.href.toLowerCase().includes(label.toLowerCase())
+        h.label.toLowerCase() === lower ||
+        h.href.toLowerCase().includes(lower) ||
+        (lower === "footwear" && (h.label.toLowerCase() === "shoes" || h.href.toLowerCase().includes("shoes")))
     );
     return item ? item.visible : true;
   };
@@ -192,6 +194,7 @@ export function Header() {
   const isOurLabelActive = pathname.startsWith("/our-label");
   const isContactActive = pathname.startsWith("/contact");
   const isStoreActive = pathname.startsWith("/store");
+  const isHomepage = pathname === "/";
 
   return (
     <>
@@ -204,11 +207,13 @@ export function Header() {
         ref={navRef}
         onMouseEnter={handleCombinedEnter}
         onMouseLeave={handleDropdownLeave}
-        className={`sticky top-0 z-50 w-full transition-colors duration-200 select-none ${
+        className={`sticky top-0 z-50 w-full transition-all duration-300 select-none ${
           activeDropdown !== null
-            ? "bg-[#FFFFFF] border-b border-[#E5E7EB]"
+            ? "bg-[#FFFFFF] border-b border-[#E5E7EB] shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
             : isScrolled
-            ? "bg-[#FFFFFF]/92 backdrop-blur-md border-b border-[#E5E7EB] shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+            ? "bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+            : isHomepage
+            ? "bg-transparent border-b border-transparent shadow-none"
             : "bg-[#FFFFFF] border-b border-[#E5E7EB]"
         }`}
       >
@@ -246,7 +251,7 @@ export function Header() {
                 className={`relative py-1 text-[12px] 2xl:text-[13px] font-normal tracking-[-0.01em] transition-colors ${
                   isNewArrivalsActive
                     ? "text-[#1D1D1F] font-semibold"
-                    : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                    : "text-[#1D1D1F]/85 hover:text-[#1D1D1F]"
                 }`}
               >
                 <span>New Arrivals</span>
@@ -273,7 +278,7 @@ export function Header() {
                   className={`py-1 text-[12px] 2xl:text-[13px] font-normal tracking-[-0.01em] transition-colors ${
                     isMenActive || activeDropdown === "men"
                       ? "text-[#1D1D1F] font-semibold"
-                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                      : "text-[#1D1D1F]/85 hover:text-[#1D1D1F]"
                   }`}
                 >
                   <span>Men</span>
@@ -300,7 +305,7 @@ export function Header() {
                   className={`py-1 text-[12px] 2xl:text-[13px] font-normal tracking-[-0.01em] transition-colors ${
                     isWomenActive || activeDropdown === "women"
                       ? "text-[#1D1D1F] font-semibold"
-                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                      : "text-[#1D1D1F]/85 hover:text-[#1D1D1F]"
                   }`}
                 >
                   <span>Women</span>
@@ -308,8 +313,8 @@ export function Header() {
               </div>
             )}
 
-            {/* 4. Shoes */}
-            {isLinkVisible("Shoes") && (
+            {/* 4. Footwear */}
+            {(isLinkVisible("Footwear") || isLinkVisible("Shoes")) && (
               <div
                 className="relative"
                 onMouseEnter={() => handleDropdownHover("shoes")}
@@ -327,10 +332,10 @@ export function Header() {
                   className={`py-1 text-[12px] 2xl:text-[13px] font-normal tracking-[-0.01em] transition-colors ${
                     isShoesActive || activeDropdown === "shoes"
                       ? "text-[#1D1D1F] font-semibold"
-                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                      : "text-[#1D1D1F]/85 hover:text-[#1D1D1F]"
                   }`}
                 >
-                  <span>Shoes</span>
+                  <span>Footwear</span>
                 </Link>
               </div>
             )}
@@ -354,7 +359,7 @@ export function Header() {
                   className={`py-1 text-[12px] 2xl:text-[13px] font-normal tracking-[-0.01em] transition-colors ${
                     isClothingActive || activeDropdown === "clothing"
                       ? "text-[#1D1D1F] font-semibold"
-                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                      : "text-[#1D1D1F]/85 hover:text-[#1D1D1F]"
                   }`}
                 >
                   <span>Clothing</span>
@@ -381,7 +386,7 @@ export function Header() {
                   className={`py-1 text-[12px] 2xl:text-[13px] font-normal tracking-[-0.01em] transition-colors ${
                     isCollectionsActive || activeDropdown === "collections"
                       ? "text-[#1D1D1F] font-semibold"
-                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                      : "text-[#1D1D1F]/85 hover:text-[#1D1D1F]"
                   }`}
                 >
                   <span>Collections</span>
@@ -408,7 +413,7 @@ export function Header() {
                   className={`py-1 text-[12px] 2xl:text-[13px] font-normal tracking-[-0.01em] transition-colors ${
                     isBrandsActive || activeDropdown === "brands"
                       ? "text-[#1D1D1F] font-semibold"
-                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                      : "text-[#1D1D1F]/85 hover:text-[#1D1D1F]"
                   }`}
                 >
                   <span>Brands</span>
@@ -435,7 +440,7 @@ export function Header() {
                   className={`py-1 text-[12px] 2xl:text-[13px] font-normal tracking-[-0.01em] transition-colors ${
                     isOurLabelActive || activeDropdown === "our-label"
                       ? "text-[#1D1D1F] font-semibold"
-                      : "text-[#6E6E73] hover:text-[#1D1D1F]"
+                      : "text-[#1D1D1F]/85 hover:text-[#1D1D1F]"
                   }`}
                 >
                   <span className="flex items-center gap-1.5">
