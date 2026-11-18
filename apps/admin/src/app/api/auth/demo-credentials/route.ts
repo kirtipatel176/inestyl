@@ -5,6 +5,7 @@ export async function GET() {
   const db = getAuthDb();
   const accounts = db.users.map((u) => ({
     email: u.email,
+    username: u.username || (u.role === "super_admin" ? "admin" : u.email.split("@")[0]),
     role: u.role,
     name: u.fullName,
     status: u.status,
@@ -27,7 +28,7 @@ export async function GET() {
       .map((t) => ({
         email: t.email,
         token: t.token,
-        url: `/admin/reset-password?token=${t.token}`,
+        url: `/reset-password?token=${t.token}`,
       })),
   });
 }

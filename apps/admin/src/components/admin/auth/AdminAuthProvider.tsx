@@ -31,7 +31,7 @@ export function AdminAuthProvider({
 
   const fetchUser = async () => {
     try {
-      const res = await fetch("/api/admin/auth/me");
+      const res = await fetch("/api/auth/me");
       if (res.ok) {
         const data = await res.json();
         if (data.authenticated && data.user) {
@@ -57,10 +57,10 @@ export function AdminAuthProvider({
 
   const logout = async () => {
     try {
-      await fetch("/api/admin/auth/logout", { method: "POST" });
+      await fetch("/api/auth/logout", { method: "POST" });
     } finally {
       setUser(null);
-      window.location.href = "/admin/login";
+      window.location.href = "/login";
     }
   };
 

@@ -44,12 +44,12 @@ export default function UnauthorizedPage() {
         </div>
 
         <div className="pt-2 flex flex-col sm:flex-row gap-3">
-          <Link href="/admin" className="w-full">
+          <Link href="/" className="w-full">
             <AuthButton icon={<Home className="w-4 h-4" />}>
               Return to Dashboard
             </AuthButton>
           </Link>
-          <Link href="/admin/login" className="w-full">
+          <Link href="/login" className="w-full">
             <AuthButton variant="secondary" icon={<LogIn className="w-4 h-4" />}>
               Sign In with Other Account
             </AuthButton>

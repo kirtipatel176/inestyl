@@ -219,7 +219,7 @@ export function AdminHeader({
 
               <div className="pt-2 border-t border-[#E5E7EB] flex flex-col gap-1.5">
                 <Link
-                  href="/admin/login"
+                  href="/login"
                   onClick={() => setIsProfileOpen(false)}
                   className="w-full flex items-center gap-2 p-2 rounded-xl hover:bg-[#F5F5F7] text-[#1D1D1F] font-semibold transition-colors"
                 >

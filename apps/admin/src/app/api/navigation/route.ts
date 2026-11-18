@@ -1,24 +1,23 @@
 import { NextResponse } from "next/server";
 import { getServerAdminSession } from "@/lib/auth/session";
-import { createServiceClient, logActivityMutation } from "@inestyle/database";
+import { createServiceClient, getNavigationTree, logActivityMutation } from "@inestyle/database";
+import { DEFAULT_NAVIGATION_CONFIG } from "@/config/navigation";
 
 export async function GET() {
   try {
     const supabase = createServiceClient();
-    const { data: items, error } = await supabase
-      .from("navigation_items")
-      .select("*")
-      .order("sort_order", { ascending: true });
+    const tree = await getNavigationTree(supabase);
 
-    if (error) throw new Error(error.message);
-
-    // Group items into mega menu format for admin
+    // Merge or fallback to DEFAULT_NAVIGATION_CONFIG so all required keys are guaranteed
     const navigation = {
-      footwear: items?.filter((i) => i.parent_id === "nav-footwear" || i.label?.includes("Shoes") || i.label?.includes("Sneakers")) || [],
-      clothing: items?.filter((i) => i.parent_id === "nav-clothing" || i.label?.includes("Polos") || i.label?.includes("Jeans")) || [],
-      men: items?.filter((i) => i.parent_id === "nav-men") || [],
-      women: items?.filter((i) => i.parent_id === "nav-women") || [],
-      allItems: items || [],
+      header: tree?.header?.length ? tree.header : DEFAULT_NAVIGATION_CONFIG.header,
+      footwearMegaMenu: tree?.footwearMegaMenu?.length ? tree.footwearMegaMenu : DEFAULT_NAVIGATION_CONFIG.footwearMegaMenu,
+      clothingMegaMenu: tree?.clothingMegaMenu?.length ? tree.clothingMegaMenu : DEFAULT_NAVIGATION_CONFIG.clothingMegaMenu,
+      menMegaMenu: tree?.menMegaMenu?.length ? tree.menMegaMenu : DEFAULT_NAVIGATION_CONFIG.menMegaMenu,
+      womenMegaMenu: tree?.womenMegaMenu?.length ? tree.womenMegaMenu : DEFAULT_NAVIGATION_CONFIG.womenMegaMenu,
+      collections: tree?.collections?.length ? tree.collections : DEFAULT_NAVIGATION_CONFIG.collections,
+      brands: tree?.brands?.length ? tree.brands : DEFAULT_NAVIGATION_CONFIG.brands,
+      footer: tree?.footer?.length ? tree.footer : DEFAULT_NAVIGATION_CONFIG.footer,
     };
 
     return NextResponse.json(
@@ -30,9 +29,14 @@ export async function GET() {
       }
     );
   } catch (error: any) {
+    // If Supabase is unreachable or misconfigured, fallback gracefully to complete default config
     return NextResponse.json(
-      { success: false, error: error.message || "Failed to fetch navigation" },
-      { status: 500 }
+      { success: true, navigation: DEFAULT_NAVIGATION_CONFIG, fallback: true, warning: error.message },
+      {
+        headers: {
+          "Cache-Control": "private, no-cache, no-store, must-revalidate",
+        },
+      }
     );
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Compass,
   ArrowUp,
@@ -18,6 +18,21 @@ import {
 } from "lucide-react";
 import { NavigationConfig, NavigationLink, MegaMenuSection } from "@/types";
 import { useToast } from "@/components/admin/ToastContext";
+import { DEFAULT_NAVIGATION_CONFIG } from "@/config/navigation";
+
+function normalizeNavigation(nav?: NavigationConfig | null): NavigationConfig {
+  if (!nav) return DEFAULT_NAVIGATION_CONFIG;
+  return {
+    header: Array.isArray(nav.header) ? nav.header : DEFAULT_NAVIGATION_CONFIG.header,
+    footwearMegaMenu: Array.isArray(nav.footwearMegaMenu) ? nav.footwearMegaMenu : DEFAULT_NAVIGATION_CONFIG.footwearMegaMenu,
+    clothingMegaMenu: Array.isArray(nav.clothingMegaMenu) ? nav.clothingMegaMenu : DEFAULT_NAVIGATION_CONFIG.clothingMegaMenu,
+    menMegaMenu: Array.isArray(nav.menMegaMenu) ? nav.menMegaMenu : DEFAULT_NAVIGATION_CONFIG.menMegaMenu,
+    womenMegaMenu: Array.isArray(nav.womenMegaMenu) ? nav.womenMegaMenu : DEFAULT_NAVIGATION_CONFIG.womenMegaMenu,
+    collections: Array.isArray(nav.collections) ? nav.collections : DEFAULT_NAVIGATION_CONFIG.collections,
+    brands: Array.isArray(nav.brands) ? nav.brands : DEFAULT_NAVIGATION_CONFIG.brands,
+    footer: Array.isArray(nav.footer) ? nav.footer : DEFAULT_NAVIGATION_CONFIG.footer,
+  };
+}
 
 interface NavigationManagerTabProps {
   initialNavigation: NavigationConfig;
@@ -25,13 +40,19 @@ interface NavigationManagerTabProps {
 
 export function NavigationManagerTab({ initialNavigation }: NavigationManagerTabProps) {
   const { success, error } = useToast();
-  const [navigation, setNavigation] = useState<NavigationConfig>(initialNavigation);
+  const [navigation, setNavigation] = useState<NavigationConfig>(() => normalizeNavigation(initialNavigation));
   const [activeSection, setActiveSection] = useState<
     "header" | "footwear" | "clothing" | "gender" | "collections" | "brands" | "footer"
   >("header");
   const [isSaving, setIsSaving] = useState(false);
   const [showMobilePreview, setShowMobilePreview] = useState(true);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>("Shoes");
+
+  useEffect(() => {
+    if (initialNavigation) {
+      setNavigation(normalizeNavigation(initialNavigation));
+    }
+  }, [initialNavigation]);
 
   // Reordering helpers
   const moveItem = (list: any[], index: number, direction: "up" | "down") => {
@@ -46,14 +67,14 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
   const handleHeaderMove = (index: number, direction: "up" | "down") => {
     setNavigation((prev) => ({
       ...prev,
-      header: moveItem(prev.header, index, direction),
+      header: moveItem(prev.header || [], index, direction),
     }));
   };
 
   const handleHeaderToggleVisibility = (id: string) => {
     setNavigation((prev) => ({
       ...prev,
-      header: prev.header.map((item) =>
+      header: (prev.header || []).map((item) =>
         item.id === id ? { ...item, visible: !item.visible } : item
       ),
     }));
@@ -62,7 +83,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
   const handleHeaderChange = (id: string, field: "label" | "href" | "badge", value: string) => {
     setNavigation((prev) => ({
       ...prev,
-      header: prev.header.map((item) =>
+      header: (prev.header || []).map((item) =>
         item.id === id ? { ...item, [field]: value } : item
       ),
     }));
@@ -75,18 +96,18 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
       label: "New Link",
       href: "/custom",
       visible: true,
-      order: navigation.header.length + 1,
+      order: (navigation.header?.length || 0) + 1,
     };
     setNavigation((prev) => ({
       ...prev,
-      header: [...prev.header, newLink],
+      header: [...(prev.header || []), newLink],
     }));
   };
 
   const handleDeleteHeaderLink = (id: string) => {
     setNavigation((prev) => ({
       ...prev,
-      header: prev.header.filter((item) => item.id !== id),
+      header: (prev.header || []).filter((item) => item.id !== id),
     }));
   };
 
@@ -99,9 +120,9 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
   ) => {
     setNavigation((prev) => ({
       ...prev,
-      [menu]: prev[menu].map((sec) =>
+      [menu]: (prev[menu] || []).map((sec) =>
         sec.id === secId
-          ? { ...sec, links: moveItem(sec.links, linkIdx, direction) }
+          ? { ...sec, links: moveItem(sec.links || [], linkIdx, direction) }
           : sec
       ),
     }));
@@ -114,11 +135,11 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
   ) => {
     setNavigation((prev) => ({
       ...prev,
-      [menu]: prev[menu].map((sec) =>
+      [menu]: (prev[menu] || []).map((sec) =>
         sec.id === secId
           ? {
               ...sec,
-              links: sec.links.map((link) =>
+              links: (sec.links || []).map((link) =>
                 link.id === linkId ? { ...link, visible: !link.visible } : link
               ),
             }
@@ -131,11 +152,11 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
   const handleFooterLinkToggle = (columnId: string, linkId: string) => {
     setNavigation((prev) => ({
       ...prev,
-      footer: prev.footer.map((col) =>
+      footer: (prev.footer || []).map((col) =>
         col.id === columnId
           ? {
               ...col,
-              links: col.links.map((link) =>
+              links: (col.links || []).map((link) =>
                 link.id === linkId ? { ...link, visible: !link.visible } : link
               ),
             }
@@ -255,7 +276,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
               </div>
 
               <div className="divide-y divide-[#E5E7EB]">
-                {navigation.header.map((item, idx) => (
+                {(navigation.header || []).map((item, idx) => (
                   <div key={item.id} className="py-3 flex items-center justify-between gap-3 text-xs">
                     {/* Reorder Arrows */}
                     <div className="flex items-center gap-1">
@@ -269,7 +290,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                       </button>
                       <button
                         type="button"
-                        disabled={idx === navigation.header.length - 1}
+                        disabled={idx === (navigation.header || []).length - 1}
                         onClick={() => handleHeaderMove(idx, "down")}
                         className="p-1 rounded text-[#86868B] hover:text-[#1D1D1F] disabled:opacity-30"
                       >
@@ -335,17 +356,17 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
           {/* 2. Footwear Mega Menu Editor */}
           {activeSection === "footwear" && (
             <div className="space-y-4">
-              {navigation.footwearMegaMenu.map((section) => (
+              {(navigation.footwearMegaMenu || []).map((section) => (
                 <div key={section.id} className="bg-white rounded-2xl border border-[#E5E7EB] p-5 space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-[#E5E7EB]">
                     <span className="font-bold text-xs uppercase tracking-wider text-[#0071E3]">
                       {section.title}
                     </span>
-                    <span className="text-[11px] text-[#86868B]">{section.links.length} Links</span>
+                    <span className="text-[11px] text-[#86868B]">{(section.links || []).length} Links</span>
                   </div>
 
                   <div className="divide-y divide-[#E5E7EB]">
-                    {section.links.map((link, idx) => (
+                    {(section.links || []).map((link, idx) => (
                       <div key={link.id} className="py-2.5 flex items-center justify-between gap-3 text-xs">
                         <div className="flex items-center gap-1">
                           <button
@@ -358,7 +379,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                           </button>
                           <button
                             type="button"
-                            disabled={idx === section.links.length - 1}
+                            disabled={idx === (section.links || []).length - 1}
                             onClick={() => handleMegaLinkMove("footwearMegaMenu", section.id, idx, "down")}
                             className="p-1 text-[#86868B] hover:text-[#1D1D1F] disabled:opacity-30"
                           >
@@ -393,17 +414,17 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
           {/* 3. Clothing Mega Menu Editor */}
           {activeSection === "clothing" && (
             <div className="space-y-4">
-              {navigation.clothingMegaMenu.map((section) => (
+              {(navigation.clothingMegaMenu || []).map((section) => (
                 <div key={section.id} className="bg-white rounded-2xl border border-[#E5E7EB] p-5 space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-[#E5E7EB]">
                     <span className="font-bold text-xs uppercase tracking-wider text-[#0071E3]">
                       {section.title}
                     </span>
-                    <span className="text-[11px] text-[#86868B]">{section.links.length} Links</span>
+                    <span className="text-[11px] text-[#86868B]">{(section.links || []).length} Links</span>
                   </div>
 
                   <div className="divide-y divide-[#E5E7EB]">
-                    {section.links.map((link, idx) => (
+                    {(section.links || []).map((link, idx) => (
                       <div key={link.id} className="py-2.5 flex items-center justify-between gap-3 text-xs">
                         <div className="flex items-center gap-1">
                           <button
@@ -416,7 +437,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                           </button>
                           <button
                             type="button"
-                            disabled={idx === section.links.length - 1}
+                            disabled={idx === (section.links || []).length - 1}
                             onClick={() => handleMegaLinkMove("clothingMegaMenu", section.id, idx, "down")}
                             className="p-1 text-[#86868B] hover:text-[#1D1D1F] disabled:opacity-30"
                           >
@@ -455,7 +476,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                 Featured Collection Navigation Links
               </span>
               <div className="divide-y divide-[#E5E7EB]">
-                {navigation.collections.map((col) => (
+                {(navigation.collections || []).map((col) => (
                   <div key={col.id} className="py-2.5 flex items-center justify-between text-xs">
                     <div>
                       <span className="font-semibold block">{col.label}</span>
@@ -466,7 +487,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                       onClick={() =>
                         setNavigation((prev) => ({
                           ...prev,
-                          collections: prev.collections.map((c) =>
+                          collections: (prev.collections || []).map((c) =>
                             c.id === col.id ? { ...c, visible: !c.visible } : c
                           ),
                         }))
@@ -492,7 +513,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                 Authorized Brand Navigation Links
               </span>
               <div className="divide-y divide-[#E5E7EB]">
-                {navigation.brands.map((b) => (
+                {(navigation.brands || []).map((b) => (
                   <div key={b.id} className="py-2.5 flex items-center justify-between text-xs">
                     <div>
                       <span className="font-semibold block">{b.label}</span>
@@ -503,7 +524,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                       onClick={() =>
                         setNavigation((prev) => ({
                           ...prev,
-                          brands: prev.brands.map((item) =>
+                          brands: (prev.brands || []).map((item) =>
                             item.id === b.id ? { ...item, visible: !item.visible } : item
                           ),
                         }))
@@ -525,17 +546,17 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
           {/* 6. Footer Navigation */}
           {activeSection === "footer" && (
             <div className="space-y-4">
-              {navigation.footer.map((column) => (
+              {(navigation.footer || []).map((column) => (
                 <div key={column.id} className="bg-white rounded-2xl border border-[#E5E7EB] p-5 space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-[#E5E7EB]">
                     <span className="font-bold text-xs uppercase tracking-wider text-[#1D1D1F]">
                       Column: {column.title}
                     </span>
-                    <span className="text-[11px] text-[#86868B]">{column.links.length} Links</span>
+                    <span className="text-[11px] text-[#86868B]">{(column.links || []).length} Links</span>
                   </div>
 
                   <div className="divide-y divide-[#E5E7EB]">
-                    {column.links.map((link) => (
+                    {(column.links || []).map((link) => (
                       <div key={link.id} className="py-2.5 flex items-center justify-between text-xs">
                         <div>
                           <span className="font-semibold block">{link.label}</span>
@@ -598,7 +619,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                     </button>
                     {mobileExpanded === "Shoes" && (
                       <div className="pt-2 pl-3 space-y-1.5 text-[11px] text-[#6E6E73]">
-                        {navigation.footwearMegaMenu[0]?.links
+                        {(navigation.footwearMegaMenu?.[0]?.links || [])
                           .filter((l) => l.visible)
                           .map((l) => (
                             <div key={l.id} className="py-1 flex items-center justify-between">
@@ -626,7 +647,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                     </button>
                     {mobileExpanded === "Clothing" && (
                       <div className="pt-2 pl-3 space-y-1.5 text-[11px] text-[#6E6E73]">
-                        {navigation.clothingMegaMenu[0]?.links
+                        {(navigation.clothingMegaMenu?.[0]?.links || [])
                           .filter((l) => l.visible)
                           .map((l) => (
                             <div key={l.id} className="py-1 flex items-center justify-between">
@@ -639,7 +660,7 @@ export function NavigationManagerTab({ initialNavigation }: NavigationManagerTab
                   </div>
 
                   {/* Header Links List */}
-                  {navigation.header
+                  {(navigation.header || [])
                     .filter((h) => h.visible)
                     .map((item) => (
                       <div key={item.id} className="py-2.5 flex items-center justify-between font-medium text-[#1D1D1F]">

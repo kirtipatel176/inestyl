@@ -160,8 +160,25 @@ export interface Product {
   hasVideo?: boolean;
   videoUrl?: string;
 
+  // Separate Hero Product Media System (Transparent Cutout for 3D Orbit Showcase)
+  heroCutout?: ProductHeroCutout;
+
   // Change History / Audit
   changeHistory?: ProductChangeHistoryItem[];
+}
+
+export interface ProductHeroCutout {
+  id?: string;
+  productId: string;
+  heroCutoutUrl: string;
+  cloudinaryPublicId?: string;
+  transparencyStatus: "transparent_verified" | "processing" | "unsuitable";
+  processingStatus: "completed" | "pending" | "manual";
+  visualScale: number;
+  displayOrder: number;
+  aspectRatio?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface ProductChangeHistoryItem {

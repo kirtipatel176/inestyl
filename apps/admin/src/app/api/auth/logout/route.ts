@@ -8,7 +8,7 @@ export async function POST() {
     const response = NextResponse.json({
       success: true,
       message: "Successfully signed out.",
-      redirectUrl: "/admin/login",
+      redirectUrl: "/login",
     });
 
     attachClearSessionCookie(response);

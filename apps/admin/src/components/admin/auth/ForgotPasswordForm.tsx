@@ -39,7 +39,7 @@ export function ForgotPasswordForm() {
     setGeneralError("");
 
     try {
-      const res = await fetch("/api/admin/auth/forgot-password", {
+      const res = await fetch("/api/auth/forgot-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim() }),
@@ -73,7 +73,7 @@ export function ForgotPasswordForm() {
       {/* Return to login link */}
       <div>
         <Link
-          href="/admin/login"
+          href="/login"
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#86868B] hover:text-[#0071E3] transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
@@ -181,7 +181,7 @@ export function ForgotPasswordForm() {
             )}
 
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
-              <Link href="/admin/login" className="w-full">
+              <Link href="/login" className="w-full">
                 <AuthButton variant="secondary">Return to Sign In</AuthButton>
               </Link>
               <button

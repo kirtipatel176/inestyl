@@ -5,6 +5,7 @@ export type AdminUserStatus = "active" | "disabled" | "pending_verification";
 export interface AdminUser {
   id: string;
   email: string;
+  username?: string;
   fullName: string;
   role: AdminRole;
   status: AdminUserStatus;

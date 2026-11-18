@@ -14,7 +14,7 @@ export function TwoFactorForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const challengeId = searchParams.get("challengeId") || "";
-  const returnUrl = searchParams.get("returnUrl") || "/admin";
+  const returnUrl = searchParams.get("returnUrl") || "/";
 
   const [maskedEmail, setMaskedEmail] = useState("");
   const [debugCode, setDebugCode] = useState<string | null>(null);
@@ -42,7 +42,7 @@ export function TwoFactorForm() {
     const savedDebug = sessionStorage.getItem("inestyl_2fa_debug");
     if (savedDebug) setDebugCode(savedDebug);
 
-    fetch("/api/admin/auth/demo-credentials")
+    fetch("/api/auth/demo-credentials")
       .then((res) => res.json())
       .then((data) => {
         if (data.twoFactorChallenges && data.twoFactorChallenges.length > 0) {
@@ -83,7 +83,7 @@ export function TwoFactorForm() {
     setInfoMessage("");
 
     try {
-      const res = await fetch("/api/admin/auth/two-factor", {
+      const res = await fetch("/api/auth/two-factor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -120,7 +120,7 @@ export function TwoFactorForm() {
     setError("");
 
     try {
-      const res = await fetch("/api/admin/auth/two-factor/resend", {
+      const res = await fetch("/api/auth/two-factor/resend", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ challengeId }),
@@ -162,7 +162,7 @@ export function TwoFactorForm() {
     >
       <div>
         <Link
-          href="/admin/login"
+          href="/login"
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#86868B] hover:text-[#0071E3] transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />

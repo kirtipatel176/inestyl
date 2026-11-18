@@ -1,3 +1,4 @@
+import defaultAuthDb from "../../data/admin-auth.json";
 import {
   AdminAuthDatabase,
   AdminSession,
@@ -48,15 +49,20 @@ export function getAuthDb(): AdminAuthDatabase {
     return memoryAuthDb;
   }
 
-  const initialDb: AdminAuthDatabase = {
-    users: [],
-    sessions: [],
-    resetTokens: [],
-    twoFactorChallenges: [],
-    verificationTokens: [],
-    rateLimits: {},
-  };
-  seedDefaultAdmins(initialDb);
+  const initialDb: AdminAuthDatabase = JSON.parse(JSON.stringify(defaultAuthDb));
+  initialDb.users.forEach((u: AdminUser) => {
+    if (!u.username) {
+      if (u.role === "super_admin") u.username = "admin";
+      else if (u.email === "security@inestyl.com") u.username = "security";
+      else if (u.email === "manager@inestyl.com") u.username = "manager";
+    }
+  });
+  if (!initialDb.sessions) initialDb.sessions = [];
+  if (!initialDb.resetTokens) initialDb.resetTokens = [];
+  if (!initialDb.twoFactorChallenges) initialDb.twoFactorChallenges = [];
+  if (!initialDb.verificationTokens) initialDb.verificationTokens = [];
+  if (!initialDb.rateLimits) initialDb.rateLimits = {};
+
   memoryAuthDb = initialDb;
   return initialDb;
 }
@@ -67,17 +73,30 @@ export const DEMO_ADMIN_EMAILS = [
   "manager@inestyl.com",
   "disabled@inestyl.com",
   "newjoiner@inestyl.com",
+  "admin",
+  "kirti",
+  "kirtipatel",
+  "security",
+  "manager",
 ];
 export const COMMON_DEMO_PASSWORD = "Admin@IneStyl2026!";
 
 export function resetDemoAccounts(): AdminAuthDatabase {
-  const db = getAuthDb();
-  seedDefaultAdmins(db);
-  db.rateLimits = {};
-  db.twoFactorChallenges = [];
-  db.resetTokens = [];
-  saveAuthDb(db);
-  return db;
+  const freshDb: AdminAuthDatabase = JSON.parse(JSON.stringify(defaultAuthDb));
+  freshDb.users.forEach((u: AdminUser) => {
+    if (!u.username) {
+      if (u.role === "super_admin") u.username = "admin";
+      else if (u.email === "security@inestyl.com") u.username = "security";
+      else if (u.email === "manager@inestyl.com") u.username = "manager";
+    }
+  });
+  freshDb.rateLimits = {};
+  freshDb.twoFactorChallenges = [];
+  freshDb.resetTokens = [];
+  freshDb.sessions = [];
+  freshDb.verificationTokens = [];
+  memoryAuthDb = freshDb;
+  return freshDb;
 }
 
 export function saveAuthDb(db: AdminAuthDatabase): void {
@@ -93,6 +112,7 @@ export function seedDefaultAdmins(db: AdminAuthDatabase): void {
   const superAdmin: AdminUser = {
     id: "adm_super_01",
     email: "admin@inestyl.com",
+    username: "admin",
     fullName: "Kirti Patel (Executive Admin)",
     role: "super_admin",
     status: "active",
@@ -111,6 +131,7 @@ export function seedDefaultAdmins(db: AdminAuthDatabase): void {
   const securityAdmin: AdminUser = {
     id: "adm_security_02",
     email: "security@inestyl.com",
+    username: "security",
     fullName: "Security Administrator",
     role: "admin",
     status: "active",
@@ -129,6 +150,7 @@ export function seedDefaultAdmins(db: AdminAuthDatabase): void {
   const managerAdmin: AdminUser = {
     id: "adm_manager_03",
     email: "manager@inestyl.com",
+    username: "manager",
     fullName: "Kapadwanj Store Manager",
     role: "inventory_manager",
     status: "active",
@@ -261,15 +283,29 @@ export function authenticateAdmin(
   clientIp = "127.0.0.1",
   userAgent = "Mozilla/5.0"
 ): LoginResult {
-  const email = emailInput.trim().toLowerCase();
-  const rateLimitKey = `login:${email}:${clientIp}`;
+  const identifier = emailInput.trim().toLowerCase();
+  const db = getAuthDb();
+  const user = db.users.find(
+    (u) =>
+      u.email.toLowerCase() === identifier ||
+      (u.username && u.username.toLowerCase() === identifier) ||
+      (u.role === "super_admin" && (identifier === "admin" || identifier === "kirti" || identifier === "kirtipatel"))
+  );
 
-  const isDemoAccount = DEMO_ADMIN_EMAILS.includes(email);
+  const rateLimitKey = `login:${user ? user.email : identifier}:${clientIp}`;
+
+  const isDemoAccount =
+    DEMO_ADMIN_EMAILS.includes(identifier) ||
+    Boolean(user && DEMO_ADMIN_EMAILS.includes(user.email));
   const isDemoPass = passwordInput === COMMON_DEMO_PASSWORD;
 
   // If using legitimate demo credentials, clear any prior rate limit lockout
   if (isDemoAccount && isDemoPass) {
     clearRateLimit(rateLimitKey);
+    clearRateLimit(`login:${identifier}:${clientIp}`);
+    if (user) {
+      clearRateLimit(`login:${user.email}:${clientIp}`);
+    }
   }
 
   const rateCheck = checkRateLimit(rateLimitKey);
@@ -282,9 +318,6 @@ export function authenticateAdmin(
       retryAfterSeconds: rateCheck.retryAfterSeconds,
     };
   }
-
-  const db = getAuthDb();
-  const user = db.users.find((u) => u.email.toLowerCase() === email);
 
   // Constant-time check even if user doesn't exist to prevent timing attacks
   if (!user) {

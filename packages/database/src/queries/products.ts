@@ -102,6 +102,17 @@ export function mapDbProductToDomain(row: any): Product {
     status: row.status,
     hasVideo: Boolean(row.has_video),
     videoUrl: row.video_url || undefined,
+    heroCutout: row.product_hero_cutouts ? {
+      id: row.product_hero_cutouts.id,
+      productId: row.id,
+      heroCutoutUrl: row.product_hero_cutouts.hero_cutout_url,
+      cloudinaryPublicId: row.product_hero_cutouts.cloudinary_public_id,
+      transparencyStatus: row.product_hero_cutouts.transparency_status,
+      processingStatus: row.product_hero_cutouts.processing_status,
+      visualScale: Number(row.product_hero_cutouts.visual_scale || 1.0),
+      displayOrder: Number(row.product_hero_cutouts.display_order || 0),
+      aspectRatio: row.product_hero_cutouts.aspect_ratio ? Number(row.product_hero_cutouts.aspect_ratio) : undefined,
+    } : undefined,
     publishedAt: row.published_at || undefined,
     scheduledPublishDate: row.scheduled_publish_date || undefined,
   };

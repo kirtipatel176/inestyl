@@ -70,6 +70,7 @@ import { NotificationsTab } from "./tabs/NotificationsTab";
 import { AuditRecoveryTab } from "./tabs/AuditRecoveryTab";
 import { MediaLibraryTab } from "./tabs/MediaLibraryTab";
 import { MediaPickerModal } from "./modals/MediaPickerModal";
+import { DEFAULT_NAVIGATION_CONFIG } from "@/config/navigation";
 import { apiClient } from "@/lib/api-client";
 import { LoadingButton } from "@/components/ui/LoadingButton";
 import { DashboardSkeleton } from "@/components/ui/DashboardSkeleton";
@@ -143,7 +144,7 @@ function AdminDashboardInner() {
     alertProductPublication: true,
     alertFailedUploads: true,
   });
-  const [navigation, setNavigation] = useState<NavigationConfig | null>(null);
+  const [navigation, setNavigation] = useState<NavigationConfig>(DEFAULT_NAVIGATION_CONFIG);
   const [sizeGuides, setSizeGuides] = useState<Record<string, SizeGuideTable> | null>(null);
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
   const [backups, setBackups] = useState<BackupSnapshotMeta[]>([]);
@@ -202,7 +203,7 @@ function AdminDashboardInner() {
     isOpen: false,
     title: "",
     message: "",
-    action: () => {},
+    action: () => { },
   });
 
   // Product Form State
@@ -277,7 +278,11 @@ function AdminDashboardInner() {
         setEnquiries(enqRes.data.enquiries || []);
       }
 
-      if (navRes.ok && navRes.data?.success) setNavigation(navRes.data.navigation);
+      if (navRes.ok && navRes.data?.success && navRes.data?.navigation?.header) {
+        setNavigation(navRes.data.navigation);
+      } else {
+        setNavigation(DEFAULT_NAVIGATION_CONFIG);
+      }
       if (sgRes.ok && sgRes.data?.success) setSizeGuides(sgRes.data.sizeGuides);
       if (notifRes.ok && notifRes.data?.success) {
         setNotifications(notifRes.data.notifications);
@@ -777,10 +782,10 @@ function AdminDashboardInner() {
       variants: variantProduct.variants?.map((v) =>
         v.size === size
           ? {
-              ...v,
-              isAvailable: !isCurrentlyInStock,
-              stockQuantity: isCurrentlyInStock ? 0 : 2,
-            }
+            ...v,
+            isAvailable: !isCurrentlyInStock,
+            stockQuantity: isCurrentlyInStock ? 0 : 2,
+          }
           : v
       ),
     };
@@ -944,11 +949,10 @@ function AdminDashboardInner() {
                       key={filterTab.id}
                       type="button"
                       onClick={() => setProductStatusFilter(filterTab.id as any)}
-                      className={`px-3.5 py-1.5 rounded-full font-semibold transition-all ${
-                        productStatusFilter === filterTab.id
-                          ? "bg-[#1D1D1F] text-white shadow-2xs"
-                          : "bg-white border border-[#E5E7EB] text-[#6E6E73] hover:text-[#1D1D1F]"
-                      }`}
+                      className={`px-3.5 py-1.5 rounded-full font-semibold transition-all ${productStatusFilter === filterTab.id
+                        ? "bg-[#1D1D1F] text-white shadow-2xs"
+                        : "bg-white border border-[#E5E7EB] text-[#6E6E73] hover:text-[#1D1D1F]"
+                        }`}
                     >
                       {filterTab.label}
                     </button>
@@ -1006,9 +1010,8 @@ function AdminDashboardInner() {
                           return (
                             <tr
                               key={p.id}
-                              className={`hover:bg-[#F9F9FB] transition-colors ${
-                                isSelected ? "bg-blue-50/50" : ""
-                              }`}
+                              className={`hover:bg-[#F9F9FB] transition-colors ${isSelected ? "bg-blue-50/50" : ""
+                                }`}
                             >
                               {/* Checkbox */}
                               <td className="py-3 px-4">
@@ -1068,15 +1071,14 @@ function AdminDashboardInner() {
                                 <button
                                   type="button"
                                   onClick={() => handleQuickPublishToggle(p.id)}
-                                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase transition-colors ${
-                                    isPublished
-                                      ? "bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100"
-                                      : isScheduled
+                                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase transition-colors ${isPublished
+                                    ? "bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100"
+                                    : isScheduled
                                       ? "bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100"
                                       : isArchived
-                                      ? "bg-neutral-100 text-neutral-600 border border-neutral-300"
-                                      : "bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100"
-                                  }`}
+                                        ? "bg-neutral-100 text-neutral-600 border border-neutral-300"
+                                        : "bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100"
+                                    }`}
                                   title="Click to toggle publish status"
                                 >
                                   <span className="w-1.5 h-1.5 rounded-full bg-current" />
@@ -1109,11 +1111,10 @@ function AdminDashboardInner() {
                                       return (
                                         <span
                                           key={s}
-                                          className={`text-[9px] px-1 rounded font-mono ${
-                                            inStock
-                                              ? "bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold"
-                                              : "bg-neutral-100 text-neutral-400 line-through"
-                                          }`}
+                                          className={`text-[9px] px-1 rounded font-mono ${inStock
+                                            ? "bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold"
+                                            : "bg-neutral-100 text-neutral-400 line-through"
+                                            }`}
                                         >
                                           {s}
                                         </span>
@@ -1132,11 +1133,10 @@ function AdminDashboardInner() {
                                   <button
                                     type="button"
                                     onClick={() => handleToggleFeatured(p.id)}
-                                    className={`text-[9px] px-2 py-0.5 rounded font-bold uppercase transition-colors ${
-                                      p.isFeatured
-                                        ? "bg-blue-50 text-[#0071E3] border border-blue-200"
-                                        : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
-                                    }`}
+                                    className={`text-[9px] px-2 py-0.5 rounded font-bold uppercase transition-colors ${p.isFeatured
+                                      ? "bg-blue-50 text-[#0071E3] border border-blue-200"
+                                      : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
+                                      }`}
                                   >
                                     Featured: {p.isFeatured ? "Yes" : "No"}
                                   </button>
@@ -1144,11 +1144,10 @@ function AdminDashboardInner() {
                                   <button
                                     type="button"
                                     onClick={() => handleToggleNew(p.id)}
-                                    className={`text-[9px] px-2 py-0.5 rounded font-bold uppercase transition-colors ${
-                                      p.isNew
-                                        ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                                        : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
-                                    }`}
+                                    className={`text-[9px] px-2 py-0.5 rounded font-bold uppercase transition-colors ${p.isNew
+                                      ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                                      : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
+                                      }`}
                                   >
                                     New: {p.isNew ? "Yes" : "No"}
                                   </button>
@@ -1218,11 +1217,10 @@ function AdminDashboardInner() {
                                   <button
                                     type="button"
                                     onClick={() => handleArchiveProduct(p.id, !isArchived)}
-                                    className={`p-1.5 rounded-lg ${
-                                      isArchived
-                                        ? "text-emerald-600 hover:bg-emerald-50"
-                                        : "text-neutral-400 hover:text-red-600 hover:bg-red-50"
-                                    }`}
+                                    className={`p-1.5 rounded-lg ${isArchived
+                                      ? "text-emerald-600 hover:bg-emerald-50"
+                                      : "text-neutral-400 hover:text-red-600 hover:bg-red-50"
+                                      }`}
                                     title={isArchived ? "Restore from Archive" : "Archive Product"}
                                   >
                                     <Archive className="w-3.5 h-3.5" />
@@ -1250,7 +1248,7 @@ function AdminDashboardInner() {
                 <TableSkeleton rows={6} columns={4} />
               </div>
             ) : (
-              <NavigationManagerTab initialNavigation={navigation} />
+              <NavigationManagerTab initialNavigation={navigation || DEFAULT_NAVIGATION_CONFIG} />
             )
           )}
 
@@ -1462,7 +1460,8 @@ function AdminDashboardInner() {
           {/* ========================================================= */}
           {activeTab === "homepage" && (
             <div className="space-y-6">
-              <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB]">
+
+              <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB] pt-4">
                 <div>
                   <h2 className="font-heading text-lg font-bold text-[#1D1D1F]">
                     Homepage Section Layout &amp; Ordering
@@ -1492,11 +1491,10 @@ function AdminDashboardInner() {
                         );
                         success("Homepage Section Updated", `${sec.name} is now ${!sec.enabled ? "Enabled" : "Hidden"}`);
                       }}
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
-                        sec.enabled
-                          ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-                          : "bg-neutral-100 text-neutral-400 border-neutral-200"
-                      }`}
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${sec.enabled
+                        ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                        : "bg-neutral-100 text-neutral-400 border-neutral-200"
+                        }`}
                     >
                       {sec.enabled ? "Active on Home" : "Disabled"}
                     </button>
@@ -1532,80 +1530,79 @@ function AdminDashboardInner() {
                   </div>
                 ) : (
                   <div className="overflow-x-auto">
-                  <table className="w-full text-left text-xs border-collapse">
-                    <thead>
-                      <tr className="bg-[#F5F5F7] border-b border-[#E5E7EB] text-[#86868B] font-bold uppercase text-[10px] tracking-wider">
-                        <th className="py-3 px-4">Customer</th>
-                        <th className="py-3 px-4">Requested Style</th>
-                        <th className="py-3 px-4">Size &amp; Colour</th>
-                        <th className="py-3 px-4">Channel</th>
-                        <th className="py-3 px-4">Date</th>
-                        <th className="py-3 px-4">Status</th>
-                        <th className="py-3 px-4 text-right">Update Status</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-[#E5E7EB] text-[#1D1D1F]">
-                      {enquiries.map((enq) => (
-                        <tr key={enq.id} className="hover:bg-[#F9F9FB] transition-colors">
-                          <td className="py-3 px-4">
-                            <div>
-                              <span className="font-bold block">{enq.customerName}</span>
-                              <span className="text-[11px] text-[#86868B]">{enq.customerPhone}</span>
-                            </div>
-                          </td>
-                          <td className="py-3 px-4">
-                            <span className="font-semibold block">{enq.productTitle}</span>
-                            <span className="text-[11px] text-[#86868B]">
-                              Outlet Price: ₹{enq.outletPrice?.toLocaleString("en-IN")}
-                            </span>
-                          </td>
-                          <td className="py-3 px-4 text-[#0071E3] font-semibold">
-                            {enq.sizeRequested} • {enq.colourRequested}
-                          </td>
-                          <td className="py-3 px-4">
-                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold capitalize bg-emerald-50 text-emerald-800 border border-emerald-200">
-                              {enq.channel}
-                            </span>
-                          </td>
-                          <td className="py-3 px-4 text-[#86868B]">{enq.createdAt}</td>
-                          <td className="py-3 px-4">
-                            <span
-                              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold ${
-                                enq.status === "New"
+                    <table className="w-full text-left text-xs border-collapse">
+                      <thead>
+                        <tr className="bg-[#F5F5F7] border-b border-[#E5E7EB] text-[#86868B] font-bold uppercase text-[10px] tracking-wider">
+                          <th className="py-3 px-4">Customer</th>
+                          <th className="py-3 px-4">Requested Style</th>
+                          <th className="py-3 px-4">Size &amp; Colour</th>
+                          <th className="py-3 px-4">Channel</th>
+                          <th className="py-3 px-4">Date</th>
+                          <th className="py-3 px-4">Status</th>
+                          <th className="py-3 px-4 text-right">Update Status</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#E5E7EB] text-[#1D1D1F]">
+                        {enquiries.map((enq) => (
+                          <tr key={enq.id} className="hover:bg-[#F9F9FB] transition-colors">
+                            <td className="py-3 px-4">
+                              <div>
+                                <span className="font-bold block">{enq.customerName}</span>
+                                <span className="text-[11px] text-[#86868B]">{enq.customerPhone}</span>
+                              </div>
+                            </td>
+                            <td className="py-3 px-4">
+                              <span className="font-semibold block">{enq.productTitle}</span>
+                              <span className="text-[11px] text-[#86868B]">
+                                Outlet Price: ₹{enq.outletPrice?.toLocaleString("en-IN")}
+                              </span>
+                            </td>
+                            <td className="py-3 px-4 text-[#0071E3] font-semibold">
+                              {enq.sizeRequested} • {enq.colourRequested}
+                            </td>
+                            <td className="py-3 px-4">
+                              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold capitalize bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                {enq.channel}
+                              </span>
+                            </td>
+                            <td className="py-3 px-4 text-[#86868B]">{enq.createdAt}</td>
+                            <td className="py-3 px-4">
+                              <span
+                                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold ${enq.status === "New"
                                   ? "bg-red-50 text-red-700 border border-red-200"
                                   : enq.status === "Contacted"
-                                  ? "bg-amber-50 text-amber-700 border border-amber-200"
-                                  : enq.status === "In Store Visit"
-                                  ? "bg-blue-50 text-blue-700 border border-blue-200"
-                                  : "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                              }`}
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                              {enq.status}
-                            </span>
-                          </td>
-                          <td className="py-3 px-4 text-right">
-                            <select
-                              value={enq.status}
-                              onChange={(e) =>
-                                handleUpdateEnquiryStatus(
-                                  enq.id!,
-                                  e.target.value as StoreEnquiry["status"]
-                                )
-                              }
-                              className="bg-[#F5F5F7] border border-[#E5E7EB] rounded-lg px-2.5 py-1 text-xs font-semibold cursor-pointer"
-                            >
-                              <option value="New">New</option>
-                              <option value="Contacted">Contacted</option>
-                              <option value="In Store Visit">In Store Visit</option>
-                              <option value="Resolved">Resolved</option>
-                            </select>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                                    ? "bg-amber-50 text-amber-700 border border-amber-200"
+                                    : enq.status === "In Store Visit"
+                                      ? "bg-blue-50 text-blue-700 border border-blue-200"
+                                      : "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                                  }`}
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                                {enq.status}
+                              </span>
+                            </td>
+                            <td className="py-3 px-4 text-right">
+                              <select
+                                value={enq.status}
+                                onChange={(e) =>
+                                  handleUpdateEnquiryStatus(
+                                    enq.id!,
+                                    e.target.value as StoreEnquiry["status"]
+                                  )
+                                }
+                                className="bg-[#F5F5F7] border border-[#E5E7EB] rounded-lg px-2.5 py-1 text-xs font-semibold cursor-pointer"
+                              >
+                                <option value="New">New</option>
+                                <option value="Contacted">Contacted</option>
+                                <option value="In Store Visit">In Store Visit</option>
+                                <option value="Resolved">Resolved</option>
+                              </select>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 )}
               </div>
             </div>
@@ -2076,11 +2073,10 @@ function AdminDashboardInner() {
                           {variantProduct.type === "footwear" ? `UK ${size}` : size}
                         </span>
                         <span
-                          className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
-                            inStock
-                              ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                              : "bg-neutral-100 text-neutral-500"
-                          }`}
+                          className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${inStock
+                            ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                            : "bg-neutral-100 text-neutral-500"
+                            }`}
                         >
                           {inStock ? "In Stock (Available)" : "Out of Stock"}
                         </span>
@@ -2089,11 +2085,10 @@ function AdminDashboardInner() {
                       <button
                         type="button"
                         onClick={() => handleToggleSizeStock(size)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${
-                          inStock
-                            ? "bg-red-50 text-red-700 border-red-200 hover:bg-red-100"
-                            : "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100"
-                        }`}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${inStock
+                          ? "bg-red-50 text-red-700 border-red-200 hover:bg-red-100"
+                          : "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100"
+                          }`}
                       >
                         {inStock ? "Mark Out of Stock" : "Mark In Stock"}
                       </button>
@@ -2321,9 +2316,8 @@ function AdminDashboardInner() {
                         </div>
                       </div>
                       <span
-                        className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                          isAssigned ? "bg-[#0071E3]/10 text-[#0071E3]" : "text-[#86868B]"
-                        }`}
+                        className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isAssigned ? "bg-[#0071E3]/10 text-[#0071E3]" : "text-[#86868B]"
+                          }`}
                       >
                         {isAssigned ? "Assigned" : "Not in collection"}
                       </span>

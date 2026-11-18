@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
     const response = NextResponse.json({
       success: true,
       user: result.user,
-      redirectUrl: "/admin",
+      redirectUrl: "/",
     });
 
     attachSessionCookie(response, result.session);

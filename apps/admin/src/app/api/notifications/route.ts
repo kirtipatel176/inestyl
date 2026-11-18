@@ -54,7 +54,7 @@ export async function GET() {
         message: `${v.size ? `Size UK ${v.size}` : ""} ${v.colour || ""} has ${row.available_quantity} units remaining at Kapadwanj flagship.`,
         timestamp: new Date().toISOString(),
         read: false,
-        link: "/admin?tab=inventory",
+        link: "/?tab=inventory",
       });
     });
 
@@ -67,7 +67,7 @@ export async function GET() {
         message: `Customer inquired about ${enq.product_title || "flagship product"}.`,
         timestamp: enq.created_at,
         read: false,
-        link: "/admin?tab=enquiries",
+        link: "/?tab=enquiries",
       });
     });
 

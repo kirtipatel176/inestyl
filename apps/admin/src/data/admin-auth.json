@@ -1,1 +1,150 @@
-{"users":[{"id":"adm_super_01","email":"admin@inestyl.com","fullName":"Kirti Patel (Executive Admin)","role":"super_admin","status":"active","emailVerified":true,"twoFactorEnabled":false,"passwordHash":"bcd5940472397b4247e6fa504309decca38da73fd5431e7403f40b6685118302f80213d40d1df4f218070fecf9da104a3cea5a8ae67ff5ddc8bc96b2cc92227d","passwordSalt":"6386b62341e4491851339b53af302dcf","backupCodes":["ADM-9988-7766","ADM-1122-3344"],"lastLoginAt":null,"createdAt":"2026-11-17T08:17:56.144Z","updatedAt":"2026-11-17T08:17:56.144Z"},{"id":"adm_security_02","email":"security@inestyl.com","fullName":"Security Administrator","role":"admin","status":"active","emailVerified":true,"twoFactorEnabled":true,"passwordHash":"6a8570868af79aab6c0ff6e98d0cf842ad7ed83ea9e6164f2f15e52539d8ded5db9d8ffa57e8df2c57fb8389c7151dffcc58e21b45bc9efa0bc7c50815efb2a1","passwordSalt":"533c330301256d503b13837120203422","backupCodes":["SEC-7788-9900","SEC-1122-3344","SEC-5566-7788"],"lastLoginAt":null,"createdAt":"2026-11-17T08:17:56.144Z","updatedAt":"2026-11-17T08:17:56.144Z"},{"id":"adm_manager_03","email":"manager@inestyl.com","fullName":"Kapadwanj Store Manager","role":"inventory_manager","status":"active","emailVerified":true,"twoFactorEnabled":false,"passwordHash":"5ccb5b5cfc65e7963ecb3afa731aa183125c23590991dfd6ef4da5cfb23de8d6646ae788e9f9c093fdcc7f388fc76be4cbdc2ccf29cb4806da3da814b2dfd689","passwordSalt":"bdd2a4bde49e2fdf263b985964cccd11","backupCodes":["MGR-4455-6677","MGR-8899-0011"],"lastLoginAt":null,"createdAt":"2026-11-17T08:17:56.144Z","updatedAt":"2026-11-17T08:17:56.144Z"},{"id":"adm_disabled_04","email":"disabled@inestyl.com","fullName":"Former Store Clerk","role":"admin","status":"disabled","emailVerified":true,"twoFactorEnabled":false,"passwordHash":"e5b4bdd34072ed032850582670ee2e2c38a2ad9d751e77a4e10adaa3d434a97cda29aa868220553d8756edea3dceb1d41c106bd94b7f7cee667b6ea26d38dc12","passwordSalt":"6bc0a385c49bda2c8d90df4a7d9b5b22","backupCodes":["DIS-0000-1111"],"lastLoginAt":null,"createdAt":"2026-11-17T08:17:56.144Z","updatedAt":"2026-11-17T08:17:56.144Z"},{"id":"adm_unverified_05","email":"newjoiner@inestyl.com","fullName":"Associate Trainee","role":"admin","status":"pending_verification","emailVerified":false,"twoFactorEnabled":false,"passwordHash":"dcae1f4402f892a6379c4c84f0cb9e8f12750e59fe4711a09a62352974bb214fff5672a25b2f52a3177f7c3c2c130f0834fca2e13f4f11f9556717660a514549","passwordSalt":"07843f58d3a9fe6690150fc604d2b2c4","backupCodes":["TRN-2233-4455"],"lastLoginAt":null,"createdAt":"2026-11-17T08:17:56.144Z","updatedAt":"2026-11-17T08:17:56.144Z"}],"sessions":[],"resetTokens":[],"twoFactorChallenges":[],"verificationTokens":[],"rateLimits":{}}
+{
+  "users": [
+    {
+      "id": "adm_super_01",
+      "email": "admin@inestyl.com",
+      "username": "admin",
+      "fullName": "Kirti Patel (Executive Admin)",
+      "role": "super_admin",
+      "status": "active",
+      "emailVerified": true,
+      "twoFactorEnabled": false,
+      "passwordHash": "da22f2e8cc4ce606cfe5e1dacb5626e920d5b27fc86da950c912710acbcd191651f7765ab20eddcee7b0591a46bda8182c82ba28d940fda2cae142aa865cf49b",
+      "passwordSalt": "8a79c8ee86fd4c756a903bce3f5c6f3a",
+      "backupCodes": [
+        "ADM-9988-7766",
+        "ADM-1122-3344"
+      ],
+      "lastLoginAt": "2026-11-18T08:42:55.508Z",
+      "createdAt": "2026-11-18T08:42:55.270Z",
+      "updatedAt": "2026-11-18T08:42:55.508Z"
+    },
+    {
+      "id": "adm_security_02",
+      "email": "security@inestyl.com",
+      "username": "security",
+      "fullName": "Security Administrator",
+      "role": "admin",
+      "status": "active",
+      "emailVerified": true,
+      "twoFactorEnabled": true,
+      "passwordHash": "752552bff264cc867f01bcb8755660842d1ed05d8cf29815d92e448ee8a540a49c3e88917642a11f3b112f8e2aefd5ca68aeaf8cc106588dceee10a9f40ce53f",
+      "passwordSalt": "234a592665e3658480799d61b13f5a61",
+      "backupCodes": [
+        "SEC-7788-9900",
+        "SEC-1122-3344",
+        "SEC-5566-7788"
+      ],
+      "lastLoginAt": null,
+      "createdAt": "2026-11-18T08:42:55.270Z",
+      "updatedAt": "2026-11-18T08:42:55.270Z"
+    },
+    {
+      "id": "adm_manager_03",
+      "email": "manager@inestyl.com",
+      "username": "manager",
+      "fullName": "Kapadwanj Store Manager",
+      "role": "inventory_manager",
+      "status": "active",
+      "emailVerified": true,
+      "twoFactorEnabled": false,
+      "passwordHash": "68b6f2cf741666a8e5bc466aab2f67ccd0dcc8e26591f2c3e4b0823586467c90a735c1bdafab8c3c586bd163aa65838d408a622a9a8f00572312866062b578d1",
+      "passwordSalt": "e9ec2eeceff6c1a4090a22a84712c9c3",
+      "backupCodes": [
+        "MGR-4455-6677",
+        "MGR-8899-0011"
+      ],
+      "lastLoginAt": null,
+      "createdAt": "2026-11-18T08:42:55.270Z",
+      "updatedAt": "2026-11-18T08:42:55.270Z"
+    },
+    {
+      "id": "adm_disabled_04",
+      "email": "disabled@inestyl.com",
+      "fullName": "Former Store Clerk",
+      "role": "admin",
+      "status": "disabled",
+      "emailVerified": true,
+      "twoFactorEnabled": false,
+      "passwordHash": "6d05ec5c85d51eeed12d82a4e4ea279078f0fca474c151b89421fba6362b1c81021d0b07fc7519242ec31ef059c84371544716548ff9cb9debd96452b916a95a",
+      "passwordSalt": "2383235f40efe4cec74f42462803461a",
+      "backupCodes": [
+        "DIS-0000-1111"
+      ],
+      "lastLoginAt": null,
+      "createdAt": "2026-11-18T08:42:55.270Z",
+      "updatedAt": "2026-11-18T08:42:55.270Z"
+    },
+    {
+      "id": "adm_unverified_05",
+      "email": "newjoiner@inestyl.com",
+      "fullName": "Associate Trainee",
+      "role": "admin",
+      "status": "pending_verification",
+      "emailVerified": false,
+      "twoFactorEnabled": false,
+      "passwordHash": "8f77ea2857c95b70c2ea86184b9d5b3298075a470e882124e07b2799adebc3ab7185add4b994e13b5519482c937b5dfdcf705a9af55579e1c2f9b7f78b67f8d8",
+      "passwordSalt": "346fb51214a6bb693392956facdf5ace",
+      "backupCodes": [
+        "TRN-2233-4455"
+      ],
+      "lastLoginAt": null,
+      "createdAt": "2026-11-18T08:42:55.270Z",
+      "updatedAt": "2026-11-18T08:42:55.270Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "80776b7b28bfddc7e4c5e1a004cab83c3abcafd47fbcafdc363e61ebe6a09768368e83acb379c597cf25487e280d44d5",
+      "adminId": "adm_super_01",
+      "email": "admin@inestyl.com",
+      "fullName": "Kirti Patel (Executive Admin)",
+      "role": "super_admin",
+      "rememberDevice": false,
+      "createdAt": 1794991118854,
+      "expiresAt": 1795019918854,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+      "ip": "::1"
+    },
+    {
+      "token": "c8954ee938d2fc420407f4a96d2de3105206ecd08e7919a6042475ee73ba95e34dd386e369ec3c6d3b737fd662c0f15a",
+      "adminId": "adm_super_01",
+      "email": "admin@inestyl.com",
+      "fullName": "Kirti Patel (Executive Admin)",
+      "role": "super_admin",
+      "rememberDevice": true,
+      "createdAt": 1794991375447,
+      "expiresAt": 1797583375447,
+      "userAgent": "Mac-Chrome",
+      "ip": "127.0.0.1"
+    },
+    {
+      "token": "706e199a967b72c6f5c48a2a6c52d27d4ec5348c5006d8567967dbf9eed1890df3ea8b289dcd128769b16d3275bda5cb",
+      "adminId": "adm_super_01",
+      "email": "admin@inestyl.com",
+      "fullName": "Kirti Patel (Executive Admin)",
+      "role": "super_admin",
+      "rememberDevice": true,
+      "createdAt": 1794991375507,
+      "expiresAt": 1797583375507,
+      "userAgent": "Mac-Chrome",
+      "ip": "127.0.0.1"
+    }
+  ],
+  "resetTokens": [],
+  "twoFactorChallenges": [
+    {
+      "challengeId": "9a57a2563851880b786def21373805f8",
+      "adminId": "adm_security_02",
+      "email": "security@inestyl.com",
+      "code": "642183",
+      "createdAt": 1794991375538,
+      "expiresAt": 1794991675538,
+      "cooldownUntil": 1794991435538,
+      "attempts": 0,
+      "rememberDevice": false
+    }
+  ],
+  "verificationTokens": [],
+  "rateLimits": {}
+}

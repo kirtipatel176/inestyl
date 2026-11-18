@@ -21,6 +21,22 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/admin/:path*",
+        destination: "/api/:path*",
+      },
+      {
+        source: "/admin",
+        destination: "/",
+      },
+      {
+        source: "/admin/:path*",
+        destination: "/:path*",
+      },
+    ];
+  },
   async headers() {
     return [
       {

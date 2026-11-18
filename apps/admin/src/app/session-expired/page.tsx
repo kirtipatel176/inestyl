@@ -45,7 +45,7 @@ export default function SessionExpiredPage() {
         </div>
 
         <div className="pt-2">
-          <Link href="/admin/login">
+          <Link href="/login">
             <AuthButton icon={<LogIn className="w-4 h-4" />}>
               Sign In Again
             </AuthButton>

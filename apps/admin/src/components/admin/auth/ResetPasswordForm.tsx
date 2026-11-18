@@ -40,7 +40,7 @@ export function ResetPasswordForm() {
       return;
     }
 
-    fetch(`/api/admin/auth/reset-password?token=${encodeURIComponent(token)}`)
+    fetch(`/api/auth/reset-password?token=${encodeURIComponent(token)}`)
       .then((res) => res.json())
       .then((data) => {
         setIsValidatingToken(false);
@@ -100,7 +100,7 @@ export function ResetPasswordForm() {
     setGeneralError("");
 
     try {
-      const res = await fetch("/api/admin/auth/reset-password", {
+      const res = await fetch("/api/auth/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -161,10 +161,10 @@ export function ResetPasswordForm() {
         </div>
 
         <div className="pt-2 flex flex-col sm:flex-row gap-3">
-          <Link href="/admin/forgot-password" className="w-full">
+          <Link href="/forgot-password" className="w-full">
             <AuthButton>Request New Reset Link</AuthButton>
           </Link>
-          <Link href="/admin/login" className="w-full">
+          <Link href="/login" className="w-full">
             <AuthButton variant="secondary">Return to Sign In</AuthButton>
           </Link>
         </div>
@@ -194,7 +194,7 @@ export function ResetPasswordForm() {
         </div>
 
         <div className="pt-2">
-          <Link href="/admin/login">
+          <Link href="/login">
             <AuthButton icon={<ArrowRight className="w-4 h-4" />}>
               Sign In with New Password
             </AuthButton>
@@ -214,7 +214,7 @@ export function ResetPasswordForm() {
     >
       <div>
         <Link
-          href="/admin/login"
+          href="/login"
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#86868B] hover:text-[#0071E3] transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />

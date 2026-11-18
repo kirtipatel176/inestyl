@@ -28,6 +28,7 @@ export interface LoginInput {
 }
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const USERNAME_REGEX = /^[a-zA-Z0-9._-]{3,50}$/;
 
 export const loginSchema: SchemaValidator<LoginInput> = {
   safeParse(input: unknown): SafeParseResult<LoginInput> {
@@ -40,10 +41,12 @@ export const loginSchema: SchemaValidator<LoginInput> = {
     const rememberDevice = Boolean(val.rememberDevice);
 
     if (!email) {
-      return { success: false, error: { issues: [{ message: "Email address is required", path: ["email"] }] } };
+      return { success: false, error: { issues: [{ message: "Email address or username is required", path: ["email"] }] } };
     }
-    if (!EMAIL_REGEX.test(email)) {
-      return { success: false, error: { issues: [{ message: "Please enter a valid email address", path: ["email"] }] } };
+    const isEmail = EMAIL_REGEX.test(email);
+    const isUsername = USERNAME_REGEX.test(email);
+    if (!isEmail && !isUsername) {
+      return { success: false, error: { issues: [{ message: "Please enter a valid email address or username", path: ["email"] }] } };
     }
     if (!password) {
       return { success: false, error: { issues: [{ message: "Password is required", path: ["password"] }] } };

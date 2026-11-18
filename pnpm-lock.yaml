@@ -7,80 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@inestyle/database':
-        specifier: workspace:*
-        version: link:packages/database
-      '@inestyle/permissions':
-        specifier: workspace:*
-        version: link:packages/permissions
-      '@inestyle/shared-types':
-        specifier: workspace:*
-        version: link:packages/shared-types
-      '@inestyle/shared-utils':
-        specifier: workspace:*
-        version: link:packages/shared-utils
-      '@inestyle/validations':
-        specifier: workspace:*
-        version: link:packages/validations
-      '@studio-freight/lenis':
-        specifier: ^1.0.42
-        version: 1.0.42
-      '@supabase/ssr':
-        specifier: ^0.5.2
-        version: 0.5.2(@supabase/supabase-js@2.119.0)
-      '@supabase/supabase-js':
-        specifier: ^2.119.0
-        version: 2.119.0
-      cloudinary:
-        specifier: ^2.11.0
-        version: 2.11.0
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      framer-motion:
-        specifier: ^12.4.7
-        version: 12.43.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      lucide-react:
-        specifier: ^0.475.0
-        version: 0.475.0(react@19.3.1)
-      next:
-        specifier: ^15.1.7
-        version: 15.5.29(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      react:
-        specifier: ^19.0.0
-        version: 19.3.1
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.3.1(react@19.3.1)
-      sharp:
-        specifier: ^0.33.5
-        version: 0.33.5
-      tailwind-merge:
-        specifier: ^3.0.1
-        version: 3.7.0
-      zod:
-        specifier: ^3.24.2
-        version: 3.25.76
     devDependencies:
       '@types/node':
         specifier: ^22.13.4
         version: 22.20.5
-      '@types/react':
-        specifier: ^19.0.10
-        version: 19.3.0
-      '@types/react-dom':
-        specifier: ^19.0.4
-        version: 19.3.0(@types/react@19.3.0)
-      autoprefixer:
-        specifier: ^10.4.20
-        version: 10.6.2(postcss@8.5.33)
-      postcss:
-        specifier: ^8.5.2
-        version: 8.5.33
-      tailwindcss:
-        specifier: ^3.4.17
-        version: 3.4.19
       typescript:
         specifier: ^5.7.3
         version: 5.9.3
@@ -102,6 +32,12 @@ importers:
       '@inestyle/validations':
         specifier: workspace:*
         version: link:../../packages/validations
+      '@supabase/ssr':
+        specifier: ^0.5.2
+        version: 0.5.2(@supabase/supabase-js@2.119.0)
+      '@supabase/supabase-js':
+        specifier: ^2.119.0
+        version: 2.119.0
       cloudinary:
         specifier: ^2.11.0
         version: 2.11.0
@@ -172,6 +108,15 @@ importers:
       '@studio-freight/lenis':
         specifier: ^1.0.42
         version: 1.0.42
+      '@supabase/ssr':
+        specifier: ^0.5.2
+        version: 0.5.2(@supabase/supabase-js@2.119.0)
+      '@supabase/supabase-js':
+        specifier: ^2.119.0
+        version: 2.119.0
+      cloudinary:
+        specifier: ^2.11.0
+        version: 2.11.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1

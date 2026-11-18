@@ -14,7 +14,7 @@ import { apiClient } from "@/lib/api-client";
 export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const returnUrl = searchParams.get("returnUrl") || "/admin";
+  const returnUrl = searchParams.get("returnUrl") || "/";
   const isExpiredSession = searchParams.get("expired") === "1";
 
   const [email, setEmail] = useState("");
@@ -51,11 +51,14 @@ export function LoginForm() {
     setGeneralError("");
 
     const trimmedEmail = targetEmail.trim();
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail);
+    const isUsername = /^[a-zA-Z0-9._-]{3,50}$/.test(trimmedEmail);
+
     if (!trimmedEmail) {
-      setEmailError("Email address is required.");
+      setEmailError("Email address or username is required.");
       isValid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
-      setEmailError("Please enter a valid administrator email address.");
+    } else if (!isEmail && !isUsername) {
+      setEmailError("Please enter a valid administrator email address or username.");
       isValid = false;
     }
 
@@ -71,7 +74,7 @@ export function LoginForm() {
     setIsLoading(true);
     setGeneralError("");
 
-    const res = await apiClient<any>("/api/admin/auth/login", {
+    const res = await apiClient<any>("/api/auth/login", {
       method: "POST",
       body: JSON.stringify({
         email: loginEmail.trim(),
@@ -98,7 +101,7 @@ export function LoginForm() {
       if (data.debugCode) {
         sessionStorage.setItem("inestyl_2fa_debug", data.debugCode);
       }
-      router.push(`/admin/two-factor?challengeId=${data.challengeId}&returnUrl=${encodeURIComponent(returnUrl)}`);
+      router.push(`/two-factor?challengeId=${data.challengeId}&returnUrl=${encodeURIComponent(returnUrl)}`);
       return;
     }
 
@@ -178,12 +181,12 @@ export function LoginForm() {
 
       {/* Login Form */}
       <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-        {/* Email Address */}
+        {/* Email Address or Username */}
         <AuthInput
-          label="Email address"
-          type="email"
-          autoComplete="email"
-          placeholder="admin@inestyl.com"
+          label="Email address or username"
+          type="text"
+          autoComplete="username"
+          placeholder="admin@inestyl.com or admin"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -210,7 +213,7 @@ export function LoginForm() {
           icon={<Lock className="w-4 h-4" />}
           rightAction={
             <Link
-              href="/admin/forgot-password"
+              href="/forgot-password"
               className="text-xs font-semibold text-[#0071E3] hover:underline focus:outline-none"
               tabIndex={-1}
             >

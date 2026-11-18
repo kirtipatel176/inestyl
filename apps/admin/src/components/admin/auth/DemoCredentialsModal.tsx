@@ -27,7 +27,7 @@ export function DemoCredentialsModal({ onSelectAccount }: DemoCredentialsModalPr
   } | null>(null);
 
   const loadDemoData = () => {
-    fetch("/api/admin/auth/demo-credentials")
+    fetch("/api/auth/demo-credentials")
       .then((res) => res.json())
       .then((data) => setDemoData(data))
       .catch((err) => console.error("Failed to load demo accounts:", err));
@@ -47,7 +47,7 @@ export function DemoCredentialsModal({ onSelectAccount }: DemoCredentialsModalPr
     setIsResetting(true);
     setResetMessage(null);
     try {
-      const res = await fetch("/api/admin/auth/demo-credentials", { method: "POST" });
+      const res = await fetch("/api/auth/demo-credentials", { method: "POST" });
       const data = await res.json();
       if (data.success) {
         setResetMessage("Demo accounts reset successfully.");
@@ -159,7 +159,9 @@ export function DemoCredentialsModal({ onSelectAccount }: DemoCredentialsModalPr
                         </span>
                       )}
                     </div>
-                    <p className="text-[11px] font-mono text-[#86868B] truncate mt-0.5">{acc.email}</p>
+                    <p className="text-[11px] font-mono text-[#86868B] truncate mt-0.5">
+                      {acc.email} {(acc as any).username ? `• username: ${(acc as any).username}` : ""}
+                    </p>
                     <p className="text-[10px] text-[#A1A1A6] mt-0.5">
                       {is2FA
                         ? "Prompts for 6-digit OTP code (demo code displayed on next screen)"

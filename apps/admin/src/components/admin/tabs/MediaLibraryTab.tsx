@@ -78,7 +78,7 @@ export function MediaLibraryTab({
   const loadMedia = async () => {
     setIsLoading(true);
     try {
-      const url = new URL("/api/admin/media", window.location.origin);
+      const url = new URL("/api/media", window.location.origin);
       if (selectedFolder !== "all") url.searchParams.set("folder", selectedFolder);
       if (searchQuery.trim()) url.searchParams.set("q", searchQuery.trim());
 
@@ -149,7 +149,7 @@ export function MediaLibraryTab({
         );
       }, 150);
 
-      const res = await fetch("/api/admin/media", {
+      const res = await fetch("/api/media", {
         method: "POST",
         body: formData,
       });
@@ -202,7 +202,7 @@ export function MediaLibraryTab({
     }
 
     try {
-      const res = await fetch(`/api/admin/media/${asset.publicId}`, {
+      const res = await fetch(`/api/media/${asset.publicId}`, {
         method: "DELETE",
       });
 
@@ -223,7 +223,7 @@ export function MediaLibraryTab({
     if (!selectedAsset) return;
 
     try {
-      const res = await fetch(`/api/admin/media/${selectedAsset.publicId}`, {
+      const res = await fetch(`/api/media/${selectedAsset.publicId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ altText: editAltText }),

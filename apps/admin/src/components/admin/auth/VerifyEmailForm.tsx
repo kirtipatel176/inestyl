@@ -31,7 +31,7 @@ export function VerifyEmailForm() {
       return;
     }
 
-    fetch(`/api/admin/auth/verify-email?token=${encodeURIComponent(token)}`)
+    fetch(`/api/auth/verify-email?token=${encodeURIComponent(token)}`)
       .then((res) => res.json())
       .then((data) => {
         setIsVerifying(false);
@@ -57,7 +57,7 @@ export function VerifyEmailForm() {
     setResendStatus(null);
 
     try {
-      const res = await fetch("/api/admin/auth/verify-email", {
+      const res = await fetch("/api/auth/verify-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: resendEmail.trim() }),
@@ -109,7 +109,7 @@ export function VerifyEmailForm() {
         </div>
 
         <div className="pt-2">
-          <Link href="/admin/login">
+          <Link href="/login">
             <AuthButton icon={<ArrowRight className="w-4 h-4" />}>
               Proceed to Sign In
             </AuthButton>
@@ -170,7 +170,7 @@ export function VerifyEmailForm() {
         )}
 
         <div className="pt-2">
-          <Link href="/admin/login">
+          <Link href="/login">
             <AuthButton variant="secondary">Return to Sign In</AuthButton>
           </Link>
         </div>
@@ -241,7 +241,7 @@ export function VerifyEmailForm() {
 
       <div className="pt-2 text-center">
         <Link
-          href="/admin/login"
+          href="/login"
           className="text-xs font-semibold text-[#86868B] hover:text-[#0071E3] transition-colors"
         >
           Return to Sign In
